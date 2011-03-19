@@ -1,0 +1,2 @@
+2011/03/18 22:54:51 [error] [system.db.CDbCommand] Error in querying SQL: SHOW COLUMNS FROM `album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
