@@ -20,6 +20,7 @@
  */
 class Album extends CActiveRecord
 {
+    private static $_items=array();
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Album the static model class
@@ -115,5 +116,22 @@ class Album extends CActiveRecord
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
+	}
+    //Get albums 
+    public static function getAlbums($type){
+        if(!isset(self::$_items[$type]))
+			self::loadAlbums($type);
+		return self::$_items[$type];
+    }
+    private static function loadAlbums($type)
+	{
+		self::$_items[$type]=array();
+		$models=self::model()->findAll(array(
+			'condition'=>'user_id=:user_id',
+			'params'=>array(':user_id'=>$type),
+			'order'=>'id',
+		));
+		foreach($models as $model)
+			self::$_items[$type][$model->id]=$model->title;
 	}
 }

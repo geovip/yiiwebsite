@@ -12,6 +12,7 @@
  */
 class Category extends CActiveRecord
 {
+    private static $_items=array();
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Category the static model class
@@ -91,5 +92,22 @@ class Category extends CActiveRecord
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
+	}
+    //Get categories 
+    public static function getCategories($type){
+        if(!isset(self::$_items[$type]))
+			self::loadCategories($type);
+		return self::$_items[$type];
+    }
+    private static function loadCategories($type)
+	{
+		self::$_items[$type]=array();
+		$models=self::model()->findAll(array(
+			'condition'=>'type=:type',
+			'params'=>array(':type'=>$type),
+			'order'=>'id',
+		));
+		foreach($models as $model)
+			self::$_items[$type][$model->id]=$model->name;
 	}
 }
