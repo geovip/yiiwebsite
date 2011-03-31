@@ -101,6 +101,26 @@ class AlbumController extends Controller
 		));
         
 	}
+    //add ajax album
+    public function actionCreateAlbum(){
+        if(isset($_POST['ajax'])){
+            $user_id= Yii::app()->user->getId();
+            $model= new Album;
+            $model->title=$_POST['title'];
+            $model->description= $_POST['description'];
+            $model->user_id= $user_id;
+            
+            $model->owner_type= 'user';
+            $model->creation_date= date("Y-m-d H:i:s");
+            $model->modified_date= date("Y-m-d H:i:s");
+            $model->search= 1;
+            $model->type= 'wall';
+            $model->save();   
+            echo $model->id;
+            exit;
+        }
+        
+    }
     public function actionFiles(){
         
         //prepare save album
@@ -109,8 +129,12 @@ class AlbumController extends Controller
         //get album_id
         $album_id = $_POST['ul'];
         //create photo model and save 
-        
-        //$model->save();        
+        //album
+        $album=Album::model()->findByPk($album_id);
+        $album->category_id= $_POST['category_id'];
+        var_dump($album_id);//exit;
+        $album->save(); 
+               
         //get file
         $file = CUploadedFile::getInstanceByName("Filedata");
         //var_dump();exit;
