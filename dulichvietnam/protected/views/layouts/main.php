@@ -17,7 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
     -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.3.2.min.js"></script>
+    
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/cufon-yui.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/myradpro.font.js"></script>
     <script type="text/javascript">
@@ -25,6 +25,10 @@
     </script>
     <!-- flash script -->
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/flash_detect.v1.7.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript">    
+      jQuery.noConflict();
+    </script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -34,28 +38,34 @@
 
 	<div class="header">
     <div class="Click"> Follow us on the social network sites for the latest updates on our projects or so.</div>
-    <div class="rss"> <img src="images/rss_4.gif" alt="picture" width="16" height="16" class="floated" /> <img src="images/rss_3.gif" alt="picture" width="16" height="16" class="floated" /> <img src="images/rss_2.gif" alt="picture" width="16" height="16" class="floated" /> <img src="images/rss_1.gif" alt="picture" width="16" height="16" class="floated" /> </div>
+    <div class="rss"> 
+        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/rss_4.gif" alt="picture" width="16" height="16" class="floated" /> 
+        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/rss_3.gif" alt="picture" width="16" height="16" class="floated" /> 
+        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/rss_2.gif" alt="picture" width="16" height="16" class="floated" /> 
+        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/rss_1.gif" alt="picture" width="16" height="16" class="floated" /> 
+    </div>
+
     <div class="search">
       <form id="form1" name="form1" method="post" action="">
         <span>
         <input name="q" type="text" class="keywords" id="textfield" maxlength="50" value="Search..." />
         </span>
-        <input name="b" type="image" src="images/search.gif" class="button" />
+        <input name="b" type="image" src="<?php echo Yii::app()->request->baseUrl ?>/images/search.gif" class="button" />
       </form>
     </div>
     <div class="clr"></div>
     <div class="menu">
-      <div class="logo"><a href="index.html"><img src="images/logo.png" width="197" height="89" border="0" alt="logo" /></a></div>
+      <div class="logo"><a href="#"><img src="<?php echo Yii::app()->request->baseUrl ?>/images/logo.png" width="197" height="89" border="0" alt="logo" /></a></div>
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="portfolio.html"> Services </a></li>
-        <li><a href="portfolio.html"> Portfolio</a></li>
-        <li><a href="about.html"> About Us</a></li>
-        <li><a href="contact.html"> Contact Us</a></li>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#"> Services </a></li>
+        <li><a href="#"> Portfolio</a></li>
+        <li><a href="#"> About Us</a></li>
+        <li><a href="#"> Contact Us</a></li>
       </ul>
       <div class="clr"></div>
     </div>
-    <img src="images/header_im_bottom.gif" alt="picture" width="980" height="22" />
+    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/header_im_bottom.gif" alt="picture" width="980" height="22" />
     <div class="clr"></div>
   </div>
     <!-- header -->

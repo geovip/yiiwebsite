@@ -4,6 +4,7 @@
 
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/source/FancyUpload2.js"></script>
 
+
 <style type="text/css">
 .swiff-uploader-box a {
 	display: none !important;
@@ -94,6 +95,7 @@ a:hover, a.hover {
 	line-height: 18px;
 	margin-right: 6px;
 }
+
 </style>
 <div class="form">
     
@@ -116,11 +118,11 @@ a:hover, a.hover {
             <?php }
             ?>  
             </select>
-            <a href="javascript:void(0);" onclick="javascript:add_album();">Add Album</a>
+            <a class="add_album" href="javascript:void(0);" ><img id="img_add_album" src="<?php echo Yii::app()->request->baseUrl; ?>/images/folder_add.png" /></a>
         </li>
         <li>
             <label>Choose category</label>
-            <select name="Album[category_id]">
+            <select id="category" name="Album[category_id]">
            
             <?php if(!empty($this->categories)){
                     foreach($this->categories as $key=>$value){?>
@@ -130,15 +132,21 @@ a:hover, a.hover {
             ?>    
             </select>
         </li>
+         <div id="create_album" style="display: none;">
         <li>
-            <div id="create_album" style="display: none;">
+           
+            <form id="form_create_album">
                 <label>Title</label>
                 <input id="title" type="text" class="text" name="Album[title]" />
+                <label style="color: red;" id="error_title"></label>
                 <label> Description</label>
                 <textarea id="description" name="Album[description]" cols="45" rows="6"></textarea>
-                <input type="submit" value="Save" />
-            </div>
+                
+                <input type="button" value="Save" onclick="javascript:save_create_album();" />
+                </form>
+            
         </li>
+        </div>
         
     </ol>
     
@@ -182,24 +190,48 @@ a:hover, a.hover {
 
 </div><!-- form -->
 <script type="text/javascript">
-function chooseAlbum(){
-    var album = document.getElementById("album");
-    var name = document.getElementById("create_album");
+function save_create_album(){
     
-   
-    if (album.value == 0)
-    {
-        name.style.display = "block"; 
+    var url="<?php echo Yii::app()->request->baseUrl ?>/?r=album/createalbum";
+    var title= $('title').value;
+    var valid= checkValid('#title', 160);
+    var description= $('description').value;
+    
+    if(valid==false){
+        $('error_title').set('html', 'Title is not empty and no more than 160 characters');
     }
-    else
-    {
-        name.style.display = "none";
-
+    if(valid){
+        new Request({
+            url: url,
+            method: "post",
+           data:{
+                'ajax': 'ajax',
+                'title': title,
+                'description': description
+            },
+            onSuccess : function(responseHTML)
+            {
+                if(responseHTML > 0){
+                    jQuery('#album').prepend('<option value="'+responseHTML+'" selected >'+title+'</option>');
+                    $('title').set('value', '');
+                    $('description').set('value', '');
+                    $('create_album').style.display="none";
+                    $('error_title').set('html', '');
+                }
+            		
+            }
+        }).send();
+    
     }
+    
 }
 </script>
 <script type="text/javascript">
 window.addEvent('domready', function() { // wait for the content
+    $('img_add_album').addEvent('click', function(){
+        //alert('hi');
+        jQuery('#create_album').toggle();
+    });
     
 	// our uploader instance 
     
@@ -221,8 +253,9 @@ window.addEvent('domready', function() { // wait for the content
 		// this is our browse button, *target* is overlayed with the Flash movie
 		target: 'demo-browse',
         data: {
-            'ul': $('album').value,
-            'user_id': $('user_id').value
+            'ul': jQuery('#album').val(),
+            'user_id': jQuery('#user_id').val(),
+            'category_id': jQuery('#category').val()
         },
 		// graceful degradation, onLoad is only called if all went well with Flash
 		onLoad: function() {
@@ -256,7 +289,7 @@ window.addEvent('domready', function() { // wait for the content
 			$('demo-upload').addEvent('click', function() {
                 
 				up.start(); // start upload
-                window.location.href= "<?php echo Yii::app()->request->baseUrl ?>";
+                //window.location.href= "<?php echo Yii::app()->request->baseUrl ?>";
 				return false;
 			});
 		},
@@ -324,12 +357,9 @@ window.addEvent('domready', function() { // wait for the content
 		}
  
 	});
- 
+    
 });
 </script>
 
-<script type="text/javascript">
-function add_album(){
-    $('create_album').style.display= 'block';
-}
-</script>
+
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery_check_form.js"></script>
