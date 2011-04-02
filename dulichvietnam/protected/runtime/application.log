@@ -185,3 +185,15 @@ Stack trace:
 #1 D:\xampp1.7.3\xampp\htdocs\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
 #2 D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
 #3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php/piecemakerNoShadow.swf
+2011/04/03 01:06:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "piecemakerNoShadow.swf".' in D:\xampp1.7.3\xampp\htdocs\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 D:\xampp1.7.3\xampp\htdocs\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('piecemakerNoSha...')
+#1 D:\xampp1.7.3\xampp\htdocs\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php/piecemakerNoShadow.swf
+2011/04/03 01:06:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "piecemakerNoShadow.swf".' in D:\xampp1.7.3\xampp\htdocs\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 D:\xampp1.7.3\xampp\htdocs\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('piecemakerNoSha...')
+#1 D:\xampp1.7.3\xampp\htdocs\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php/piecemakerNoShadow.swf

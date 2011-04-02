@@ -107,4 +107,4 @@ p.clr, .clr { clear:both; padding:0; margin:0; background:none;}
 #form-demo textarea { width:450px; border:1px solid #e0e0e0; margin:2px 0; padding:2px; background:none; float:left; }
 #form-demo li.buttons input { padding:3px 0 3px 0; margin:10px 0 0 0; border:0; color:#FFF;}
 #form-demo li a img{border:  none;}
-
+a.add_album img{margin:0; padding:0}
