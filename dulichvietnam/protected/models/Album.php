@@ -134,4 +134,11 @@ class Album extends CActiveRecord
 		foreach($models as $model)
 			self::$_items[$type][$model->id]=$model->title;
 	}
+    public function listAlbum(){
+        $condition= array(
+                        'order'=> 'view_count DESC',
+                        'limit'=>6
+                        );
+        return self::model()->findAll($condition);
+    }
 }

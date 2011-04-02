@@ -1,5 +1,4 @@
-
-  <div id="slider">
+   <div id="slider">
     <!-- start slideshow -->
     <div class="flash_slider">
     <script language="JavaScript" type="text/javascript">
@@ -25,19 +24,17 @@
 		'movie', 'piecemakerNoShadow',
 		'salign', ''
 		); //end AC code
-</script>
-</div>
+    </script>
+    </div>
+     <img src="<?php echo Yii::app()->request->baseUrl ?>/images/simple_bg.gif" alt="picture" width="980" height="37" />
     <div class="clr"></div>
-    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/simple_bg.gif" alt="picture" width="980" height="37" />
-    <div class="clr"></div>
-    <div class="click_blog"> <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/Get_in_touch.gif" alt="picture" width="163" height="47" />
+    <div class="click_blog"> <img src="<?php echo Yii::app()->request->baseUrl ?>/images/Get_in_touch.gif" alt="picture" width="163" height="47" />
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, labore et dolore magna aliqua.</p>
       <div class="clr"></div>
     </div>
     <!-- end #slideshow -->
     <div class="clr"></div>
   </div>
-  <div class="clr"></div>
   <div class="body">
     <div class="body_resize">
       <div class="port">
@@ -46,7 +43,7 @@
         <div class="clr"></div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id tristique sem. Nunc nec ipsum sed nisi dictum mollis. Praesent malesuada mauris a odio adipiscing mollis. In varius tincidunt elit vitae eleifend. <br />
         </p>
-        <a href="#"><img src="images/read_more.gif" alt="picture" width="85" height="26" border="0" class="floated" /></a></div>
+        <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/read_more.gif" alt="picture" width="85" height="26" border="0" class="floated" /></a></div>
       <div class="port">
         <h2>A Little About Us</h2>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/img_2.jpg" alt="picture" width="276" height="148" />

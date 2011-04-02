@@ -17,7 +17,11 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
     -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
-    
+    <style type="text/css">
+    .main { margin:0 auto; padding:0;  background:#f5f5f5 url(<?php echo Yii::app()->request->baseUrl;?>/images/header_bg.gif) top center no-repeat;}
+    .main2 { margin:0 auto; padding:0; background: url(<?php echo Yii::app()->request->baseUrl;?>/images/main_bg2.gif) top center repeat-x;}
+    .search span { display:block; float:left; background: url(<?php echo Yii::app()->request->baseUrl;?>/images/search_bg.gif) left top no-repeat; width:168px; padding:0; height:32px;}
+    </style>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/cufon-yui.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/myradpro.font.js"></script>
     <script type="text/javascript">
@@ -34,7 +38,7 @@
 
 <body>
 
-<div class="main" id="page">
+<div class="main">
 
 	<div class="header">
     <div class="Click"> Follow us on the social network sites for the latest updates on our projects or so.</div>
@@ -68,6 +72,8 @@
     <img src="<?php echo Yii::app()->request->baseUrl ?>/images/header_im_bottom.gif" alt="picture" width="980" height="22" />
     <div class="clr"></div>
   </div>
+ 
+   <div class="clr"></div>
     <!-- header -->
 <!--
 	<div id="mainmenu">-->
@@ -84,7 +90,7 @@
 			),
 		)); 
         */ ?>
-	</div><!-- mainmenu -->
+	<!-- mainmenu -->
 
 	<?php 
     /*
@@ -96,6 +102,7 @@
     <!-- breadcrumbs -->
 
 	<?php echo $content; ?>
+    <div class="clr"></div>
     <div class="FBG">
     <div class="FBG_resize">
       <div class="blog">
@@ -146,15 +153,15 @@
       <div class="clr"></div>
     </div>
   </div>
-	<div class="footer">
+	
+
+</div><!-- page -->
+<div class="footer">
       <div class="footer_resize">
         <p class="leftt">© Copyright <a href="#">Templatesold</a>. All Rights Reserved </p>
         <p class="right"> (TS) <a href="http://www.templatesold.com">Website Templates</a></p>
         <div class="clr"></div>
       </div>
     </div><!-- footer -->
-
-</div><!-- page -->
-
 </body>
 </html>

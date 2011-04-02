@@ -129,4 +129,7 @@ class File extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+    public function getFile($file_id){
+        return self::model()->findByPk($file_id);
+    }
 }
