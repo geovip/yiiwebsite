@@ -6,7 +6,7 @@ class AlbumController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/tour';
     var $categories;
     var $albums;
     var $user_id;
@@ -123,16 +123,19 @@ class AlbumController extends Controller
     }
     public function actionFiles(){
         
+        //if (Yii::app()->request->isAjaxRequest) {
+           
+        //}
         //prepare save album
         //var_dump(HttpRequest::getParam('ul'));exit;
         $user_id= $_POST['user_id'];
         //get album_id
-        $album_id = $_POST['ul'];
+        $album_id =Yii::app()->request->getParam('ul');
         //create photo model and save 
         //album
         $album=Album::model()->findByPk($album_id);
         $album->category_id= $_POST['category_id'];
-        var_dump($album_id);//exit;
+        //var_dump($album_id);exit;
         $album->save(); 
                
         //get file
@@ -271,7 +274,33 @@ class AlbumController extends Controller
         }
         
     }
-    
+    public function actionListAlbum(){
+        //list album
+        
+        $albums= Album::model()->listAlbum();   
+        /*
+        //list photo
+        foreach($albums as $album){
+            $photo= Photo::model()->getPhoto($album->id);
+            
+            $files= File::model()->getFile($photo->file_id);
+            $file[$album->id][$photo->id]=$files;
+        }
+        //var_dump(count($file));exit;
+        */
+        //$this->albums= $albums;
+        $this->render('listalbum',
+            array(
+                'albums'=>$albums
+            )
+        );
+    }
+    public function getPicture($album_id){
+        $photo= Photo::model()->getPhoto($album_id);
+            
+        $files= File::model()->getFile($photo->file_id);
+        return $files->name;
+    }
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

@@ -135,7 +135,7 @@ a:hover, a.hover {
          <div id="create_album" style="display: none;">
         <li>
            
-            <form id="form_create_album">
+            
                 <label>Title</label>
                 <input id="title" type="text" class="text" name="Album[title]" />
                 <label style="color: red;" id="error_title"></label>
@@ -143,7 +143,7 @@ a:hover, a.hover {
                 <textarea id="description" name="Album[description]" cols="45" rows="6"></textarea>
                 
                 <input type="button" value="Save" onclick="javascript:save_create_album();" />
-                </form>
+               
             
         </li>
         </div>
@@ -252,10 +252,15 @@ window.addEvent('domready', function() { // wait for the content
  
 		// this is our browse button, *target* is overlayed with the Flash movie
 		target: 'demo-browse',
-        data: {
-            'ul': jQuery('#album').val(),
-            'user_id': jQuery('#user_id').val(),
-            'category_id': jQuery('#category').val()
+        
+        onBeforeStart: function() {
+            up.setOptions({
+            data:{
+                'ul': jQuery('#album').val(),
+                'user_id': jQuery('#user_id').val(),
+                'category_id': jQuery('#category').val() 
+            } 
+            });
         },
 		// graceful degradation, onLoad is only called if all went well with Flash
 		onLoad: function() {
@@ -289,7 +294,7 @@ window.addEvent('domready', function() { // wait for the content
 			$('demo-upload').addEvent('click', function() {
                 
 				up.start(); // start upload
-                //window.location.href= "<?php echo Yii::app()->request->baseUrl ?>";
+                window.location.href= "<?php echo Yii::app()->request->baseUrl ?>/?r=album/listalbum";
 				return false;
 			});
 		},

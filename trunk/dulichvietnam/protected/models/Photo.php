@@ -116,4 +116,19 @@ class Photo extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+    //get all photo of album
+    public function listPhoto($album_id){
+        $condition= array(
+                        'condition'=>'collection_id=:collection_id',
+			             'params'=>array(':collection_id'=>$album_id)
+        );
+        return self::model()->findAll($condition);
+    }
+    public function getPhoto($album_id){
+        $condition= array(
+                        'condition'=>'collection_id=:collection_id',
+			             'params'=>array(':collection_id'=>$album_id)
+        );
+        return self::model()->find($condition);
+    }
 }
