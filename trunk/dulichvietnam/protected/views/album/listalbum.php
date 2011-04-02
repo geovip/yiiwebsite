@@ -1,4 +1,3 @@
-
  <div id="slider">
     <h2>Album</h2>
   </div>

@@ -22,7 +22,7 @@ a:hover, a.hover {
 }
  
 #demo-status .progress {
-	background: url(<?php echo Yii::app()->request->baseUrl; ?>/images/progress-bar/progress.gif) no-repeat;
+	background: url(<?php echo Yii::app()->request->baseUrl; ?>/images/progress-bar/progress.gif) no-repeat scrollbar;
 	background-position: +50% 0;
 	margin-right: 0.5em;
 	vertical-align: middle;
@@ -295,7 +295,7 @@ window.addEvent('domready', function() { // wait for the content
                 
 				up.start(); // start upload
                 window.location.href= "<?php echo Yii::app()->request->baseUrl ?>/?r=album/listalbum";
-				return false;
+				//return false;
 			});
 		},
  
