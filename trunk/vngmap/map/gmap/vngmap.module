@@ -1,0 +1,114 @@
+<?php
+// $Id$
+/**
+ * @file
+ * @see  http://code.google.com/p/vngmap/
+ */
+function vngmap_node_info() {
+	 return array(
+    'Google Map' => array(
+      'name' => t('Google Map'),
+      'module' => 'vngmap',
+      'description' => t('Small google map api for Vietnam.'),
+      'has_title' => TRUE,
+      'title_label' => t('Google Map'),
+      'has_body' => TRUE,
+      'body_label' => t('Overview'),
+    )
+  	);
+}
+function vngmap_perm() {
+  return array(
+    'create vngmap node',
+    'edit vngmap nodes',
+    'delete vngmap nodes',
+  );
+}
+function vngmap_access($op, $node, $account) {
+  switch ($op) {
+    case 'create':
+      return user_access('create vngmap node', $account);
+    case 'update':
+      return user_access('edit vngmap nodes', $account);
+    case 'delete':
+      return user_access('delete vngmap nodes', $account);
+  }
+}
+/**
+ * implements hook_insert().
+ */
+function vngmap_insert($node) {
+  db_query(
+    'INSERT INTO {gmap_content} (vid, nid) '
+      ."VALUES (%d, %d)", 
+    $node->vid, 
+    $node->nid
+  );
+}
+/**
+ * Implements hook_delete().
+ */
+function vngmap_delete($node) {
+  db_query(
+    'DELETE FROM {gmap_content} WHERE nid = %d', 
+    $node->nid
+  );
+}
+/**
+ * Implementation of hook_load().
+ */
+function vngmap_load($node) {
+  $result = db_query(
+    'SELECT * FROM {gmap_content} WHERE vid = %d',
+    $node->vid
+  );
+  return db_fetch_object($result);
+}
+/**
+ * Implementation of hook_view().
+ */
+function vngmap_view($node, $teaser = FALSE, $page = FALSE) {
+  $node = node_prepare($node, $teaser); // get it ready for display      
+  // Add theme stuff here
+  $node->content['vngmap_info'] = array(
+    '#value' => theme('vngmap_info'),
+    '#weight' => 1,
+  );   
+  return $node;
+}
+function vngmap_theme() {
+  return array(
+    'vngmap_info' => array(
+      'template' => 'vngmap_info',
+      'arguments' => array( ),
+    ),
+  );
+}
+
+function vngmap_search_form($context) {
+  
+  // Textfield for subject of the body
+  $form['address'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Dia chi'),
+    '#size' => 50,
+    '#maxlengh' => 255,
+    '#description' => t('Dia chi'),
+  );      
+  // Finally, a submit button:
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+  );
+  return $form;
+}
+function vngmap_search_form_submit($form, &$form_state) {
+  $form_values = $form_state['values'];
+  $fulladdress = $form_values['address'];
+  $_SESSION['fulladdress']=$fulladdress;
+}
+
+function vngmap_search_map($query){
+	$fulladdress =$query;
+	include_once 'searchAddressAction.php';
+}
