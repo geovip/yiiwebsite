@@ -1,0 +1,34 @@
+<?php
+function vngmap_install() {
+	drupal_install_schema('vngmap');
+}
+/**
+ * Implementation of hook_uninstall().
+ */
+function vngmap_uninstall() {
+	drupal_uninstall_schema('vngmap');
+}
+function vngmap_schema(){
+	$schema['gmap_content'] = array(
+		'fields' => array(
+			'vid' => array(
+	        	'type' => 'int', 
+	        	'unsigned' => TRUE, 
+	        	'not null' => TRUE, 
+	        	'default' => 0,
+			),
+	      	'nid' => array(
+	        	'type' => 'int', 
+	        	'unsigned' => TRUE, 
+	        	'not null' => TRUE, 
+	        	'default' => 0,
+			)
+		),
+		'indexes' => array(
+      		'nid' => array('nid'),
+		),
+		//Version is primary key. Could do nid, vid.
+    	'primary key' => array('vid'), 
+		);
+	return $schema;
+}
