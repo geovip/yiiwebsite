@@ -63,6 +63,8 @@ class Album extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'comments' => array(self::HAS_MANY, 'Comment', 'resource_id', 'condition'=>'comments.resource_type=:resource_type', 'params'=>array(':resource_type'=> 'album_comment'), 'order'=>'comments.creation_date DESC'),
+			'commentCount' => array(self::STAT, 'Comment', 'resource_id'),
 		);
 	}
 
@@ -140,5 +142,13 @@ class Album extends CActiveRecord
                         'limit'=>6
                         );
         return self::model()->findAll($condition);
+    }
+    //get album follow id
+    public function getAlbum($album_id){
+        $condition= array(
+                        'condition'=>'id=:id',
+			             'params'=>array(':id'=>$album_id)
+        );
+        return self::model()->find($condition);
     }
 }

@@ -62,6 +62,8 @@ class Photo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'comments' => array(self::HAS_MANY, 'Comment', 'resource_id', 'condition'=>'comments.resource_type=:resource_type', 'params'=>array(':resource_type'=> 'photo_comment'), 'order'=>'comments.creation_date DESC'),
+			'commentCount' => array(self::STAT, 'Comment', 'resource_id'),
 		);
 	}
 
@@ -124,11 +126,30 @@ class Photo extends CActiveRecord
         );
         return self::model()->findAll($condition);
     }
+    //get 1 picture in album
     public function getPhoto($album_id){
         $condition= array(
                         'condition'=>'collection_id=:collection_id',
 			             'params'=>array(':collection_id'=>$album_id)
         );
         return self::model()->find($condition);
+    }
+    public function getPhotoFile($photo_id){
+        $condition= array(
+                        'condition'=>'id=:id',
+			             'params'=>array(':id'=>$photo_id)
+        );
+        return self::model()->find($condition);
+    }
+    //check rated
+    public function checkRated($photo_id, $user_id)
+    {
+        $condition= array(
+                        'condition'=>'user_id=:user_id AND photo_id=:photo_id',
+			             'params'=>array(':user_id'=>$user_id, ':photo_id'=> $photo_id)
+        );
+        $row= Rating::model()->findAll($condition);
+        if (count($row)>0) return true;
+        return false;
     }
 }

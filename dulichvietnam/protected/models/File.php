@@ -132,4 +132,14 @@ class File extends CActiveRecord
     public function getFile($file_id){
         return self::model()->findByPk($file_id);
     }
+    //get photo orignal
+    //dang lam do doan ni:d
+    public function getFileOrginal($file_id){
+        $condition= array(
+                        'condition'=>'parent_file_id=:id AND type=:type',
+                        'params'=>array(':id'=>$file_id, ':type'=> 'orgin')
+        );
+        return self::model()->find($condition);
+    }
+    
 }

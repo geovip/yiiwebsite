@@ -22,6 +22,7 @@
     .main2 { margin:0 auto; padding:0; background: url(<?php echo Yii::app()->request->baseUrl;?>/images/main_bg2.gif) top center repeat-x;}
     .search span { display:block; float:left; background: url(<?php echo Yii::app()->request->baseUrl;?>/images/search_bg.gif) left top no-repeat; width:168px; padding:0; height:32px;}
     </style>
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/mootools-1.2.2.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/cufon-yui.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/myradpro.font.js"></script>
     <script type="text/javascript">

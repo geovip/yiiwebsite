@@ -27,16 +27,19 @@
             
             <?php
             if(empty($photo_name)){?>
-                <img src="<?php echo Yii::app()->request->baseUrl.'/images/img_1.jpg';?>" alt="picture" width="276" height="148" />
+                <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>" ><img src="<?php echo Yii::app()->request->baseUrl.'/images/img_1.jpg';?>" alt="picture" width="276" height="148" />
+                </a>
             
             <?php } else{?>
-                <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="276" height="148" />
+                <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>"><img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="276" height="148" />
+                </a>
             <?php }
             ?>
             <div class="clr"></div>
             <p><?php echo $album->description;?></p>
             
-            <a href="#"><img src="<?php echo Yii::app()->request->baseUrl;?>/images/read_more.gif" alt="picture" width="85" height="26" border="0" class="floated" /></a></div>
+            <a href="#"><img src="<?php echo Yii::app()->request->baseUrl;?>/images/read_more.gif" alt="picture" width="85" height="26" border="0" class="floated" /></a>
+            </div>
             <?php 
             if($i==3 || $i==6){?>
                 <div class="clr"></div>

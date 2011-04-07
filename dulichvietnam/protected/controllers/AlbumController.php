@@ -295,10 +295,64 @@ class AlbumController extends Controller
             )
         );
     }
+    //view detail album
+    public function actionViewDetail($album_id){
+        //list all photo
+        $album= Album::model()->getAlbum($album_id);
+        $photos= Photo::model()->listPhoto($album_id);
+        $user_id= Yii::app()->user->getId();
+        if($album->user_id !=$user_id){
+            $album->view_count +=1;
+            $album->save();
+        }
+        $comment=$this->newComment($album);
+        $this->render('viewdetail', array(
+            'photos'=> $photos,
+            'album'=> $album,
+            'comment'=>$comment,
+            'user_id'=>$user_id,
+            'album_id'=> $album_id
+            ));
+        
+    }
+    public function newComment($album)
+	{
+        $user_id= Yii::app()->user->getId();
+		$comment=new Comment;
+		if(isset($_POST['ajax']) && $_POST['ajax']==='comment-form')
+		{
+		  
+			echo CActiveForm::validate($comment);
+			Yii::app()->end();
+		}
+		if(isset($_POST['Comment']))
+		{
+		  
+            $album->comment_count+=1;
+            $album->save();
+			//$comment->attributes=$_POST['Comment'];
+            $comment->resource_type="album_comment";
+            $comment->resource_id= $_POST['Comment']['album_id'];
+            $comment->poster_type= "user";
+            $comment->poster_id= $user_id;
+            $comment->content= $_POST['Comment']['content'];
+            $comment->creation_date= date('Y-m-d H:i:s');
+            
+			if($comment->save()){
+			     Yii::app()->user->setFlash('commentSubmitted','Thank you for your comment.'); 
+			}
+			else{
+			     Yii::app()->user->setFlash('commentFail','Comment could not save. Comment cannot be blank!'); 
+			}
+			$this->refresh();
+		
+		}
+		return $comment;
+	}
     public function getPicture($album_id){
         $photo= Photo::model()->getPhoto($album_id);
             
-        $files= File::model()->getFile($photo->file_id);
+        $files= File::model()->listFilePhoto($photo->file_id);
         return $files->name;
     }
 	/**
