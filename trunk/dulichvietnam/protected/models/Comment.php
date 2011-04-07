@@ -34,6 +34,7 @@ class Comment extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+     /*
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
@@ -47,7 +48,13 @@ class Comment extends CActiveRecord
 			array('id, resource_type, resource_id, poster_type, poster_id, content, creation_date', 'safe', 'on'=>'search'),
 		);
 	}
-
+    */
+    public function rules(){
+        return array(
+			array('content', 'required')
+			
+		);
+    }
 	/**
 	 * @return array relational rules.
 	 */
@@ -97,5 +104,20 @@ class Comment extends CActiveRecord
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
+	}
+    public function getListComment($photo_id){
+        $condition= array(
+                        'condition'=>'resource_id=:resource_id',
+			             'params'=>array(':resource_id'=>$photo_id)
+        );
+        return self::model()->findAll($condition);
+    }
+    public function getAuthorLink($user_id)
+	{
+	   $condition= array(
+                        'condition'=>'id=:id',
+                        'params'=>array(':id'=>$user_id)
+        );
+        return CHtml::encode(User::model()->find($condition)->username);
 	}
 }

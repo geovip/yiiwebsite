@@ -84,4 +84,41 @@ class Rating extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+    //rating count
+    public function ratingCount($photo_id){
+        $condition= array(
+                        'condition'=>'photo_id=:photo_id',
+			             'params'=>array(':photo_id'=> $photo_id)
+        );
+        $row= self::model()->findAll($condition);
+        $total = count($row);
+        return $total;
+    }
+    //get rating
+    public function getRatings($photo_id)
+    {
+        $condition= array(
+                        'condition'=>'photo_id=:photo_id',
+			             'params'=>array(':photo_id'=> $photo_id)
+        );
+        $row= self::model()->findAll($condition);
+        
+        return $row;
+    }
+    public function setRating($photo_id, $user_id, $rating){
+        $condition= array(
+                        'condition'=>'photo_id=:photo_id AND user_id=:user_id',
+			             'params'=>array(':photo_id'=> $photo_id, ':user_id'=> $user_id)
+        );
+        
+        $row= self::model()->find($condition);
+        if (empty($row)) {
+          // create rating
+          $model= new Rating();
+          $model->rating= $rating;
+          $model->user_id= $user_id;
+          $model->photo_id= $photo_id;
+          $model->save();
+        }
+    }
 }

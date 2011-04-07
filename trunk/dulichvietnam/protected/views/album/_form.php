@@ -1,4 +1,4 @@
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/mootools-1.2.2.js"></script>
+
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/source/Swiff.Uploader.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/source/Fx.ProgressBar.js"></script>
 

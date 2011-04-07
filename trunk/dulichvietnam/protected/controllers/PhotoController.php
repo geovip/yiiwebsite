@@ -23,6 +23,7 @@ class PhotoController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
+     /*
 	public function accessRules()
 	{
 		return array(
@@ -43,7 +44,7 @@ class PhotoController extends Controller
 			),
 		);
 	}
-
+    */
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -173,4 +174,117 @@ class PhotoController extends Controller
 			Yii::app()->end();
 		}
 	}
+    //detail photo
+    public function actionDetail($photo_id, $file_id){
+        $file= File::model()->getFileOrginal($file_id);
+        //var_dump($file);exit;
+        //view count
+        $photo= Photo::model()->getPhotoFile($photo_id);
+        $user_id= Yii::app()->user->getId();
+        if($photo->user_id !=$user_id){
+            $photo->view_count +=1;
+            $photo->save();
+        }
+        $comment=$this->newComment($photo);
+        $rating_count= Rating::model()->ratingCount($photo_id);
+        $rated= Photo::model()->checkRated($photo_id, $user_id);
+        $total_rating= Rating::model()->getRatings($photo_id);
+        
+		$tt=0;
+		if(!empty($total_rating)){
+			foreach($total_rating as $tt_rating){
+				$tt+= $tt_rating['rating'];
+			}
+		}
+        $this->render('detail', array(
+                                'file'=> $file, 
+                                'photo_id'=>$photo_id,
+                                'model'=>$photo,
+                                'comment'=>$comment,
+                                'user_id'=>$user_id,
+                                'rated'=> $rated,
+                                'rating_count'=> $rating_count,
+                                'tt_rating'=> $tt
+                                ));
+    }
+    public function newComment($photo)
+	{
+        $user_id= Yii::app()->user->getId();
+		$comment=new Comment;
+		if(isset($_POST['ajax']) && $_POST['ajax']==='comment-form')
+		{
+		  
+			echo CActiveForm::validate($comment);
+			Yii::app()->end();
+		}
+		if(isset($_POST['Comment']))
+		{
+		  
+            $photo->comment_count+=1;
+            $photo->save();
+			//$comment->attributes=$_POST['Comment'];
+            $comment->resource_type="photo_comment";
+            $comment->resource_id= $_POST['Comment']['photo_id'];
+            $comment->poster_type= "user";
+            $comment->poster_id= $user_id;
+            $comment->content= $_POST['Comment']['content'];
+            $comment->creation_date= date('Y-m-d H:i:s');
+            
+			if($comment->save()){
+			     Yii::app()->user->setFlash('commentSubmitted','Thank you for your comment.'); 
+			}
+			else{
+			     Yii::app()->user->setFlash('commentFail','Comment could not save. Comment cannot be blank!'); 
+			}
+			$this->refresh();
+		
+		}
+		return $comment;
+	}
+    //rating
+    public function actionRate()
+	{
+		$user_id= Yii::app()->user->getId();
+        
+		$rating = $_POST['rating'];
+        
+		$photo_id = $_POST['photo_id'];
+		try
+		{
+			Rating::model()->setRating($photo_id, $user_id, $rating);
+
+			$total = Rating::model()->ratingCount($photo_id);
+			
+			$total_rating= Rating::model()->getRatings($photo_id);
+			//Zend_Debug::dump($total_rating);exit();
+			$tt=0;
+			if(!empty($total_rating)){
+				foreach($total_rating as $tt_rating){
+					$tt+= $tt_rating['rating'];
+				}
+			}
+			
+			$photo =Photo::model()->findByPk((int)$photo_id);
+			$rating = $tt/$total;
+			$photo->rating = $rating;
+            $photo->total= $total;
+			$photo->save();
+
+			
+		}
+
+		catch( Exception $e )
+		{
+			
+			throw $e;
+		}
+
+		$data = array();
+		$data[] = array(
+            'total' => $total,
+            'rating' => $rating
+		);
+		echo $data; exit;
+	}
+    
 }
