@@ -159,7 +159,7 @@ $photo= Photo::model()->getPhotoFile($photo_id);
     if (remainder <= 0.5 && remainder !=0){
       var last = parseInt(rating)+1;
       //$('rate_'+last).set('class', 'rating_star_big_generic rating_star_big_half');
-      jQuery('#rate_'+x).attr('class', 'rating_star_big_generic rating_star_big_half');
+      jQuery('#rate_'+last).attr('class', 'rating_star_big_generic rating_star_big_half');
     }
   }
   function rate(rating) {
@@ -186,7 +186,7 @@ $photo= Photo::model()->getPhotoFile($photo_id);
       },
       'onSuccess' : function(responseJSON, responseText)
       {
-      	alert(responseJSON);
+      	alert(responseJSON[0].total);
       	if(responseJSON[0].total==1){
         	//$('rating_text').innerHTML = responseJSON[0].total+" rating";
             jQuery('#rating_text').html(responseJSON[0].total+" rating");
