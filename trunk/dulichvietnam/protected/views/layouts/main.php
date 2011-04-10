@@ -31,6 +31,7 @@
     <!-- flash script -->
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/flash_detect.v1.7.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.3.2.min.js"></script>
+     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.validate.js"></script>
     <script type="text/javascript">    
       jQuery.noConflict();
     </script>

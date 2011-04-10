@@ -101,6 +101,7 @@ a:hover, a.hover {
     
 
     <form action="<?php echo Yii::app()->request->baseUrl; ?>/?r=album/create" method="post" enctype="multipart/form-data" id="form-demo">
+    
     <ol>
         <li>
             <label>Choose Album</label>

@@ -88,7 +88,7 @@ class Rating extends CActiveRecord
     public function ratingCount($photo_id){
         $condition= array(
                         'condition'=>'photo_id=:photo_id',
-			             'params'=>array(':photo_id'=> $photo_id)
+                        'params'=>array(':photo_id'=> $photo_id)
         );
         $row= self::model()->findAll($condition);
         $total = count($row);
