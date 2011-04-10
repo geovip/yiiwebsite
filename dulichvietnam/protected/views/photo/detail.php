@@ -31,7 +31,7 @@ $photo= Photo::model()->getPhotoFile($photo_id);
     <div class="body_resize">
       <div class="right">
         <h2><?php echo $photo->title; ?><span></span></h2>
-        <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture"/>
+        <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture" width="617" />
         <div class="clr"></div>
         <p><?php echo $photo->description;?></p>
          <div id="photo_rating" class="rating" onmouseout="rating_out();">
@@ -42,6 +42,11 @@ $photo= Photo::model()->getPhotoFile($photo_id);
           <span id="rate_5" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(5);"<?php endif; ?> onmouseover="rating_over(5);"></span>
           <span id="rating_text" class="rating_text"><?php echo "click to rate" ;?></span>
         </div>
+        <?php 
+            if($user_id==$photo->user_id){?>
+                <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/del&photo_id='.$photo->id ?>"><?php echo "Delete";?></a>
+        <?php }
+        ?>
         <?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
 		<div class="flash_success">
 			<?php echo Yii::app()->user->getFlash('commentSubmitted'); ?>
@@ -197,7 +202,7 @@ $photo= Photo::model()->getPhotoFile($photo_id);
       },
       'onSuccess' : function(responseJSON, responseText)
       {
-      	alert(responseJSON[0].rating);
+      	
       	if(responseJSON[0].total==1){
         	//$('rating_text').innerHTML = responseJSON[0].total+" rating";
             jQuery('#rating_text').html(responseJSON[0].total+" rating");

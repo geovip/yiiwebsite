@@ -188,7 +188,7 @@ class AlbumController extends Controller
             
             $file->saveAs(Yii::app()->getBasePath().'/uploads/'.$file_name,false);
             //var_dump($thumbnail);exit;
-            $thumbnail = new SThumbnail(Yii::app()->getBasePath().'/uploads/'.$file_name, "", 100);
+            $thumbnail = new SThumbnail(Yii::app()->getBasePath().'/uploads/'.$file_name, "", 276);
 
             $thumbnail->createthumb();
             
@@ -196,6 +196,8 @@ class AlbumController extends Controller
         
             $model->user_id= $user_id;
             $model->collection_id= $album_id;
+            $model->rating= 0;
+            $model->total=0;
             $model->owner_type= 'user';
             $model->creation_date= date("Y-m-d H:i:s");
             $model->modified_date= date("Y-m-d H:i:s");
@@ -452,6 +454,38 @@ class AlbumController extends Controller
 			'model'=>$model,
 		));
 	}
+    public function actionDel($album_id){
+        
+        $album= $this->loadModel($album_id);
+        $photos= Photo::model()->listPhoto($album_id);
+        $user_id= Yii::app()->user->getId();
+        
+        foreach($photos as $photo){
+            try{
+                $file_thumb= File::model()->getFile($photo->file_id);
+                $file_ogr= File::model()->getFileOrginal($photo->file_id);
+                @unlink(Yii::app()->getBasePath().'/uploads/'.$file_thumb->name);
+                @unlink(Yii::app()->getBasePath().'/uploads/'.$file_ogr->name);
+                $file_thumb->delete();
+                $file_ogr->delete();
+                $photo->delete();
+            }
+            catch(Exception $e){
+                throw $e;
+            }
+            
+        }
+        //list comments
+        $comments= Comment::model()->getListCommentAlbum($album_id);
+        //del comments
+        foreach($comments as $comment){
+            $comment->delete();
+        }
+        $album->delete();
+        $this->redirect(array('manage'));
+        
+        
+    }
 
 	/**
 	 * Deletes a particular model.
