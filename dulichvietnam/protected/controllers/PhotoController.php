@@ -244,47 +244,50 @@ class PhotoController extends Controller
     //rating
     public function actionRate()
 	{
-		$user_id= Yii::app()->user->getId();
-        
-		$rating = $_POST['rating'];
-        
-		$photo_id = $_POST['photo_id'];
-		try
-		{
-			Rating::model()->setRating($photo_id, $user_id, $rating);
-
-			$total = Rating::model()->ratingCount($photo_id);
-			
-			$total_rating= Rating::model()->getRatings($photo_id);
-			//Zend_Debug::dump($total_rating);exit();
-			$tt=0;
-			if(!empty($total_rating)){
-				foreach($total_rating as $tt_rating){
-					$tt+= $tt_rating['rating'];
-				}
-			}
-			
-			$photo =Photo::model()->findByPk((int)$photo_id);
-			$rating = $tt/$total;
-			$photo->rating = $rating;
-            $photo->total= $total;
-			$photo->save();
-
-			
-		}
-
-		catch( Exception $e )
-		{
-			
-			throw $e;
-		}
-
-		$data = array();
-		$data[] = array(
-            'total' => $total,
-            'rating' => $rating
-		);
-		echo $data; exit;
+	   
+	   //if (Yii::app()->request->isAjaxRequest) {
+    		$user_id= Yii::app()->user->getId();
+            
+    		$rating = $_POST['rating'];
+    		$photo_id = $_POST['photo_id'];
+            $photo= $this->loadModel($photo_id);
+    		try
+    		{
+    			Rating::model()->setRating($photo_id, $user_id, $rating);
+    
+    			$total = Rating::model()->ratingCount($photo_id);
+    			
+    			$total_rating= Rating::model()->getRatings($photo_id);
+    			
+    			$tt=0;
+    			if(!empty($total_rating)){
+    				foreach($total_rating as $tt_rating){
+    					$tt += $tt_rating['rating'];
+    				}
+    			}
+    			
+    			//$photo =Photo::model()->findByPk($photo_id);
+                
+    			$rating = $tt/$total;
+    			$photo->rating = $rating;
+                $photo->total= $total;
+                $photo->save(false);
+	
+    		}
+    
+    		catch( Exception $e )
+    		{
+    			
+    			throw $e;
+    		}
+    
+    		$data = array();
+    		$data[] = array(
+                'total' => $total,
+                'rating' => $rating
+    		);
+            echo CJavaScript::jsonEncode($data);
+		//}
 	}
     
 }

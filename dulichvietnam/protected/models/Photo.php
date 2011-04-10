@@ -40,12 +40,13 @@ class Photo extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+     /*
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('collection_id, user_id, file_id, view_count, comment_count, rating, total', 'numerical', 'integerOnly'=>true),
+			array('collection_id, user_id, file_id, view_count, comment_count', 'numerical', 'integerOnly'=>true),
 			array('title, owner_type', 'length', 'max'=>45),
 			array('description, creation_date, modified_date', 'safe'),
 			// The following rule is used by search().
@@ -53,7 +54,7 @@ class Photo extends CActiveRecord
 			array('id, title, description, creation_date, modified_date, collection_id, owner_type, user_id, file_id, view_count, comment_count, rating, total', 'safe', 'on'=>'search'),
 		);
 	}
-
+*/
 	/**
 	 * @return array relational rules.
 	 */

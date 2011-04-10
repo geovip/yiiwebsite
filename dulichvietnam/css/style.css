@@ -105,7 +105,7 @@ p.clr, .clr { clear:both; padding:0; margin:0; background:none;}
 #form-demo label span { color:#d66423; font-weight:bold; }
 #form-demo input.text { width:450px; border:1px solid #e0e0e0; margin:2px 0; padding:5px 2px; height:16px; background:none; float:left; }
 #form-demo textarea { width:450px; border:1px solid #e0e0e0; margin:2px 0; padding:2px; background:none; float:left; }
-#form-demo li.buttons input { padding:3px 0 3px 0; margin:10px 0 0 0; border:0; color:#FFF;}
+#form-demo li.buttons input { padding:3px 0 3px 0; margin:10px 0 0 0; border:0; color:#FFF; background-color: #5A5A5A;}
 #form-demo li a img{border:  none;}
 a.add_album img{margin:0; padding:0}
 .comment{padding: 10px; background: whiteSmoke; margin: 5px 0;}

@@ -15,6 +15,9 @@
 .rating_star_big_disabled {
     background-image:url(<?php echo Yii::app()->request->baseUrl; ?>/images/star_big_disabled.png);
 }
+.rating_star_big_half{
+    background-image: url(<?php echo Yii::app()->request->baseUrl; ?>/images/star_big_half.png)
+}
 </style>
 <?php
 //get title and description of photo
@@ -85,7 +88,7 @@ $photo= Photo::model()->getPhotoFile($photo_id);
   </div>
 <script type="text/javascript">
   var pre_rate= <?php echo $photo->rating; ?>;
-  var rated = '<?php echo $rated;?>';
+  var rated = "<?php echo $rated;?>";
   var photo_id = <?php echo $photo->id;?>;
   var total_votes = <?php echo $rating_count;?>;
   var viewer = <?php echo $user_id;?>;
@@ -137,7 +140,9 @@ $photo= Photo::model()->getPhotoFile($photo_id);
   }
 
   function set_rating() {
+    
     var rating = pre_rate;
+    //alert(rating);
     if((total_votes == 0) ||(total_votes == 1)){
 		//$('rating_text').innerHTML = total_votes+" rating";
         jQuery('#rating_text').html(total_votes+ " rating");
@@ -155,9 +160,12 @@ $photo= Photo::model()->getPhotoFile($photo_id);
         //$('rate_'+x).set('class', 'rating_star_big_generic rating_star_big_disabled');
         jQuery('#rate_'+x).attr('class', 'rating_star_big_generic rating_star_big_disabled');
       }
+    
     var remainder = Math.round(rating)-rating;
+    
     if (remainder <= 0.5 && remainder !=0){
       var last = parseInt(rating)+1;
+      //alert(last);
       //$('rate_'+last).set('class', 'rating_star_big_generic rating_star_big_half');
       jQuery('#rate_'+last).attr('class', 'rating_star_big_generic rating_star_big_half');
     }
@@ -166,6 +174,7 @@ $photo= Photo::model()->getPhotoFile($photo_id);
 	
     //$('rating_text').innerHTML = "Thanks for rating!";
     jQuery('#rating_text').html("Thanks for rating!");
+    
     for(var x=1; x<=5; x++) {
       //$('rate_'+x).set('onclick', '');
       jQuery('#rate_'+x).attr('onclick', '');
@@ -174,6 +183,7 @@ $photo= Photo::model()->getPhotoFile($photo_id);
       'format': 'json',
       'url' : '<?php echo Yii::app()->request->baseUrl?>/?r=photo/rate',
       'data' : {
+        
         'format' : 'json',
         'rating' : rating,
         'photo_id': photo_id
@@ -182,17 +192,19 @@ $photo= Photo::model()->getPhotoFile($photo_id);
         rated = 1;
         total_votes = total_votes+1;
         pre_rate = (tt_rating+rating)/total_votes;
+        
         set_rating();
       },
       'onSuccess' : function(responseJSON, responseText)
       {
-      	alert(responseJSON[0].total);
+      	alert(responseJSON[0].rating);
       	if(responseJSON[0].total==1){
         	//$('rating_text').innerHTML = responseJSON[0].total+" rating";
             jQuery('#rating_text').html(responseJSON[0].total+" rating");
         }else{
           //$('rating_text').innerHTML = responseJSON[0].total+" ratings";
           jQuery('#rating_text').html(responseJSON[0].total+" ratings");
+          //return;
         }
       }
     })).send();

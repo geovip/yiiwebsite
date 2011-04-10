@@ -305,8 +305,22 @@ class AlbumController extends Controller
             $album->view_count +=1;
             $album->save();
         }
+        $criteria=new CDbCriteria(array(
+                        'condition'=>'collection_id=:collection_id',
+			            'params'=>array(':collection_id'=>$album_id),
+			            'order'=>'comment_count DESC'
+			//'with'=>'commentCount',
+		));
+		
+		$dataProvider=new CActiveDataProvider('Photo', array(
+			'pagination'=>array(
+				'pageSize'=>Yii::app()->params['photoPerPage']
+			),
+			'criteria'=>$criteria
+		));
         $comment=$this->newComment($album);
         $this->render('viewdetail', array(
+            'dataProvider'=>$dataProvider,
             'photos'=> $photos,
             'album'=> $album,
             'comment'=>$comment,
@@ -314,6 +328,52 @@ class AlbumController extends Controller
             'album_id'=> $album_id
             ));
         
+    }
+    //my album
+    public function actionManage(){
+        $user_id= Yii::app()->user->getId();
+        
+        
+		$dataProvider=new CActiveDataProvider('Album', array(
+			'criteria'=>array(
+				'condition'=>'user_id=:user_id',
+	            'params'=>array(':user_id'=>$user_id),
+	            'order'=>'comment_count DESC'
+			),
+            'pagination'=>array(
+				'pageSize'=>Yii::app()->params['albumPerPage']
+			)
+		));
+		
+         $this->render('manage', array(
+            'dataProvider'=>$dataProvider
+            ));
+    }
+    //edit setting album
+    public function actionEditSetting($album_id){
+        
+        $album= Album::model()->getAlbum($album_id);
+        $photos= Photo::model()->listPhoto($album_id);
+        $user_id= Yii::app()->user->getId();
+        if(isset($_POST['Album']))
+		{
+		  
+            foreach($photos as $photo){
+                
+                $photo->title= $_POST['Album']['title'][$photo->id];
+                $photo->description= $_POST['Album']['description'][$photo->id];
+                $photo->save();
+	           
+		  }
+          $this->redirect(array('viewdetail','album_id'=>$album_id));
+			
+		}
+        
+        $this->render('editsetting', array(
+            'photos'=> $photos,
+            'album'=> $album,
+            'user_id'=>$user_id
+            ));
     }
     public function newComment($album)
 	{
@@ -355,6 +415,19 @@ class AlbumController extends Controller
         $files= File::model()->listFilePhoto($photo->file_id);
         return $files->name;
     }
+    public function actionEdit($album_id){
+        $model=$this->loadModel($album_id);
+        if(isset($_POST['Album']))
+		{
+			$model->title= $_POST['Album']['title'];
+            $model->description= $_POST['Album']['description'];
+			if($model->save())
+				$this->redirect(array('viewdetail','album_id'=>$model->id));
+		}
+        $this->render('edit',array(
+			'model'=>$model,
+		));
+    }
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -362,6 +435,7 @@ class AlbumController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+	  
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed

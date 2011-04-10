@@ -4,6 +4,9 @@
   <div class="clr"></div>
   <div class="body">
     <div class="body_resize">
+    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/listalbum'?>"><?php echo "Hot Album";?></a>
+    |
+    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/manage'?>"><?php echo "My Album";?></a>
     <?php if(!empty($albums)){
         $i=0;
        foreach($albums as $album){?>
