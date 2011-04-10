@@ -121,4 +121,11 @@ class Rating extends CActiveRecord
           $model->save();
         }
     }
+    public function getListRatingPhoto($photo_id){
+        $condition= array(
+                        'condition'=>'photo_id=:photo_id',
+			             'params'=>array(':photo_id'=>$photo_id)
+        );
+        return self::model()->findAll($condition);
+    }
 }

@@ -107,8 +107,8 @@ class Comment extends CActiveRecord
 	}
     public function getListComment($photo_id){
         $condition= array(
-                        'condition'=>'resource_id=:resource_id',
-			             'params'=>array(':resource_id'=>$photo_id)
+                        'condition'=>'resource_id=:resource_id AND resource_type=:resource_type',
+			             'params'=>array(':resource_id'=>$photo_id, ':resource_type'=> 'photo_comment')
         );
         return self::model()->findAll($condition);
     }
@@ -120,4 +120,11 @@ class Comment extends CActiveRecord
         );
         return CHtml::encode(User::model()->find($condition)->username);
 	}
+    public function getListCommentAlbum($album_id){
+        $condition= array(
+                        'condition'=>'resource_id=:resource_id AND resource_type=:resource_type',
+			             'params'=>array(':resource_id'=>$album_id, ':resource_type'=>'album_comment')
+        );
+        return self::model()->findAll($condition);
+    }
 }

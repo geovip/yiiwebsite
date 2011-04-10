@@ -241,6 +241,36 @@ class PhotoController extends Controller
 		}
 		return $comment;
 	}
+    //delete photo
+    public function actionDel($photo_id){
+        
+        $photo= $this->loadModel($photo_id);
+        $album_id= $photo->collection_id;
+        //get ratings
+        $ratings= Rating::model()->getListRatingPhoto($photo_id);
+        //get comments
+        $comments= Comment::model()->getListComment($photo_id);
+        //get file image
+        $file_thumb= File::model()->getFile($photo->file_id);
+        $file_ogr= File::model()->getFileOrginal($photo->file_id);
+        try{
+            foreach($comments as $comment){
+                $comment->delete();
+            }
+            foreach($ratings as $rating){
+                $rating->delete();
+            }
+            @unlink(Yii::app()->getBasePath().'/uploads/'.$file_thumb->name);
+            @unlink(Yii::app()->getBasePath().'/uploads/'.$file_ogr->name);
+            $photo->delete();
+        }
+        catch(Exception $e){
+            throw $e;
+        }
+        //redirect
+        $this->redirect(array('album/viewdetail', 'album_id'=>$album_id));
+        
+    }
     //rating
     public function actionRate()
 	{
