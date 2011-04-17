@@ -153,4 +153,7 @@ class Photo extends CActiveRecord
         if (count($row)>0) return true;
         return false;
     }
+    public function listAllPhoto(){
+        return self::model()->findAll();
+    }
 }

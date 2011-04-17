@@ -34,6 +34,9 @@
                     <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/detail&photo_id='.$photo->id.'&file_id='.$photo->file_id ?>"><img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" />
                     </a>
                     <li>
+                        <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/map&photo_id='.$photo->id.'&file_id='.$photo->file_id ?>"><?php echo "to map";?></a>
+                    </li>
+                    <li>
                         <label>Title</label>
                         <input value="<?php echo $photo->title ?>" name="Album[title][<?php echo $photo->id ?>]" type="text" class="text" />
                     </li>

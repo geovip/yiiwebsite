@@ -18,7 +18,7 @@
     -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
     <style type="text/css">
-    .main { margin:0 auto; padding:0;  background:#f5f5f5 url(<?php echo Yii::app()->request->baseUrl;?>/images/header_bg.gif) top center no-repeat;}
+    .main { margin:0 auto; padding:0;}
     .main2 { margin:0 auto; padding:0; background: url(<?php echo Yii::app()->request->baseUrl;?>/images/main_bg2.gif) top center repeat-x;}
     .search span { display:block; float:left; background: url(<?php echo Yii::app()->request->baseUrl;?>/images/search_bg.gif) left top no-repeat; width:168px; padding:0; height:32px;}
     </style>
@@ -63,15 +63,23 @@
     <div class="menu">
       <div class="logo"><a href="#"><img src="<?php echo Yii::app()->request->baseUrl ?>/images/logo.png" width="197" height="89" border="0" alt="logo" /></a></div>
       <ul>
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#"> Services </a></li>
-        <li><a href="#"> Portfolio</a></li>
-        <li><a href="#"> About Us</a></li>
-        <li><a href="#"> Contact Us</a></li>
+      <?php
+          $this->widget('zii.widgets.CMenu',array(
+    			'items'=>array(
+    				array('label'=>'Your Photos', 'url'=>array('/album/listalbum'), 'visible'=>!Yii::app()->user->isGuest),
+    				array('label'=>'Upload', 'url'=>array('/album/create'), 'visible'=>!Yii::app()->user->isGuest),
+    				
+    				array('label'=>'Sign up', 'url'=>array('/site/signup'), 'visible'=>Yii::app()->user->isGuest),
+    				array('label'=>'Sign in', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+    				array('label'=>'Sign out ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+    			),
+    		));  
+      ?>
+        
       </ul>
       <div class="clr"></div>
     </div>
-    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/header_im_bottom.gif" alt="picture" width="980" height="22" />
+   
     <div class="clr"></div>
   </div>
  
@@ -106,62 +114,15 @@
 	<?php echo $content; ?>
     <div class="clr"></div>
     <div class="FBG">
-    <div class="FBG_resize">
-      <div class="blog">
-        <h2>Recent Post</h2>
-        <div class="clr"></div>
-        <ul>
-          <li><a href="#">Full standards compliance</a></li>
-          <li><a href="#">All of Videos Supported</a></li>
-          <li><a href="#">Spam protection</a></li>
-          <li><a href="#">Video Support!</a></li>
-          <li><a href="#">We have gone!</a></li>
-          <li><a href="#">Dummy Photo</a></li>
-        </ul>
-      </div>
-      <div class="blog">
-        <h2>Miscelaneous</h2>
-        <div class="clr"></div>
-        <ul>
-          <li><a href="#">Development Blog</a></li>
-          <li><a href="#">Documentation</a></li>
-          <li><a href="#">Plugins</a></li>
-          <li><a href="#">Suggest Ideas</a></li>
-          <li><a href="#">Support Forum</a></li>
-          <li><a href="#">Themes</a></li>
-        </ul>
-      </div>
-      <div class="blog">
-        <h2>Latest News</h2>
-        <p><strong>At vero eos et accusamus et iusto </strong><br />
-          <a href="#">January 6, 2010</a><br />
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua...</p>
-        <p><strong>Cras lobortis mauris vel diam </strong><br />
-          <a href="#">February 27, 2010</a><br />
-          Ut enim ad minim veniam, quis nostrud exercitation Lorem ipsum dolor sit amet...</p>
-        <div class="clr"></div>
-      </div>
-      <div class="blog last">
-        <h2>Our Skills</h2>
-        <div class="clr"></div>
-        <ul>
-          <li><a href="#">Site Admin</a></li>
-          <li><a href="#">Log out</a></li>
-          <li><a href="#">Entries RSS</a></li>
-          <li><a href="#">Comments RSS</a></li>
-          <li><a href="#">WordPress.org</a></li>
-        </ul>
-      </div>
-      <div class="clr"></div>
-    </div>
+    
   </div>
 	
 
 </div><!-- page -->
 <div class="footer">
       <div class="footer_resize">
-        <p class="leftt">© Copyright <a href="#">Templatesold</a>. All Rights Reserved </p>
-        <p class="right"> (TS) <a href="http://www.templatesold.com">Website Templates</a></p>
+        <p class="leftt">© Copyright <a href="#">TourVN</a>.  </p>
+        <p class="right"><a href="http://www.tourvn.vn">http://www.tourvn.vn </a></p>
         <div class="clr"></div>
       </div>
     </div><!-- footer -->

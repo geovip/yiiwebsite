@@ -338,7 +338,7 @@ window.addEvent('domready', function() { // wait for the content
 			if (json.get('status') == '1') {
 				file.element.addClass('file-success');
 				file.info.set('html', '<strong>Image was uploaded:</strong> ' + json.get('width') + ' x ' + json.get('height') + 'px, <em>' + json.get('mime') + '</em>)');
-                //window.location.href= "<?php echo Yii::app()->request->baseUrl ?>/?r=album/listalbum";
+                window.location.href= "<?php echo Yii::app()->request->baseUrl ?>/?r=album/listalbum";
 			} else {
 				file.element.addClass('file-failed');
 				file.info.set('html', '<strong>An error occured:</strong> ' + (json.get('error') ? (json.get('error') + ' #' + json.get('code')) : response));

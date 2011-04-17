@@ -196,6 +196,23 @@ class PhotoController extends Controller
 				$tt+= $tt_rating['rating'];
 			}
 		}
+        //load all photo
+        $str="";
+        $allphotos= Photo::model()->listAllPhoto();
+        
+        if($allphotos){
+            $i=0;
+            foreach($allphotos as $photos){
+                $i++;
+                $file_photo= $photos->file_id;
+                $name= File::model()->getFile($file_photo)->name;
+                if(count($allphotos)==$i){
+                    $str.= $photos->id.",".$file_photo.",".$name.",".$photos->lat.",".$photos->lag; 
+                }else{
+                    $str.= $photos->id.",".$file_photo.",".$name.",".$photos->lat.",".$photos->lag."|";
+                }
+            }
+        }
         $this->render('detail', array(
                                 'file'=> $file, 
                                 'photo_id'=>$photo_id,
@@ -204,7 +221,8 @@ class PhotoController extends Controller
                                 'user_id'=>$user_id,
                                 'rated'=> $rated,
                                 'rating_count'=> $rating_count,
-                                'tt_rating'=> $tt
+                                'tt_rating'=> $tt,
+                                'photos'=>$str
                                 ));
     }
     public function newComment($photo)
@@ -319,5 +337,28 @@ class PhotoController extends Controller
             echo CJavaScript::jsonEncode($data);
 		//}
 	}
-    
+    //to map google
+    public function actionMap($photo_id, $file_id){
+        $file= File::model()->getFile($file_id);
+        $photo= Photo::model()->getPhotoFile($photo_id, $file_id);
+        $this->render('map', array(
+                                'file'=> $file,
+                                'photo_id'=>$photo_id,
+                                'model'=>$photo,
+                                'file_id'=> $file_id
+                                ));
+    }
+    public function actionPosition(){
+       
+        if(isset($_POST['ajax'])){
+            //$user_id= Yii::app()->user->getId();
+            $photo_id= $_POST['photo_id'];
+            $model= $this->loadModel($photo_id);
+            $model->lat= $_POST['lat'] ;
+            $model->lag= $_POST['lng'];
+            $model->save();   
+            echo $model->id;
+            exit;
+        }
+    }
 }

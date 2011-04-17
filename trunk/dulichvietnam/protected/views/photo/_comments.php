@@ -3,7 +3,7 @@
 
 	
 	<div class="author">
-		<?php echo $comment->getAuthorLink($user_id); ?> says:
+		<?php echo $comment->getAuthorLink($photo->user_id); ?> says:
 	</div>
 	<div class="time">
 		<?php echo date('d F Y', strtotime($comment->creation_date)); ?>
