@@ -1,40 +1,55 @@
-   <div id="slider">
-    <!-- start slideshow -->
-    <div class="flash_slider">
-    <script language="JavaScript" type="text/javascript">
-	AC_FL_RunContent(
-		'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
-		'width', '100%',
-		'height', '400',
-		'src', 'piecemakerNoShadow',
-		'quality', 'high',
-		'pluginspage', 'http://www.adobe.com/go/getflashplayer_de',
-		'align', 'middle',
-		'play', 'true',
-		'loop', 'true',
-		'scale', 'noscale',
-		'wmode', 'transparent',
-		'devicefont', 'false',
-		'id', 'piecemakerNoShadow',
-		'bgcolor', '#ffffff',
-		'name', 'piecemakerNoShadow',
-		'menu', 'true',
-		'allowFullScreen', 'false',
-		'allowScriptAccess','sameDomain',
-		'movie', 'piecemakerNoShadow',
-		'salign', ''
-		); //end AC code
+   <head>
+   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+   <script type="text/javascript">
+var geocoder;
+var map;
+ function load() {
+    
+        var marker;
+        var latlng = new google.maps.LatLng(-34.397, 150.644);
+        
+        var myOptions = {
+          zoom: 8,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById("map"), myOptions);
+        geocoder = new google.maps.Geocoder();
+        marker = new google.maps.Marker({
+          map:map,
+          draggable:true,
+          animation: google.maps.Animation.DROP,
+          position: latlng
+        });
+        google.maps.event.addListener(marker, 'dragend', function(event){
+            var point = marker.getPosition();
+            map.panTo(point);
+            
+        });
+    }
+  
+	  
     </script>
-    </div>
-     <img src="<?php echo Yii::app()->request->baseUrl ?>/images/simple_bg.gif" alt="picture" width="980" height="37" />
+   </head>
+<body onload="load()" onunload="GUnload()" >
+
+
+   <div id="slider">
+  
+    <p>
+        <div align="center" id="map" style="width: 100%; height: 400px"><br/></div>
+    </p>
+
+     
     <div class="clr"></div>
     <div class="click_blog"> <img src="<?php echo Yii::app()->request->baseUrl ?>/images/Get_in_touch.gif" alt="picture" width="163" height="47" />
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, labore et dolore magna aliqua.</p>
+      <p>Mikonos island in Greece, Chichi-jima in Japan, more cool places in Tour VN</p>
       <div class="clr"></div>
     </div>
     <!-- end #slideshow -->
     <div class="clr"></div>
   </div>
+  </body>
   <div class="body">
     <div class="body_resize">
       <div class="port">

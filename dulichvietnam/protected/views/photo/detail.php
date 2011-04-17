@@ -18,11 +18,14 @@
 .rating_star_big_half{
     background-image: url(<?php echo Yii::app()->request->baseUrl; ?>/images/star_big_half.png)
 }
+.right{width: 506px;}
+.left{width: 390px;}
 </style>
 <?php
 //get title and description of photo
 $photo= Photo::model()->getPhotoFile($photo_id);
 ?>
+<body onload="load()" onunload="GUnload()" >
 <div id="slider">
     <h2>Detail Photo</h2>
   </div>
@@ -31,9 +34,12 @@ $photo= Photo::model()->getPhotoFile($photo_id);
     <div class="body_resize">
       <div class="right">
         <h2><?php echo $photo->title; ?><span></span></h2>
-        <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture" width="617" />
+        
+        <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture" width="495" />
+        
         <div class="clr"></div>
         <p><?php echo $photo->description;?></p>
+        <?php if(!Yii::app()->user->isGuest){?>
          <div id="photo_rating" class="rating" onmouseout="rating_out();">
           <span id="rate_1" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(1);"<?php endif; ?> onmouseover="rating_over(1);"></span>
           <span id="rate_2" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(2);"<?php endif; ?> onmouseover="rating_over(2);"></span>
@@ -42,6 +48,7 @@ $photo= Photo::model()->getPhotoFile($photo_id);
           <span id="rate_5" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(5);"<?php endif; ?> onmouseover="rating_over(5);"></span>
           <span id="rating_text" class="rating_text"><?php echo "click to rate" ;?></span>
         </div>
+        <?php }?>
         <?php 
             if($user_id==$photo->user_id){?>
                 <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/del&photo_id='.$photo->id ?>"><?php echo "Delete";?></a>
@@ -62,35 +69,104 @@ $photo= Photo::model()->getPhotoFile($photo_id);
         <?php $this->renderPartial('_comments',array(
 			'post'=>$model,
 			'comments'=>$model->comments,
+            'photo'=>$photo,
             'user_id'=>$user_id
 		)); ?>
+        <?php if(!Yii::app()->user->isGuest){?>
         <?php $this->renderPartial('/comment/_form',array(
     			'model'=>$comment,
                 'photo_id'=>$photo_id
     		)); ?>
         
-        
+      <?php }?>
       </div>
       <div class="left">
-        <h2>Testimonial</h2>
-        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/test.gif" alt="picture" width="36" height="28" class="floated" />
-        <div class="clr"></div>
-        <p>“ Nunc nec ipsum sed nisi dictum mollis. Praesent malesuada mauris a odio adipiscing mollis. In varius tincidunt elit vitae eleifend. Etiam fermentum suscipit est vel aliquet. ”</p>
-        <div class="bg"></div>
-        <a href="#"><img src="<?php echo Yii::app()->request->baseUrl ?>/images/test_img.gif" alt="picture" width="38" height="37" border="0" class="floated" style="padding:10px 20px 0 0;" /></a>
-        <p style="padding:10px 20px 0 20px;"><strong>John Doe, <br />
-          Creative Director of Website.com</strong></p>
-        <img src="images/r_bg.gif" alt="picture" width="293" height="8" class="floated" /> <img src="<?php echo Yii::app()->request->baseUrl ?>/images/test.gif" alt="picture" width="36" height="28" class="floated" />
-        <div class="clr"></div>
-        <p>“ Nunc nec ipsum sed nisi dictum mollis. Praesent malesuada mauris a odio adipiscing mollis. In varius tincidunt elit vitae eleifend. Etiam fermentum suscipit est vel aliquet. ”</p>
-        <div class="bg"></div>
-        <a href="#"><img src="<?php echo Yii::app()->request->baseUrl ?>/images/test_img.gif" alt="picture" width="38" height="37" border="0" class="floated" style="padding:10px 20px 0 0;" /></a>
-        <p style="padding:10px 20px 0 20px;"><strong>John Doe, <br />
-          Creative Director of Website.com</strong></p>
-        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/r_bg.gif" alt="picture" width="293" height="8" class="floated" /> </div>
+         <h2>Map</h2>
+          <p>
+            <div align="center" id="map" style="width: 380px; height: 400px"><br/></div>
+          </p>
+          <?php if($user_id==$photo->user_id){?>
+          <p>
+            <img style="float: left;" src="<?php echo Yii::app()->request->baseUrl.'/images/marker.png'?>" />&nbsp;
+            <?php echo $photo->lat. ' and '. $photo->lag;?><br />&nbsp;
+             
+             <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/map&photo_id='.$photo->id.'&file_id='.$photo->file_id?>"><?php echo "Change Position";?></a>
+           
+          </p>
+           <?php }?>
+      </div>
+      </div>
       <div class="clr"></div>
     </div>
   </div>
+</body>
+<head> 	
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+var map;
+function createMarker(point, photo_id, file_id, name) {
+    var icon = new google.maps.MarkerImage("<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'?>"+name, null, null, new google.maps.Point(0, 0), new google.maps.Size(20, 20));
+   
+    var marker = new google.maps.Marker({
+          map:map,
+          icon: icon,
+          //draggable:true,
+          //animation: google.maps.Animation.DROP,
+          position: point
+        });
+    
+    google.maps.event.addListener(marker, "click", function() {
+        var imag="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'?>"+name;
+        var url= "<?php echo Yii::app()->request->baseUrl.'/?r=photo/detail&photo_id='?>"+photo_id+'&file_id='+file_id;
+       
+        var infowindow = new google.maps.InfoWindow(
+          { 
+            content: '<a href="'+url+'"><img src="'+imag+'" alt="'+name+'" /></a>',
+            
+          });
+        infowindow.open(map, marker);
+    });
+    return marker;
+}
+ function load() {
+    
+    var marker;
+    //load default latlng
+    var lat= "<?php echo $photo->lat; ?>";
+    var lng= "<?php echo $photo->lag;?>";
+    var latlng;
+    if(lat){
+        latlng= new google.maps.LatLng(lat, lng);
+    }
+    else{
+        latlng = new google.maps.LatLng(-34.397, 150.644);
+    }
+    var myOptions = {
+      zoom: 8,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map"), myOptions);
+    //add makers load from database
+    var allphotos= "<?php echo $photos;?>";
+    var photo_spl= allphotos.split("|");
+    var len= photo_spl.length;
+    for (var i = 0; i < len; i++) {
+        var file= photo_spl[i].split(",");
+        var photo_id= file[0];
+        var file_id= file[1];
+        var name= file[2];
+        var lat= file[3];
+        var lng= file[4];
+        
+        var point = new google.maps.LatLng(lat, lng);
+        createMarker(point, photo_id, file_id, name);
+    }
+
+}
+    </script>
+  </head>
+
 <script type="text/javascript">
   var pre_rate= <?php echo $photo->rating; ?>;
   var rated = "<?php echo $rated;?>";

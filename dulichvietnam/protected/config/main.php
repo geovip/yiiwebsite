@@ -29,7 +29,7 @@ return array(
 		),
 		
 	),
-    'defaultController'=>'album/listalbum',
+    //'defaultController'=>'album/listalbum',
 	// application components
 	'components'=>array(
 		'user'=>array(
