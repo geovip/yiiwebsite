@@ -151,4 +151,12 @@ class Album extends CActiveRecord
         );
         return self::model()->find($condition);
     }
+    //display album at home page
+    public function homeAlbum(){
+        $condition= array(
+                        'order'=> 'view_count DESC',
+                        'limit'=>2
+                        );
+        return self::model()->findAll($condition);
+    }
 }
