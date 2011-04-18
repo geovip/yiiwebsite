@@ -25,81 +25,6 @@
 //get title and description of photo
 $photo= Photo::model()->getPhotoFile($photo_id);
 ?>
-<body onload="load()" onunload="GUnload()" >
-<div id="slider">
-    <h2>Detail Photo</h2>
-  </div>
-  <div class="clr"></div>
-  <div class="body">
-    <div class="body_resize">
-      <div class="right">
-        <h2><?php echo $photo->title; ?><span></span></h2>
-        
-        <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture" width="495" />
-        
-        <div class="clr"></div>
-        <p><?php echo $photo->description;?></p>
-        <?php if(!Yii::app()->user->isGuest){?>
-         <div id="photo_rating" class="rating" onmouseout="rating_out();">
-          <span id="rate_1" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(1);"<?php endif; ?> onmouseover="rating_over(1);"></span>
-          <span id="rate_2" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(2);"<?php endif; ?> onmouseover="rating_over(2);"></span>
-          <span id="rate_3" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(3);"<?php endif; ?> onmouseover="rating_over(3);"></span>
-          <span id="rate_4" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(4);"<?php endif; ?> onmouseover="rating_over(4);"></span>
-          <span id="rate_5" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(5);"<?php endif; ?> onmouseover="rating_over(5);"></span>
-          <span id="rating_text" class="rating_text"><?php echo "click to rate" ;?></span>
-        </div>
-        <?php }?>
-        <?php 
-            if($user_id==$photo->user_id){?>
-                <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/del&photo_id='.$photo->id ?>"><?php echo "Delete";?></a>
-        <?php }
-        ?>
-        <?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
-		<div class="flash_success">
-			<?php echo Yii::app()->user->getFlash('commentSubmitted'); ?>
-		</div>
-    		
-    	<?php endif; ?>
-        <?php if(Yii::app()->user->hasFlash('commentFail')): ?>
-		<div class="flash_error">
-			<?php echo Yii::app()->user->getFlash('commentFail'); ?>
-		</div>
-    		
-    	<?php endif; ?>
-        <?php $this->renderPartial('_comments',array(
-			'post'=>$model,
-			'comments'=>$model->comments,
-            'photo'=>$photo,
-            'user_id'=>$user_id
-		)); ?>
-        <?php if(!Yii::app()->user->isGuest){?>
-        <?php $this->renderPartial('/comment/_form',array(
-    			'model'=>$comment,
-                'photo_id'=>$photo_id
-    		)); ?>
-        
-      <?php }?>
-      </div>
-      <div class="left">
-         <h2>Map</h2>
-          <p>
-            <div align="center" id="map" style="width: 380px; height: 400px"><br/></div>
-          </p>
-          <?php if($user_id==$photo->user_id){?>
-          <p>
-            <img style="float: left;" src="<?php echo Yii::app()->request->baseUrl.'/images/marker.png'?>" />&nbsp;
-            <?php echo $photo->lat. ' and '. $photo->lag;?><br />&nbsp;
-             
-             <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/map&photo_id='.$photo->id.'&file_id='.$photo->file_id?>"><?php echo "Change Position";?></a>
-           
-          </p>
-           <?php }?>
-      </div>
-      </div>
-      <div class="clr"></div>
-    </div>
-  </div>
-</body>
 <head> 	
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
@@ -166,6 +91,82 @@ function createMarker(point, photo_id, file_id, name) {
 }
     </script>
   </head>
+<body onload="load()" onunload="GUnload()" >
+<div id="slider">
+    <h2>Detail Photo</h2>
+  </div>
+  <div class="clr"></div>
+  <div class="body">
+    <div class="body_resize">
+      <div class="right">
+        <h2><?php echo $photo->title; ?><span></span></h2>
+        
+        <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture" width="495" />
+        
+        <div class="clr"></div>
+        <p><?php echo $photo->description;?></p>
+        <?php if(!Yii::app()->user->isGuest){?>
+         <div id="photo_rating" class="rating" onmouseout="rating_out();">
+          <span id="rate_1" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(1);"<?php endif; ?> onmouseover="rating_over(1);"></span>
+          <span id="rate_2" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(2);"<?php endif; ?> onmouseover="rating_over(2);"></span>
+          <span id="rate_3" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(3);"<?php endif; ?> onmouseover="rating_over(3);"></span>
+          <span id="rate_4" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(4);"<?php endif; ?> onmouseover="rating_over(4);"></span>
+          <span id="rate_5" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(5);"<?php endif; ?> onmouseover="rating_over(5);"></span>
+          <span id="rating_text" class="rating_text"><?php echo "click to rate" ;?></span>
+        </div>
+        <?php }?>
+        <?php 
+            if($user_id==$photo->user_id){?>
+                <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/del&photo_id='.$photo->id ?>"><?php echo "Delete";?></a>
+        <?php }
+        ?>
+        <?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
+		<div class="flash_success">
+			<?php echo Yii::app()->user->getFlash('commentSubmitted'); ?>
+		</div>
+    		
+    	<?php endif; ?>
+        <?php if(Yii::app()->user->hasFlash('commentFail')): ?>
+		<div class="flash_error">
+			<?php echo Yii::app()->user->getFlash('commentFail'); ?>
+		</div>
+    		
+    	<?php endif; ?>
+        <?php $this->renderPartial('_comments',array(
+			'post'=>$model,
+			'comments'=>$model->comments,
+            'photo'=>$photo,
+            'user_id'=>$user_id
+		)); ?>
+        <?php if(!Yii::app()->user->isGuest){?>
+        <?php $this->renderPartial('/comment/_form',array(
+    			'model'=>$comment,
+                'photo_id'=>$photo_id
+    		)); ?>
+        
+      <?php }?>
+      </div>
+      <div class="left">
+         <h2>Map</h2>
+          <p>
+            <div align="center" id="map" style="width: 100%; height: 500px"><br/></div>
+          </p>
+          
+          <p>
+            <img style="float: left;" src="<?php echo Yii::app()->request->baseUrl.'/images/marker.png'?>" />&nbsp;
+            <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/popular&order=view_count&lat='.$photo->lat.'&lng='.$photo->lag?>"><?php echo $photo->lat. ' and '. $photo->lag;?><br />&nbsp;</a>
+             <?php if($user_id==$photo->user_id){?>
+             <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/map&photo_id='.$photo->id.'&file_id='.$photo->file_id?>"><?php echo "Change Position";?></a>
+           <?php }?>
+          </p>
+           
+      </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+</body>
+
 
 <script type="text/javascript">
   var pre_rate= <?php echo $photo->rating; ?>;

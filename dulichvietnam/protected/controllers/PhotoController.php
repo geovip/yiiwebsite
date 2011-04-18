@@ -361,4 +361,56 @@ class PhotoController extends Controller
             exit;
         }
     }
+    //list popular photos
+    public function actionPopular($order, $lat, $lng){
+        $str="";
+        $allphotos= Photo::model()->listAllPhoto();
+        
+        if($allphotos){
+            $i=0;
+            foreach($allphotos as $photos){
+                $i++;
+                $file_photo= $photos->file_id;
+                $name= File::model()->getFile($file_photo)->name;
+                if(count($allphotos)==$i){
+                    $str.= $photos->id.",".$file_photo.",".$name.",".$photos->lat.",".$photos->lag; 
+                }else{
+                    $str.= $photos->id.",".$file_photo.",".$name.",".$photos->lat.",".$photos->lag."|";
+                }
+            }
+        }
+        if($order=='your'){
+            $user_id= Yii::app()->user->getId();
+
+            $criteria=new CDbCriteria(array(
+                        'condition'=>'user_id=:user_id',
+                        'params'=>array(':user_id'=>$user_id),
+			            'order'=> 'view_count DESC'
+			
+            ));
+        }
+        else{
+            $criteria=new CDbCriteria(array(
+                        'condition'=>'lat=:lat AND lag=:lag',
+                        'params'=>array(':lat'=>$lat, ':lag'=>$lag),
+			            'order'=> $order.' DESC'
+			
+            ));
+        }
+        
+		
+		$dataProvider=new CActiveDataProvider('Photo', array(
+			'pagination'=>array(
+				'pageSize'=>12
+			),
+			'criteria'=>$criteria
+		));
+        $this->render('popular', array(
+            'dataProvider'=>$dataProvider,
+            'photos'=>$str,
+            'lat'=> $lat,
+            'lng'=>$lng
+            ));
+    }
+    
 }

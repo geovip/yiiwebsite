@@ -3,66 +3,6 @@
 //get title and description of photo
 $photo= Photo::model()->getPhotoFile($photo_id);
 ?>
-<div id="slider">
-    <h2>Change Position</h2>
-</div>
-<div class="clr"></div>
-<body onload="load()" onunload="GUnload()" >
-<div class="body">
-    <div class="body_resize">
-        <div class="right">
-        
-            
-                <div class="clr"></div>
-                <form action="#" onsubmit="showAddress(this.address.value); return false">
-                    <p>        
-                        <input type="text" size="60" name="address" value="3 cit&eacute; Nollez Paris France" />
-                        <input type="submit" value="Search!" />
-                    </p>
-                    
-                </form>
-                
-                    <table  bgcolor="#FFFFCC" width="300">
-                        <tr>
-                            <td><b>Latitude</b></td>
-                            <td><b>Longitude</b></td>
-                        </tr>
-                        <tr>
-                            <td id="lat"></td>
-                            <td id="lng"></td>
-                        
-                        </tr>
-                    </table>
-                <?php echo "Click on the map or drag the marker to place the photo over its position";?>
-                <p>
-                    <div align="center" id="map" style="width: 600px; height: 400px"><br/></div>
-                </p>
-              
-                <form method="post" id="form-demo" action="<?php echo Yii::app()->request->baseUrl.'/?r=photo/position' ?>">
-                    <ol>
-                    
-                        <li class="buttons">
-                            <input type="button" onclick="saveposition();" value="Save Position" style="float: right;" />
-                            <input id="photo" type="hidden" value="<?php echo $photo_id ?>" />
-                            <input id="file" type="hidden" value="<?php echo $file_id ?>" />
-                        </li>
-                    </ol>
-                    
-                </form>
-            <div class="clr"></div>
-            
-            
-        </div>
-        
-        <div class="left">
-            
-        <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture" />
-        
-        </div>
-        <div class="clr"></div>
-    </div>
-</div>
-</body>
 <head>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
@@ -166,3 +106,63 @@ var map;
             }
     </script>
     </head>
+<div id="slider">
+    <h2>Change Position</h2>
+</div>
+<div class="clr"></div>
+<body onload="load()" onunload="GUnload()" >
+<div class="body">
+    <div class="body_resize">
+        <div class="right">
+        
+            
+                <div class="clr"></div>
+                <form action="#" onsubmit="showAddress(this.address.value); return false;">
+                    <p>        
+                        <input type="text" size="60" name="address" value="3 cit&eacute; Nollez Paris France" />
+                        <input type="submit" value="Search!" />
+                    </p>
+                    
+                </form>
+                
+                    <table  bgcolor="#FFFFCC" width="300">
+                        <tr>
+                            <td><b>Latitude</b></td>
+                            <td><b>Longitude</b></td>
+                        </tr>
+                        <tr>
+                            <td id="lat"></td>
+                            <td id="lng"></td>
+                        
+                        </tr>
+                    </table>
+                <?php echo "Click on the map or drag the marker to place the photo over its position";?>
+                <p>
+                    <div align="center" id="map" style="width: 600px; height: 400px"><br/></div>
+                </p>
+              
+                <form method="post" id="form-demo" action="<?php echo Yii::app()->request->baseUrl.'/?r=photo/position' ?>">
+                    <ol>
+                    
+                        <li class="buttons">
+                            <input type="button" onclick="saveposition();" value="Save Position" style="float: right;" />
+                            <input id="photo" type="hidden" value="<?php echo $photo_id ?>" />
+                            <input id="file" type="hidden" value="<?php echo $file_id ?>" />
+                        </li>
+                    </ol>
+                    
+                </form>
+            <div class="clr"></div>
+            
+            
+        </div>
+        
+        <div class="left">
+            
+        <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture" />
+        
+        </div>
+        <div class="clr"></div>
+    </div>
+</div>
+</body>

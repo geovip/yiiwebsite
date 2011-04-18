@@ -30,7 +30,31 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+        //list photos
+        //load all photo
+        $str="";
+        $allphotos= Photo::model()->listAllPhoto();
+        
+        if($allphotos){
+            $i=0;
+            foreach($allphotos as $photos){
+                $i++;
+                $file_photo= $photos->file_id;
+                $name= File::model()->getFile($file_photo)->name;
+                if(count($allphotos)==$i){
+                    $str.= $photos->id.",".$file_photo.",".$name.",".$photos->lat.",".$photos->lag; 
+                }else{
+                    $str.= $photos->id.",".$file_photo.",".$name.",".$photos->lat.",".$photos->lag."|";
+                }
+            }
+        }
+        //list album at home
+        $albums= Album::model()->homeAlbum();
+        
+		$this->render('index', array(
+                        'photos'=>$str,
+                        'albums'=>$albums
+                        ));
 	}
 
 	/**
