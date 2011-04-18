@@ -391,8 +391,8 @@ class PhotoController extends Controller
         }
         else{
             $criteria=new CDbCriteria(array(
-                        'condition'=>'lat=:lat AND lag=:lag',
-                        'params'=>array(':lat'=>$lat, ':lag'=>$lag),
+                        //'condition'=>'lat=:lat AND lag=:lag',
+                        //'params'=>array(':lat'=>$lat, ':lag'=>$lag),
 			            'order'=> $order.' DESC'
 			
             ));
