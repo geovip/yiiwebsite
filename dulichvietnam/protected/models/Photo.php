@@ -153,8 +153,15 @@ class Photo extends CActiveRecord
         if (count($row)>0) return true;
         return false;
     }
-    public function listAllPhoto(){
-        return self::model()->findAll();
+    public function listAllPhoto($lat, $lng){
+        $radius= 1; //met
+        $condition= array(
+                        'condition'=>'lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e',
+                        'params'=>array(':lat_s'=>$lat-($radius*1.1515), ':lat_e'=>$lat+($radius*1.1515), ':lag_s'=>$lng-($radius*1.1515), ':lag_e'=>$lng+($radius*1.1515))
+        
+        );
+        
+        return self::model()->findAll($condition);
     }
     
 }

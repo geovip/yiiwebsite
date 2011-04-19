@@ -33,7 +33,9 @@ class SiteController extends Controller
         //list photos
         //load all photo
         $str="";
-        $allphotos= Photo::model()->listAllPhoto();
+        $lat= !empty($lat) ? $lat : 15.8244;
+        $lng= !empty($lng) ? $lng : 107.951;
+        $allphotos= Photo::model()->listAllPhoto($lat, $lng);
         
         if($allphotos){
             $i=0;
