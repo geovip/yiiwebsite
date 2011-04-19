@@ -38,7 +38,14 @@ function createMarker(point, photo_id, file_id, name) {
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         map = new google.maps.Map(document.getElementById("map"), myOptions);
-        
+        var marker = new google.maps.Marker({
+              map:map,
+              
+              //draggable:true,
+              animation: google.maps.Animation.DROP,
+              position: latlng
+            });
+            
         //add makers load from database
         var allphotos= "<?php echo $photos;?>";
         var photo_spl= allphotos.split("|");
@@ -60,8 +67,46 @@ function createMarker(point, photo_id, file_id, name) {
             map.panTo(point);
             
         });
+        google.maps.event.addListener(map, 'dragend', function() {
+            
+            var center = map.getCenter();
+            var lat= center.lat().toFixed(5);
+            var lng= center.lng().toFixed(5);
+            var url = "<?php echo Yii::app()->request->baseUrl ?>/?r=photo/listmap";
+            new Request({
+                url: url,
+                method: "post",
+               data:{
+                    'ajax': 'ajax',
+                    'lat': lat,
+                    'lng': lng
+                },
+                onSuccess : function(responseHTML)
+                {
+                    
+                    if(responseHTML){
+                        var allphotos= responseHTML;
+                        var photo_spl= allphotos.split("|");
+                        var len= photo_spl.length;
+                        for (var i = 0; i < len; i++) {
+                            var file= photo_spl[i].split(",");
+                            var photo_id= file[0];
+                            var file_id= file[1];
+                            var name= file[2];
+                            var lat= file[3];
+                            var lng= file[4];
+                            
+                            var point = new google.maps.LatLng(lat, lng);
+                            createMarker(point, photo_id, file_id, name);
+                        }
+                    }
+                		
+                }
+            }).send();
+            
+        });
     }
-   
+    
 	  
     </script>
    </head>

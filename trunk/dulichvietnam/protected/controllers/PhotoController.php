@@ -198,7 +198,10 @@ class PhotoController extends Controller
 		}
         //load all photo
         $str="";
-        $allphotos= Photo::model()->listAllPhoto();
+        //get lat and lng if exist
+        $lat= !empty($photo->lat) ? $photo->lat : 15.8244;
+        $lng= !empty($photo->lag) ? $photo->lag : 107.951;
+        $allphotos= Photo::model()->listAllPhoto($lat, $lng);
         
         if($allphotos){
             $i=0;
@@ -364,7 +367,9 @@ class PhotoController extends Controller
     //list popular photos
     public function actionPopular($order, $lat, $lng){
         $str="";
-        $allphotos= Photo::model()->listAllPhoto();
+        $lat= !empty($lat) ? $lat : 15.8244;
+        $lng= !empty($lng) ? $lng : 107.951;
+        $allphotos= Photo::model()->listAllPhoto($lat, $lng);
         
         if($allphotos){
             $i=0;
@@ -379,26 +384,25 @@ class PhotoController extends Controller
                 }
             }
         }
+        $radius= 1; //met
         if($order=='your'){
             $user_id= Yii::app()->user->getId();
 
             $criteria=new CDbCriteria(array(
-                        'condition'=>'user_id=:user_id',
-                        'params'=>array(':user_id'=>$user_id),
+                        'condition'=>'user_id=:user_id AND lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e',
+                        'params'=>array(':user_id'=>$user_id,':lat_s'=>$lat-($radius*1.1515), ':lat_e'=>$lat+($radius*1.1515), ':lag_s'=>$lng-($radius*1.1515), ':lag_e'=>$lng+($radius*1.1515)),
 			            'order'=> 'view_count DESC'
 			
             ));
         }
         else{
             $criteria=new CDbCriteria(array(
-                        //'condition'=>'lat=:lat AND lag=:lag',
-                        //'params'=>array(':lat'=>$lat, ':lag'=>$lag),
-			            'order'=> $order.' DESC'
+                        'condition'=>'lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e',
+                        'params'=>array(':lat_s'=>$lat-($radius*1.1515), ':lat_e'=>$lat+($radius*1.1515), ':lag_s'=>$lng-($radius*1.1515), ':lag_e'=>$lng+($radius*1.1515)),
+                        'order'=> $order.' DESC'
 			
             ));
         }
-        
-		
 		$dataProvider=new CActiveDataProvider('Photo', array(
 			'pagination'=>array(
 				'pageSize'=>12
@@ -412,5 +416,29 @@ class PhotoController extends Controller
             'lng'=>$lng
             ));
     }
-    
+    public function actionListMap(){
+        if(isset($_POST['ajax'])){
+            $lat= $_POST['lat'];
+            $lng= $_POST['lng'];
+            $str="";
+           
+            $allphotos= Photo::model()->listAllPhoto($lat, $lng);
+            
+            if($allphotos){
+                $i=0;
+                foreach($allphotos as $photos){
+                    $i++;
+                    $file_photo= $photos->file_id;
+                    $name= File::model()->getFile($file_photo)->name;
+                    if(count($allphotos)==$i){
+                        $str.= $photos->id.",".$file_photo.",".$name.",".$photos->lat.",".$photos->lag; 
+                    }else{
+                        $str.= $photos->id.",".$file_photo.",".$name.",".$photos->lat.",".$photos->lag."|";
+                    }
+                }
+            }
+            echo $str;
+            exit;
+        }
+    }
 }
