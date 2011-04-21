@@ -6,7 +6,7 @@ class UserController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/tour';
 
 	/**
 	 * @return array action filters
@@ -23,6 +23,7 @@ class UserController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
+     /*
 	public function accessRules()
 	{
 		return array(
@@ -43,7 +44,7 @@ class UserController extends Controller
 			),
 		);
 	}
-
+    */
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -173,4 +174,129 @@ class UserController extends Controller
 			Yii::app()->end();
 		}
 	}
+    public function actionSignup()
+	{
+		$model=new User;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['User']))
+		{
+            $username= $_POST['User']['username'];
+            $displayname= $_POST['User']['displayname'];
+            $email= $_POST['User']['email'];
+            $phone= $_POST['User']['phone'];
+            $password= $_POST['User']['password'];
+            //var_dump($_POST['User']);exit;
+            try{
+                
+                $model->username= $username;
+                $model->displayname= $displayname;
+                $model->email= $email;
+                $model->phone= $phone;
+                $model->password= md5($password);
+                $model->creation_date= date('Y-m-d H:i:s');
+                $model->modified_date= date('Y-m-d H:i:s');
+                $model->save();
+            }
+            catch(Exception $e){}
+            $user_id= $model->id;
+            $file = CUploadedFile::getInstanceByName("User[photo_id]");
+            //var_dump($file->getName());exit;
+            //create thumb
+            if($file !=""){
+         
+                $file_name= explode('.', $file->getName());
+                $file_name= $file_name[0].'_'.time().'.'.ltrim(strrchr($file->getName(), '.'), '.');
+                
+                $file->saveAs(Yii::app()->getBasePath().'/uploads/'.$file_name,false);
+                //var_dump($thumbnail);exit;
+                $thumbnail = new SThumbnail(Yii::app()->getBasePath().'/uploads/'.$file_name, "", 50);
+    
+                $thumbnail->createthumb();
+                
+                //create and save image into file database
+                //Thumbnail
+                $model_file= new File ;
+                //$model_file->parent_file_id= $model_file->id;
+                $model_file->type= 'thumb';
+                $model_file->parent_type='user';
+                $model_file->parent_id= $user_id;
+                $model_file->user_id= $user_id;
+                $model_file->creation_date= date('Y-m-d H:i:s');
+                $model_file->modified_date= date('Y-m-d H:i:s');
+                $model_file->storage_type= 'local';
+                //$model_file->mime_major= $mime[0];
+                //$model_file->hash= $return['hash'];
+                $model_file->extension= ltrim(strrchr($thumbnail->getThumbnailBaseName(), '.'), '.');
+                //$model_file->mime_minor= $mime[1];
+                $model_file->size= filesize(Yii::app()->getBasePath().'/uploads/'. $thumbnail->getThumbnailBaseName());
+                $model_file->storage_path= Yii::app()->getBasePath().'/uploads/'. $thumbnail->getThumbnailBaseName();
+                $model_file->name= $thumbnail->getThumbnailBaseName();
+                $model_file->save();
+                
+                //Image orginal
+                $model_orgin= new File;
+                $model_orgin->parent_file_id= $model_file->id;
+                $model_orgin->type= 'orgin';
+                $model_orgin->parent_type='user';
+                $model_orgin->parent_id= $user_id;
+                $model_orgin->user_id= $user_id;
+                $model_orgin->creation_date= date('Y-m-d H:i:s');
+                $model_orgin->modified_date= date('Y-m-d H:i:s');
+                $model_orgin->storage_type= 'local';
+                //$model_orgin->mime_major= $mime[0];
+                $model_orgin->hash= $return['hash'];
+                $model_orgin->size= $_FILES["Filedata"]["size"];
+                $model_orgin->extension= ltrim(strrchr($file->getName(), '.'), '.');
+                //$model_orgin->mime_minor= $mime[1];
+                $model_orgin->storage_path= Yii::app()->getBasePath().'/uploads/'.$file_name;
+                $model_orgin->name= $file_name;
+                $model_orgin->save();
+                //save photo
+                $model->photo_id= $model_file->id;
+                $model->save();
+                $this->redirect(array('site/login'));
+            }
+            		
+		}
+
+		$this->render('create',array(
+			'model'=>$model
+		));
+	}
+    public function actionSign(){
+        if(isset($_POST['ajax'])){
+            $username= $_POST['username'];
+            $displayname= $_POST['displayname'];
+            $email= $_POST['email'];
+            $phone= $_POST['phone'];
+            $photo= $_POST['photo'];
+            $password= $_POST['password'];
+            //check username
+            
+            
+            $user= User::model()->find(array(
+                        'condition'=>'username=:username',
+                        'params'=>array(':username'=>$username)
+            ));
+            if(count($user)>0){
+                echo 'username';
+                exit;
+            }
+            $email= User::model()->find(array(
+                        'condition'=>'email=:email',
+                        'params'=>array(':email'=>$email)
+            ));
+            if(count($email)>0){
+                echo 'email';
+                exit;
+            }else{
+                echo 1;exit;
+            }
+            
+            
+        }
+    }
 }

@@ -32,6 +32,7 @@
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/flash_detect.v1.7.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.3.2.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.validate.js"></script>
+
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     
     <script type="text/javascript">    
@@ -70,10 +71,10 @@
       <?php
           $this->widget('zii.widgets.CMenu',array(
     			'items'=>array(
-    				array('label'=>'Your Photos', 'url'=>array('/album/listalbum'), 'visible'=>!Yii::app()->user->isGuest),
+    				array('label'=>'Your Photos', 'url'=>array('/album/manage'), 'visible'=>!Yii::app()->user->isGuest),
     				array('label'=>'Upload', 'url'=>array('/album/create'), 'visible'=>!Yii::app()->user->isGuest),
     				
-    				array('label'=>'Sign up', 'url'=>array('/site/signup'), 'visible'=>Yii::app()->user->isGuest),
+    				array('label'=>'Sign up', 'url'=>array('/user/signup'), 'visible'=>Yii::app()->user->isGuest),
     				array('label'=>'Sign in', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
     				array('label'=>'Sign out ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
     			),
