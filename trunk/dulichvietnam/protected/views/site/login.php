@@ -24,7 +24,7 @@ ol li #LoginForm_rememberMe{float:left; margin-top: 6px;}
     		<?php echo $form->passwordField($model,'password'); ?>
     		<?php echo $form->error($model,'password'); ?>
             <p class="hint">
-                Hint: You may login with <tt>huynhnv/123456</tt> or <tt>dunghd/123456</tt>.
+                Hint: You may login with <tt>huynhnv/huynhnv88</tt> or <tt>dunghd/dunghd88</tt>.
             </p>
         </li>
         <li>
