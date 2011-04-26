@@ -164,14 +164,34 @@ class Photo extends CActiveRecord
         return self::model()->findAll($condition);
     }
     //list photo mypage
-    public function listPhotoMypage($user_id){
-        $condition= array(
+    public function listPhotoMypage($user_id, $limit){
+        if($limit != null){
+            $condition= array(
                         'condition'=>'user_id=:user_id',
                         'params'=>array(':user_id'=>$user_id),
                         'order'=> 'view_count DESC',
-                        'limit'=>6
+                        'limit'=>$limit
+                        );
+        }
+        else{
+            $condition= array(
+                        'condition'=>'user_id=:user_id',
+                        'params'=>array(':user_id'=>$user_id),
+                        'order'=> 'view_count DESC'
+                        
+                        );
+        }
+        
+        return self::model()->findAll($condition);
+    }
+    //get photos which lat or lag null
+    public function listPhotoLatLngNull($user_id){
+        $condition= array(
+                        'condition'=>'user_id=:user_id AND lat IS null',
+                        'params'=>array(':user_id'=>$user_id),
+                        'order'=> 'view_count DESC'
+                        
                         );
         return self::model()->findAll($condition);
     }
-    
 }

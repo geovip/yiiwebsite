@@ -304,14 +304,19 @@ class UserController extends Controller
         $user_id= Yii::app()->user->getId();
         //get 6 pic popular(view)
           
-        $photos= Photo::model()->listPhotoMypage($user_id);
+        $photos= Photo::model()->listPhotoMypage($user_id, 6);
         
         //get user
         $user= User::model()->findByPk($user_id);
+        //count photos
+        $sum_photos= count(Photo::model()->listPhotoMypage($user_id, null));
+        $lat_null_photos= count(Photo::model()->listPhotoLatLngNull($user_id));
+        $sum_google_maps= $sum_photos- $lat_null_photos;
         $this->render('mypage',
             array(
                 'photos'=>$photos,
-                
+                'sum_photos'=> $sum_photos,
+                'sum_google_maps'=>$sum_google_maps,
                 'user'=> $user
             )
         );
