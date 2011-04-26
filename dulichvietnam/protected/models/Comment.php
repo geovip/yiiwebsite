@@ -127,4 +127,13 @@ class Comment extends CActiveRecord
         );
         return self::model()->findAll($condition);
     }
+    public function getCommentMypage($user_id, $photo_id){
+        $condition= array(
+                        'condition'=>'poster_id=:user_id AND resource_id=:resource_id AND resource_type=:resource_type',
+                        'params'=>array(':user_id'=>$user_id, ':resource_id'=> $photo_id, ':resource_type'=>'photo_comment'),
+                        'order'=> 'id DESC',
+                        //'limit'=>1
+                        );
+        return self::model()->find($condition);
+    }
 }
