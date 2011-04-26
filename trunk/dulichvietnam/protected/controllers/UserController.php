@@ -299,4 +299,21 @@ class UserController extends Controller
             
         }
     }
+    //mypage
+    public function actionMypage(){
+        $user_id= Yii::app()->user->getId();
+        //get 6 pic popular(view)
+          
+        $photos= Photo::model()->listPhotoMypage($user_id);
+        
+        //get user
+        $user= User::model()->findByPk($user_id);
+        $this->render('mypage',
+            array(
+                'photos'=>$photos,
+                
+                'user'=> $user
+            )
+        );
+    }
 }

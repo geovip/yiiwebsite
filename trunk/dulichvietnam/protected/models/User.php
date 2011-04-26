@@ -107,4 +107,15 @@ class User extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+    public function getUser($user_id){
+        $condition= array(
+                        'condition'=>'id=:id',
+                        'params'=>array(':id'=>$user_id)
+        );
+        $user= self::model()->find($condition);
+        //get Photo
+        $file= File::model()->getFile($user->photo_id);
+        
+        return $file;
+    }
 }

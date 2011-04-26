@@ -73,6 +73,7 @@
     			'items'=>array(
     				array('label'=>'Your Photos', 'url'=>array('/album/manage'), 'visible'=>!Yii::app()->user->isGuest),
     				array('label'=>'Upload', 'url'=>array('/album/create'), 'visible'=>!Yii::app()->user->isGuest),
+    				array('label'=>'My Page', 'url'=>array('/user/mypage'), 'visible'=>!Yii::app()->user->isGuest),
     				
     				array('label'=>'Sign up', 'url'=>array('/user/signup'), 'visible'=>Yii::app()->user->isGuest),
     				array('label'=>'Sign in', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),

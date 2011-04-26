@@ -36,10 +36,12 @@
 			'comments'=>$album->comments,
             'user_id'=>$user_id
 		)); ?>
+        <?php if(!Yii::app()->user->isGuest){?>
         <?php $this->renderPartial('/comment/_album',array(
     			'model'=>$comment,
                 'album_id'=>$album_id
     		)); ?>
+            <?php }?>
    </div>     
    <div class="clr"></div>
     </div>

@@ -115,3 +115,5 @@ margin: 10px 0;
 .comment .time{font-size: 0.8em; color: #888;}
 .flash_success{background: #E6EFC2; color: #264409;border-color: #C6D880;}
 .flash_error{background: #E6EFC2; color: red; border-color: #C6D880; }
+.photo img{float: left; margin-right: 10px;}
+.myphoto img{float:left; margin-right: 10px;}
