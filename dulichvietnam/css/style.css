@@ -117,3 +117,4 @@ margin: 10px 0;
 .flash_error{background: #E6EFC2; color: red; border-color: #C6D880; }
 .photo img{float: left; margin-right: 10px;}
 .myphoto img{float:left; margin-right: 10px;}
+img.mypage_view_image{background:none; border:none; float:left; margin-top: -3px;}

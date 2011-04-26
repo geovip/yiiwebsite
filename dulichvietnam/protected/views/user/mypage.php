@@ -1,6 +1,33 @@
  <style type="text/css">
  .port {width:167px;}
  .comment .content{height: 67px;}
+ #user_page_stats ul {
+    clear:both;
+    float:left;
+    margin:0 0 5px;
+    padding:5px 0 0 5px;
+    width:255px;
+}
+ ul {
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    padding-left: 0;
+}
+ul#counters{margin-left: 0px;}
+ul li.first_stat{
+    clear:none;
+    float:left;
+    
+    width:50%;
+}
+li.num{font-size: 1.5em;}
+.right h1 {
+    color:#006549;
+    font-size:140%;
+    margin:10px 0 0 0px;
+    padding:6px 0 10px;
+}
  </style>
  <div id="slider">
     <h2>My page</h2>
@@ -9,6 +36,7 @@
   <div class="body">
     <div class="body_resize">
     <div class="right">
+    <h1><?php echo "Your photos: "?><a href=""><?php echo "on the map";?></a></h1>
     <?php if(!empty($photos)){
         $i=0;
        foreach($photos as $photo){?>
@@ -32,6 +60,7 @@
             </a>
             
             <div class="clr"></div>
+            <img class="mypage_view_image" src="<?php echo Yii::app()->request->baseUrl.'/images/geolocated.gif'?>" /><span><?php echo $photo->view_count. " views"; ?> </span>
             <p><?php echo $photo->description;?></p>
   
             </div>
@@ -88,6 +117,46 @@
     ?>
     
     </div>
-    <div class="left"></div>
+    <div class="left">
+        <h2>Information</h2>
+        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/test.gif" alt="picture" width="36" height="28" class="floated" />
+        <div class="clr"></div>
+        <div style="background: #F7F6FB none repeat scroll 0 0;">Hi, <?php echo Comment::model()->getAuthorLink($user->id);?></div>
+        <p>
+            <?php 
+                $user_photo= User::model()->getUser($user->id);
+                $user_photo_name= $user_photo->name;
+                if($user_photo_name){?>
+                    <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$user_photo_name;?>" width="96" height="96" />
+                <?php }
+                else{?>
+                    <img src="<?php echo Yii::app()->request->baseUrl.'/images/nouser.png';?>" width="96" height="96" />
+                <?php }
+                ?>
+        </p>
+        <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/create'?>"><?php echo "Upload your photos"; ?></a>
+        <div class="bg"></div>
+        <br />
+        <div style="background: #F7F6FB none repeat scroll 0 0;">
+        <?php echo "Your Stats:";?>
+        </div>
+        <div class="user_page_stats">
+            <ul>
+                <li class="first_stat">
+                    <ul id="counters">
+                        <li class="num"><?php echo $sum_photos?></li>
+                        <li><?php echo photos?></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li class="num"><?php echo $sum_google_maps?></li>
+                        <li><?php echo "on the map" ?></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="clr"></div>
+    </div>
   </div>
  </div>
