@@ -121,7 +121,7 @@ li.num{font-size: 1.5em;}
         <h2>Information</h2>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/test.gif" alt="picture" width="36" height="28" class="floated" />
         <div class="clr"></div>
-        <div style="background: #F7F6FB none repeat scroll 0 0;">Hi, <?php echo Comment::model()->getAuthorLink($user->id);?></div>
+        <div style="background: #F7F6FB none repeat scroll 0 0;">Hi, <?php echo Comment::model()->getAuthorLink($user->id);?>!, <a href="<?php echo Yii::app()->request->baseUrl.'/?r=user/edit&user_id='.$user->id;?>"><?php echo "edit";?></a></div>
         <p>
             <?php 
                 $user_photo= User::model()->getUser($user->id);
@@ -133,7 +133,13 @@ li.num{font-size: 1.5em;}
                     <img src="<?php echo Yii::app()->request->baseUrl.'/images/nouser.png';?>" width="96" height="96" />
                 <?php }
                 ?>
+            
         </p>
+        <p><?php echo $user->information;?></p>
+        <?php if(!empty($user->website)){?>
+            <p><img class="mypage_view_image" style="border: none; background: #fff;" src="<?php echo Yii::app()->request->baseUrl.'/images/link.png'?>" /><a href="<?php echo $user->website;?>"><?php echo $user->website;?></a></p>  
+        <?php }?>
+        
         <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/create'?>"><?php echo "Upload your photos"; ?></a>
         <div class="bg"></div>
         <br />

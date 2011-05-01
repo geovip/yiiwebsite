@@ -257,9 +257,9 @@ class UserController extends Controller
                 //save photo
                 $model->photo_id= $model_file->id;
                 $model->save();
-                $this->redirect(array('site/login'));
+                
             }
-            		
+            $this->redirect(array('site/login'));		
 		}
 
 		$this->render('create',array(
@@ -320,5 +320,103 @@ class UserController extends Controller
                 'user'=> $user
             )
         );
+    }
+    //edit account
+    public function actionEdit($user_id){
+        
+        $model=$this->loadModel($user_id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+       
+		if(isset($_POST['User']))
+		{  
+            $displayname= $_POST['User']['displayname'];
+            $phone= $_POST['User']['phone'];
+            $website= $_POST['User']['website'];
+            $inform= $_POST['User']['information'];
+            
+            //var_dump($_POST['User']);exit;
+            try{
+                
+                
+                $model->phone= $phone;
+                $model->website= $website;
+                $model->information= $inform;
+                $model->displayname= $displayname;
+                $model->modified_date= date('Y-m-d H:i:s');
+                
+                $model->save();
+            }
+            catch(Exception $e){}
+            $user_id= $model->id;
+            $file = CUploadedFile::getInstanceByName("User[photo_id]");
+            //var_dump($file->getName());exit;
+            //create thumb
+            if($file !=""){
+                //delete pic
+                $file_thumb= File::model()->getFile($model->photo_id);
+                $file_ogr= File::model()->getFileOrginal($model->photo_id);
+                @unlink(Yii::app()->getBasePath().'/uploads/'.$file_thumb->name);
+                @unlink(Yii::app()->getBasePath().'/uploads/'.$file_ogr->name);
+                
+                $file_name= explode('.', $file->getName());
+                $file_name= $file_name[0].'_'.time().'.'.ltrim(strrchr($file->getName(), '.'), '.');
+                
+                $file->saveAs(Yii::app()->getBasePath().'/uploads/'.$file_name,false);
+                //var_dump($thumbnail);exit;
+                $thumbnail = new SThumbnail(Yii::app()->getBasePath().'/uploads/'.$file_name, "", 50);
+    
+                $thumbnail->createthumb();
+                
+                //create and save image into file database
+                //Thumbnail
+                $model_file= new File ;
+                //$model_file->parent_file_id= $model_file->id;
+                $model_file->type= 'thumb';
+                $model_file->parent_type='user';
+                $model_file->parent_id= $user_id;
+                $model_file->user_id= $user_id;
+                $model_file->creation_date= date('Y-m-d H:i:s');
+                $model_file->modified_date= date('Y-m-d H:i:s');
+                $model_file->storage_type= 'local';
+                //$model_file->mime_major= $mime[0];
+                //$model_file->hash= $return['hash'];
+                $model_file->extension= ltrim(strrchr($thumbnail->getThumbnailBaseName(), '.'), '.');
+                //$model_file->mime_minor= $mime[1];
+                $model_file->size= filesize(Yii::app()->getBasePath().'/uploads/'. $thumbnail->getThumbnailBaseName());
+                $model_file->storage_path= Yii::app()->getBasePath().'/uploads/'. $thumbnail->getThumbnailBaseName();
+                $model_file->name= $thumbnail->getThumbnailBaseName();
+                $model_file->save();
+                
+                //Image orginal
+                $model_orgin= new File;
+                $model_orgin->parent_file_id= $model_file->id;
+                $model_orgin->type= 'orgin';
+                $model_orgin->parent_type='user';
+                $model_orgin->parent_id= $user_id;
+                $model_orgin->user_id= $user_id;
+                $model_orgin->creation_date= date('Y-m-d H:i:s');
+                $model_orgin->modified_date= date('Y-m-d H:i:s');
+                $model_orgin->storage_type= 'local';
+                //$model_orgin->mime_major= $mime[0];
+                $model_orgin->hash= $return['hash'];
+                $model_orgin->size= $_FILES["Filedata"]["size"];
+                $model_orgin->extension= ltrim(strrchr($file->getName(), '.'), '.');
+                //$model_orgin->mime_minor= $mime[1];
+                $model_orgin->storage_path= Yii::app()->getBasePath().'/uploads/'.$file_name;
+                $model_orgin->name= $file_name;
+                $model_orgin->save();
+                //save photo
+                $model->photo_id= $model_file->id;
+                $model->save();
+                
+            }
+            $this->redirect(array('user/mypage'));		
+		}
+
+		$this->render('edit',array(
+			'model'=>$model
+		));
     }
 }

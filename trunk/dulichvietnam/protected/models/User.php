@@ -78,6 +78,8 @@ class User extends CActiveRecord
 			'salt' => 'Salt',
 			'creation_date' => 'Creation Date',
 			'modified_date' => 'Modified Date',
+            'website'=> 'Website',
+            'information'=> "About"
 		);
 	}
 
