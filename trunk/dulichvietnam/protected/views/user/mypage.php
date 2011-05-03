@@ -29,6 +29,38 @@ li.num{font-size: 1.5em;}
     padding:6px 0 10px;
 }
  </style>
+ <head> 	
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+var map;
+ function load() {
+    
+    var marker;
+    
+    var latlng;
+    
+    latlng = new google.maps.LatLng(-34.397, 150.644);
+    
+    var myOptions = {
+      zoom: 8,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map"), myOptions);
+    //set maker hien tai
+    
+    marker = new google.maps.Marker({
+      map:map,
+      //draggable:true,
+      animation: google.maps.Animation.DROP,
+      position: latlng
+    });
+    
+    
+   
+}
+    </script>
+  </head>
  <div id="slider">
     <h2>My page</h2>
   </div>
@@ -118,10 +150,14 @@ li.num{font-size: 1.5em;}
     
     </div>
     <div class="left">
+        
         <h2>Information</h2>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/test.gif" alt="picture" width="36" height="28" class="floated" />
         <div class="clr"></div>
         <div style="background: #F7F6FB none repeat scroll 0 0;">Hi, <?php echo Comment::model()->getAuthorLink($user->id);?>!, <a href="<?php echo Yii::app()->request->baseUrl.'/?r=user/edit&user_id='.$user->id;?>"><?php echo "edit";?></a></div>
+        <?php if($user->type=='admin'){?>
+            <a href="<?php echo Yii::app()->request->baseUrl.'/?r=user/admin' ?>"><?php echo "admin";?></a>
+        <?php }?>
         <p>
             <?php 
                 $user_photo= User::model()->getUser($user->id);
@@ -162,6 +198,9 @@ li.num{font-size: 1.5em;}
                 </li>
             </ul>
         </div>
+        
+        <div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
+        
         <div class="clr"></div>
     </div>
   </div>

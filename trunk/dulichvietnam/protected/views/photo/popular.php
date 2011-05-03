@@ -8,6 +8,7 @@
     text-align:center;
     padding-right: 10px;
 }
+.menu ul{width: 425px;}
 .right{width: 510px;}
 .left{width:416px;}
 

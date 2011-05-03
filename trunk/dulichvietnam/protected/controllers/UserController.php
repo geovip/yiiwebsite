@@ -110,14 +110,94 @@ class UserController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+       
 		if(Yii::app()->request->isPostRequest)
 		{
+            
+            //delete all albums of user
+            $albums= Album::model()->AdminAlbum($id);
+            
+            try{
+                if(count($albums)){
+                    foreach($albums as $album){
+                        $photos= Photo::model()->listPhoto($album->id);
+                        if(count($photos)){
+                            foreach($photos as $photo){
+                                try{
+                                    //delete comments photos
+                                    $photo_comments= Comment::model()->getListComment($photo->id);
+                                    if(count($photo_comments)){
+                                        foreach($photo_comments as $comment){
+                                            $comment->delete();
+                                        }
+                                    }
+                                    //get ratings
+
+                                    $ratings= Rating::model()->getListRatingPhoto($photo->id);
+                                    if(count($ratings)){
+                                        foreach($ratings as $rating){
+                                            $rating->delete();
+                                        }
+                                    }
+                                    $file_thumb= File::model()->getFile($photo->file_id);
+                                    $file_ogr= File::model()->getFileOrginal($photo->file_id);
+                                    @unlink(Yii::app()->getBasePath().'/uploads/'.$file_thumb->name);
+                                    @unlink(Yii::app()->getBasePath().'/uploads/'.$file_ogr->name);
+                                    $file_thumb->delete();
+                                    $file_ogr->delete();
+                                    $photo->delete();
+                                }
+                                catch(Exception $e){
+                                    throw $e;
+                                }
+                                
+                            }
+                        }
+                        
+                        //list comments
+                        $comments= Comment::model()->getListCommentAlbum($album->id);
+                        //del comments
+                        if(count($comments)){
+                            foreach($comments as $comment){
+                                $comment->delete();
+                            }
+                        }
+                        
+                        $album->delete();
+                    }
+                }
+            }
+            catch(Exception $ef){
+                throw $ef;
+            }
+
+            //delete comments
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+            //delete photo profile
+            $model= $this->loadModel($id);
+            
+            $photo_id= $model->photo_id;
+            try{
+                if(count($photo_id)){
+                    $profile_file_thumb= File::model()->getFile($photo_id);
+                    $profile_file_ogr= File::model()->getFileOrginal($photo_id);
+                    @unlink(Yii::app()->getBasePath().'/uploads/'.$profile_file_thumb->name);
+                    @unlink(Yii::app()->getBasePath().'/uploads/'.$profile_file_ogr->name);
+                    $profile_file_thumb->delete();
+                    $profile_file_ogr->delete();
+                }
+            }
+            catch(Exception $ex){
+                throw $ex;
+            }
+			$model->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
+			if(!isset($_GET['ajax'])){
+			     
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+                
+            }
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
@@ -196,6 +276,7 @@ class UserController extends Controller
                 $model->email= $email;
                 $model->phone= $phone;
                 $model->password= md5($password);
+                $model->type= "user";
                 $model->creation_date= date('Y-m-d H:i:s');
                 $model->modified_date= date('Y-m-d H:i:s');
                 $model->save();
@@ -303,7 +384,13 @@ class UserController extends Controller
     public function actionMypage(){
         $user_id= Yii::app()->user->getId();
         //get 6 pic popular(view)
-          
+        //var_dump($user_id);exit;
+        $model=User::model()->findByPk((int)$user_id);
+        if($model===null){
+            Yii::app()->user->logout();
+            $this->redirect(Yii::app()->homeUrl);
+			//throw new CHttpException(404,'The requested page does not exist.');  
+        }
         $photos= Photo::model()->listPhotoMypage($user_id, 6);
         
         //get user
@@ -419,4 +506,5 @@ class UserController extends Controller
 			'model'=>$model
 		));
     }
+    
 }

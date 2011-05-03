@@ -1,3 +1,35 @@
+<head> 	
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+var map;
+ function load() {
+    
+    var marker;
+    
+    var latlng;
+    
+    latlng = new google.maps.LatLng(-34.397, 150.644);
+    
+    var myOptions = {
+      zoom: 8,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map"), myOptions);
+    //set maker hien tai
+    
+    marker = new google.maps.Marker({
+      map:map,
+      //draggable:true,
+      animation: google.maps.Animation.DROP,
+      position: latlng
+    });
+    
+    
+   
+}
+    </script>
+  </head>
 <div id="slider">
     <h2>Add Photo</h2>
   </div>
@@ -9,21 +41,9 @@
       <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
       </div>
       <div class="left">
-        <h2>Contact Details</h2>
-        <div class="clr"></div>
-        <p>Address:<br />
-          901 12th Avenue, P.O. Box 222000<br />
-          Seattle, WA 98122-1090</p>
-        <div class="bg"></div>
-        <p>Telephone: +1 959 603 6035<br />
-          FAX: +1 504 889 9898<br />
-          E-mail: mail@companyname.com<br />
-          Website: www.yoursitename.com</p>
-        <div class="bg"></div>
-        <p>Quisque malesuada luctus dignissim bibendum a lobortis mauris placerat.</p>
-        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. <br />
-          Nulla consequat massa quis enim.</p>
-        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/r_bg.gif" alt="picture" width="293" height="8" class="floated" /></div>
+        <div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
+        
+        </div>
       <div class="clr"></div>
     </div>
   </div>

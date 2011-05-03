@@ -18,6 +18,7 @@
 .rating_star_big_half{
     background-image: url(<?php echo Yii::app()->request->baseUrl; ?>/images/star_big_half.png)
 }
+.menu ul{width: 425px;}
 .right{width: 506px;}
 .left{width: 390px;}
 </style>

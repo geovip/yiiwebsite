@@ -159,4 +159,11 @@ class Album extends CActiveRecord
                         );
         return self::model()->findAll($condition);
     }
+    public function AdminAlbum($user_id){
+        $condition= array(
+                        'condition'=>'user_id=:user_id',
+                        'params'=>array(':user_id'=>$user_id)
+                        );
+        return self::model()->findAll($condition);
+    }
 }

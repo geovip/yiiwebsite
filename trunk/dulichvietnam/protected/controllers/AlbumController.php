@@ -462,6 +462,21 @@ class AlbumController extends Controller
         
         foreach($photos as $photo){
             try{
+                //delete comments photos
+                $photo_comments= Comment::model()->getListComment($photo->id);
+                if(!empty($photo_comments)){
+                    foreach($photo_comments as $comment){
+                        $comment->delete();
+                    }
+                }
+                //get ratings
+
+                $ratings= Rating::model()->getListRatingPhoto($photo->id);
+                if(count($ratings)){
+                    foreach($ratings as $rating){
+                        $rating->delete();
+                    }
+                }
                 $file_thumb= File::model()->getFile($photo->file_id);
                 $file_ogr= File::model()->getFileOrginal($photo->file_id);
                 @unlink(Yii::app()->getBasePath().'/uploads/'.$file_thumb->name);
@@ -558,4 +573,13 @@ class AlbumController extends Controller
 			Yii::app()->end();
 		}
 	}
+    //delete comment
+    public function actionDelComment($comment_id){
+        if(isset($_POST['ajax'])){
+            $model=Comment::model()->findByPk((int)$comment_id);
+            $model->delete();
+            echo 1;
+            exit;
+        }
+    }
 }
