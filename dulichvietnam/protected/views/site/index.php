@@ -156,13 +156,27 @@ function createMarker(point, photo_id, file_id, name) {
         <div class="clr"></div>
         <p>“ Nunc nec ipsum sed nisi dictum mollis. Praesent malesuada mauris a odio adipiscing mollis. In varius tincidunt elit vitae eleifend. Etiam fermentum suscipit est vel aliquet. ”</p>
         <div class="bg"></div>
-        <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/test_img.gif" alt="picture" width="38" height="37" border="0" class="floated" style="padding:10px 20px 0 0;" /></a>
-        <p style="padding:10px 20px 0 20px;"><strong>Mr Mark, <br />
-          Creative Director of Website tourvn.vn</strong></p>
-        <div class="bg"></div>
-        <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/test_img.gif" alt="picture" width="38" height="37" border="0" class="floated" style="padding:10px 20px 0 0;" /></a>
-        <p style="padding:10px 20px 0 20px;"><strong>Mr Jelly, <br />
-          Creative Director of Website tourvn.vn</strong></p>
+        <?php 
+            $users= User::model()->getAdmin('admin');
+            
+            foreach($users as $user){
+                //var_dump($user->username);exit;
+                $file= File::model()->getFile($user->photo_id);
+                
+        ?>
+        <?php if(!empty($file->name)){?>
+                <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/protected/uploads/<?php echo $file->name?>" alt="picture" width="38" height="37" border="0" class="floated" style="padding:10px 20px 0 0;" /></a>
+        <?php } else{?>
+                <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/nouser.png" alt="picture" width="38" height="37" border="0" class="floated" style="padding:10px 20px 0 0;" /></a>
+        <?php }
+        ?>
+                <p style="padding:10px 20px 0 20px;"><strong><?php echo $user->username;?>, <br />
+                Creative Director of Website tourvn.vn</strong></p>
+                <div class="bg"></div>
+        <?php 
+                
+            }
+        ?>
       </div>
       <div class="clr"></div>
     </div>
