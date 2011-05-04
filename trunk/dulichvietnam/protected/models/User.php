@@ -120,4 +120,12 @@ class User extends CActiveRecord
         
         return $file;
     }
+    public function getAdmin($type){
+        $condition= array(
+                        'condition'=>'type=:type',
+                        'params'=>array(':type'=>$type)
+        );
+        $users= self::model()->findAll($condition);
+        return $users;
+    }
 }
