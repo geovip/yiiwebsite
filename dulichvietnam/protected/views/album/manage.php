@@ -40,7 +40,15 @@ var map;
   <div class="body">
   
     <div class="body_resize">
-  
+    <?php 
+        if(!Yii::app()->user->isGuest){?>
+    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/listalbum'?>"><?php echo "Hot Album";?></a>
+    |
+    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/manage'?>"><?php echo "My Album";?></a>
+    |
+    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/create'?>"><?php echo "Upload";?></a>
+    <?php }?>
+
     <?php $this->widget('zii.widgets.CListView', array(
     	'dataProvider'=>$dataProvider,
     	'itemView'=>'_list',
