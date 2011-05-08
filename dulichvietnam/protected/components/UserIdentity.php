@@ -17,6 +17,7 @@ class UserIdentity extends CUserIdentity
 	 */
 	
     private $_id;
+    private $_isAdmin = false;
     public function authenticate()
     {
         $record=User::model()->findByAttributes(array('username'=>$this->username));
@@ -27,6 +28,11 @@ class UserIdentity extends CUserIdentity
         else
         {
             $this->_id=$record->id;
+            // is admin
+            if($record->type == 'admin')
+            {
+                $this->_isAdmin = true;
+            }
             $this->setState('displayname', $record->displayname);
             $this->errorCode=self::ERROR_NONE;
         }
@@ -36,5 +42,10 @@ class UserIdentity extends CUserIdentity
     public function getId()
     {
         return $this->_id;
+    }
+    
+    public function isAdmin()
+    {
+        return $this->_isAdmin;
     }
 }
