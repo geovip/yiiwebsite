@@ -1,5 +1,5 @@
 <style type="text/css">
-.error-message{color: red;}
+.error-message{color: red; padding-left:129px;}
 </style><head> 	
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
@@ -33,20 +33,15 @@ var map;
     </script>
   </head>
 
-<div id="slider">
-    <h2>Sign up</h2>
-</div>
-<div class="clr"></div>
-<div class="body">
-    <div class="body_resize">
-        <div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
-    
-        <div class="right">
-            <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
-        </div>
 
-    </div>
-</div>
+
+<div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
+    
+        
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+      
+
+
 <script type="text/javascript">
 window.addEvent('domready', function(){
    jQuery('#signup').click(function(){
@@ -114,18 +109,23 @@ function validUsername(txt_id, min, err_id, lbl){
 	var str = document.getElementById(txt_id);	
 	var err = document.getElementById(err_id);	
 	if(str.value.length < min){     
-		if(str.className.indexOf("error") < 0) str.className += "error";
+		if(str.className.indexOf("error") < 0){
+		  
+		  //str.className += "error";
+        }
 		err.innerHTML = lbl + " at least " + min + " character";
 		return false;
 	}else{
 	    var aphabel = new RegExp(/^([a-zA-Z0-9]+)$/);
 		if(aphabel.test(str.value)) {
-            str.className = str.className.replace('error','');
+            //str.className = str.className.replace('error','');
             err.innerHTML = "";
     		return true;
 		}
 		else{
-			if(str.className.indexOf("error") < 0) str.className += "error";
+			if(str.className.indexOf("error") < 0){
+                //str.className += "error";
+            }
 		 	err.innerHTML = lbl + " only letters and numbers";
             return false;
 		}		
@@ -136,19 +136,23 @@ function checkPassword(txt_id, min, err_id, lbl){
     
 	var err = document.getElementById(err_id);	
 	if(str.value.length < min){     
-		if(str.className.indexOf("error") < 0) str.className += "error";
+		if(str.className.indexOf("error") < 0){
+		  //str.className += "error";
+        }
 		err.innerHTML = lbl + " at least " + min + " character";
 		return false;
 	}else{
 	    var aphabel = new RegExp(/([a-zA-Z]+)/);
         var numberic = new RegExp(/([0-9]+)/);
 		if(aphabel.test(str.value) && numberic.test(str.value)) {
-            str.className = str.className.replace('error','');
+            //str.className = str.className.replace('error','');
             err.innerHTML = "";
     		return true;
 		}
 		else{
-			if(str.className.indexOf("error") < 0) str.className += "error";
+			if(str.className.indexOf("error") < 0){
+                //str.className += "error";
+            }
 		 	err.innerHTML = lbl + " must only letters and numbers";
             return false;
 		}		
@@ -160,10 +164,12 @@ function matchValue(txt_id1,txt_id2,err_id,lbl1,lbl2) {
 	var err = document.getElementById(err_id);		
 	if(str1.value === str2.value){     
 		err.innerHTML = "";
-		str2.className = str2.className.replace('error','');
+		//str2.className = str2.className.replace('error','');
 		return true;
 	}else{
-		 if(str2.className.indexOf("error") < 0) str2.className += "error";
+		 if(str2.className.indexOf("error") < 0){
+            //str2.className += "error";
+         }
 		 err.innerHTML = lbl1 + " is not match with " + lbl2;		 
 		 return false;
 	}
@@ -174,10 +180,12 @@ function isEmail(email_id,err_id){
 	emailRegExp = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.([a-z]){2,4})$/;
 	if(emailRegExp.test(str.value)){     
 	err.innerHTML = "";
-	str.className = str.className.replace('error','');
+	//str.className = str.className.replace('error','');
 	return true;
 	}else{
-	 if(str.className.indexOf("error") < 0) str.className += "error";
+	 if(str.className.indexOf("error") < 0){
+	   //str.className += "error";
+     }
 	 err.innerHTML = "Email address incorect";	 
 	return false;
 	}
