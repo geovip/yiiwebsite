@@ -74,4 +74,9 @@ class LoginForm extends CFormModel
 		else
 			return false;
 	}
+        
+        public function isAdmin()
+        {
+            return $this->_identity->isAdmin();
+        }
 }
