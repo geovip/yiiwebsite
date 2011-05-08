@@ -111,77 +111,49 @@ function createMarker(point, photo_id, file_id, name) {
     </script>
    </head>
 <body onload="load()" onunload="GUnload()" >
+	<section id="content">
+			<article class="col1">
+				<h3>Hot Travel</h3>
+				<div class="pad">
+					<div class="wrapper under">
+						<figure class="left marg_right1"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/page1_img1.jpg" alt=""></figure>
+						<p class="pad_bot2"><strong>Italy<br>Holidays</strong></p>
+						<p class="pad_bot2">Lorem ipsum dolor sit amet, consect etuer adipiscing.</p>
+						<a href="#" class="marker_1"></a>
+					</div>
+					<div class="wrapper under">
+						<figure class="left marg_right1"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/page1_img2.jpg" alt=""></figure>
+						<p class="pad_bot2"><strong>Philippines<br>Travel</strong></p>
+						<p class="pad_bot2">Lorem ipsum dolor sit amet, consect etuer adipiscing.</p>
+						<a href="#" class="marker_1"></a>
+					</div>
+					<div class="wrapper">
+						<figure class="left marg_right1"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/page1_img3.jpg" alt=""></figure>
+						<p class="pad_bot2"><strong>Cruise<br>Holidays</strong></p>
+						<p class="pad_bot2">Lorem ipsum dolor sit amet, consect etuer adipiscing.</p>
+						<a href="#" class="marker_1"></a>
+					</div>
+				</div>
+       		</article>
+			<article class="col2 pad_left1">
+				<h2>Popular Places</h2>
+				<div class="wrapper under">
+					<figure class="left marg_right1"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/page1_img4.jpg" alt=""></figure>
+					<p class="pad_bot2"><strong>Hotel du Havre</strong></p>
+					<p class="pad_bot2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+					<p class="pad_bot2"><strong>Nemo enim ipsam voluptatem</strong> quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p>
+					<a href="#" class="marker_2"></a>
+				</div>
+				<div class="wrapper">
+					<figure class="left marg_right1"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/page1_img5.jpg" alt=""></figure>
+					<p class="pad_bot2"><strong>Hotel Vacance</strong></p>
+					<p class="pad_bot2">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.</p>
+					<p class="pad_bot2">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda.</p>
+					<a href="#" class="marker_2"></a>
+				</div>
+       		</article>
+	</section>
 
-
-   <div id="slider">
-    
-    <p>
-        <div align="center" id="map" style="width: 100%; height: 400px"><br/></div>
-    </p>
-
-     
-    <div class="clr"></div>
-    <div class="click_blog"> <img src="<?php echo Yii::app()->request->baseUrl ?>/images/Get_in_touch.gif" alt="picture" width="163" height="47" />
-      <p>Mikonos island in Greece, Chichi-jima in Japan, more cool places in Tour VN</p>
-      <div class="clr"></div>
-    </div>
-    <!-- end #slideshow -->
-    <div class="clr"></div>
-  </div>
-  </body>
-  <div class="body">
-    <div class="body_resize">
-    <?php
-        if(!empty($albums)){
-            foreach($albums as $album){
-                $file_id= Photo::getPhoto($album->id)->file_id;
-                $photo_name= File::getFile($file_id)->name;
-                ?>
-                <div class="port">
-                    <h2><?php echo $album->title;?></h2>
-                        <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>"><img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="276" height="148" />
-                        </a>
-                    <div class="clr"></div>
-                    <p><?php echo $album->description;?></p>
-                    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/read_more.gif" alt="picture" width="85" height="26" border="0" class="floated" /></a></div>
-      
-            <?php 
-            }
-        }
-    ?>
-      
-      <div class="port last">
-        <h2>Introduction</h2>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/test.gif" alt="picture" width="36" height="28" class="floated" />
-        <div class="clr"></div>
-        <p>“ Nunc nec ipsum sed nisi dictum mollis. Praesent malesuada mauris a odio adipiscing mollis. In varius tincidunt elit vitae eleifend. Etiam fermentum suscipit est vel aliquet. ”</p>
-        <div class="bg"></div>
-        <?php 
-            $users= User::model()->getAdmin('admin');
-            
-            foreach($users as $user){
-                //var_dump($user->username);exit;
-                $file= File::model()->getFile($user->photo_id);
-                
-        ?>
-        <?php if(!empty($file->name)){?>
-                <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/protected/uploads/<?php echo $file->name?>" alt="picture" width="38" height="37" border="0" class="floated" style="padding:10px 20px 0 0;" /></a>
-        <?php } else{?>
-                <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/nouser.png" alt="picture" width="38" height="37" border="0" class="floated" style="padding:10px 20px 0 0;" /></a>
-        <?php }
-        ?>
-                <p style="padding:10px 20px 0 20px;"><strong><?php echo $user->username;?>, <br />
-                Creative Director of Website tourvn.vn</strong></p>
-                <div class="bg"></div>
-        <?php 
-                
-            }
-        ?>
-      </div>
-      <div class="clr"></div>
-    </div>
-  </div>
-  <div class="clr"></div>
   
-
-
+</body>
+  

@@ -1,36 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
 
-	<!-- blueprint CSS framework -->
-    <!--
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-    -->
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
-<!--
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-    -->
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
-    <style type="text/css">
-    .main { margin:0 auto; padding:0;}
-    .main2 { margin:0 auto; padding:0; background: url(<?php echo Yii::app()->request->baseUrl;?>/images/main_bg2.gif) top center repeat-x;}
-    .search span { display:block; float:left; background: url(<?php echo Yii::app()->request->baseUrl;?>/images/search_bg.gif) left top no-repeat; width:168px; padding:0; height:32px;}
-    </style>
+	
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/mootools-1.2.2.js"></script>
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/cufon-yui.js"></script>
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/myradpro.font.js"></script>
+	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/layout.css" type="text/css" media="all">
+	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" type="text/css" media="all">
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.4.2.js" ></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/cufon-yui.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/cufon-replace.js"></script>  
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/Myriad_Pro_600.font.js"></script>
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script_other.js"></script>
+		<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/html5.js"></script>
+	<![endif]-->
     <script type="text/javascript">
         Cufon.replace('h1')('h2')('h3')('h4')('div.menu li');
     </script>
-    <!-- flash script -->
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/flash_detect.v1.7.js"></script>
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.3.2.min.js"></script>
+   
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.validate.js"></script>
 
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -42,96 +32,105 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
-<body>
-
-<div class="main">
-
-	<div class="header">
-    <div class="Click"> Follow us on the social network sites for the latest updates on our projects or so.</div>
-    <div class="rss"> 
-        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/rss_4.gif" alt="picture" width="16" height="16" class="floated" /> 
-        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/rss_3.gif" alt="picture" width="16" height="16" class="floated" /> 
-        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/rss_2.gif" alt="picture" width="16" height="16" class="floated" /> 
-        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/rss_1.gif" alt="picture" width="16" height="16" class="floated" /> 
-    </div>
-
-    <div class="search">
-      <form id="form1" name="form1" method="post" action="">
-        <span>
-        <input name="search" type="text" class="keywords" id="textfield" maxlength="50" value="Search..." />
-        </span>
-        <input name="b" type="image" src="<?php echo Yii::app()->request->baseUrl ?>/images/search.gif" class="button" />
-      </form>
-      
-    </div>
-    <div class="clr"></div>
-    <div class="menu">
-      <div class="logo"><a href="#"><img src="<?php echo Yii::app()->request->baseUrl ?>/images/logo.png" width="197" height="89" border="0" alt="logo" /></a></div>
-      <ul>
-      <?php
-          $this->widget('zii.widgets.CMenu',array(
-    			'items'=>array(
-    				array('label'=>'Albums', 'url'=>array('/album/listalbum'), 'visible'=>!Yii::app()->user->isGuest),
-    				//array('label'=>'Upload', 'url'=>array('/album/create'), 'visible'=>!Yii::app()->user->isGuest),
-    				array('label'=>'My Page', 'url'=>array('/user/mypage'), 'visible'=>!Yii::app()->user->isGuest),
-    				
-    				array('label'=>'Sign up', 'url'=>array('/user/signup'), 'visible'=>Yii::app()->user->isGuest),
-    				array('label'=>'Sign in', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-    				array('label'=>'Sign out ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-    			),
-    		));  
-      ?>
-        
-      </ul>
-      <div class="clr"></div>
-    </div>
-   
-    <div class="clr"></div>
-  </div>
- 
-   <div class="clr"></div>
-    <!-- header -->
-<!--
-	<div id="mainmenu">-->
-    
-		<?php 
-        /*
-            $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); 
-        */ ?>
-	<!-- mainmenu -->
-
-	<?php 
-    /*
-        $this->widget('zii.widgets.CBreadcrumbs', array(
-		'links'=>$this->breadcrumbs,
-	));
-    */ 
-    ?>
-    <!-- breadcrumbs -->
-
-	<?php echo $content; ?>
-    <div class="clr"></div>
-    <div class="FBG">
-    
-  </div>
-	
-
-</div><!-- page -->
-<div class="footer">
-      <div class="footer_resize">
-        <p class="leftt">© Copyright <a href="#">TourVN</a>.  </p>
-        <p class="right"><a href="http://www.tourvn.vn">http://www.tourvn.vn </a></p>
-        <div class="clr"></div>
-      </div>
-    </div><!-- footer -->
+<body id="page1">
+<div class="extra">
+	<div class="main">
+<!-- header -->
+		<header>
+			<div class="wrapper">
+				<h1><a href="index.html" id="logo">Around the World</a></h1>
+				<div class="right">
+					<div class="wrapper">
+						<form id="search" action="" method="post">
+							<div class="bg">
+								<input type="submit" class="submit" value="">
+								<input type="text" class="input">
+							</div>
+						</form>
+					</div>
+					<div class="wrapper">
+						<nav>
+							<ul id="top_nav">
+								<li><a href="#">Register</a></li>
+								<li><a href="#">Log In</a></li>
+								<li><a href="#">Help</a></li>
+							</ul>
+						</nav>
+					</div>	
+				</div>
+			</div>
+			<nav>
+				<ul id="menu">
+					<li><a href="index.html" class="nav1">Home</a></li>
+					<li><a href="About.html" class="nav2">About Us </a></li>
+					<li><a href="Tours.html" class="nav3">Our Tours</a></li>
+					<li><a href="Destinations.html" class="nav4">Destinations</a></li>
+					<li class="end"><a href="Contacts.html" class="nav5">Contacts</a></li>
+				</ul>
+			</nav>
+			<article class="col1">
+				<ul class="tabs">
+					<li><a href="#" class="active">Flight</a></li>
+					<li><a href="#">Hotel</a></li>
+					<li><a href="#">Car</a></li>
+					<li class="end"><a href="#">Cruise</a></li>
+				</ul>
+				<div class="tabs_cont">
+					<form id="form_1" action="" method="post">
+						<div class="bg">
+							<div class="wrapper">
+								<div class="radio">
+									<input type="radio" name="name1" checked>Round trip
+								</div>
+								<div class="radio"><input type="radio" name="name1">One way</div>
+							</div>
+							<a href="#">Multiple destinations</a>
+							<div class="wrapper"><input type="text" class="input">From</div>
+							<div class="wrapper"><input type="text" class="input">To</div>	
+							<div class="wrapper check_box"><input type="checkbox" checked ><a href="#">Search nearby airports</a></div>	
+							<div class="wrapper"><input type="text" class="input input2" value="04/11/2010"  onblur="if(this.value=='') this.value='04/11/2010'" onfocus="if(this.value =='04/11/2010' ) this.value=''">Depart (mm/dd/yy)</div>
+							<div class="wrapper pad_bot1"><input type="text" class="input input2" value="04/11/2010"  onblur="if(this.value=='') this.value='04/11/2010'" onfocus="if(this.value =='04/11/2010' ) this.value=''">Return  (mm/dd/yy)</div>
+							<div class="wrapper">
+								<div class="radio"><input type="radio" name="name2" checked>Economy cabin</div>
+								<div class="radio end"><input type="radio" name="name2">Business</div>
+							</div>
+							<div class="wrapper pad_bot1">
+								<a href="#" class="button" onclick="document.getElementById('form_1').submit()">Search</a>
+								Audlts <select><option>1</option></select>
+							</div>
+						</div>							
+					</form>
+				</div>
+			</article>
+			<article class="col1 pad_left1">
+				<div class="text">
+					<img src="images/text1.jpg" alt="">
+					<h2>The Best Offers</h2>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+					<a href="#" class="button">Read More</a>
+				</div>
+			</article>
+			<div class="img"><img src="images/img.jpg" alt=""></div>
+		</header><div class="inner_copy">More <a href="http://www.templatemonster.com/">Website Templates</a> at TemplateMonster.com!</div>
+<!-- / header -->
+<!-- content -->
+		<?php echo $content; ?>
+		
+<!-- / content -->
+	</div>
+	<div class="block"></div>
+</div>
+<div class="body1">
+	<div class="main">
+<!-- footer -->
+		<footer>
+			<a href="http://www.templatemonster.com/" target="_blank">Website template</a> designed by TemplateMonster.com<br>
+			<a href="http://www.templates.com/product/3d-models/" target="_blank">3D Models</a> provided by Templates.com
+		</footer>
+<!-- / footer -->
+	</div>
+</div>
+<script type="text/javascript"> Cufon.now(); </script>
 </body>
 </html>
 <head>
