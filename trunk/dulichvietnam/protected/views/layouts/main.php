@@ -44,15 +44,20 @@
 						<form id="search" action="" method="post">
 							<div class="bg">
 								<input type="submit" class="submit" value="">
-								<input type="text" class="input">
+								<input type="text" id="textfield" class="input">
 							</div>
 						</form>
 					</div>
 					<div class="wrapper">
 						<nav>
 							<ul id="top_nav">
-								<li><a href="#">Register</a></li>
-								<li><a href="#">Log In</a></li>
+                            <?php if(Yii::app()->user->isGuest){?>
+                                <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=user/signup'?>">Register</a></li>
+                                <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=site/login'?>">Sign In</a></li>
+                            <?php } else{?>
+                                <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=site/logout'?>">Sign Out</a></li>
+                                
+                            <?php }?>
 								<li><a href="#">Help</a></li>
 							</ul>
 						</nav>
@@ -122,7 +127,7 @@ function search(address) {
             });
            //add end
             }
-   jQuery('#form1').submit(function(){
+   jQuery('#search').submit(function(){
         var address= jQuery('#textfield').val();
         
         search(address);return false;

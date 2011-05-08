@@ -151,7 +151,7 @@ class Album extends CActiveRecord
         );
         return self::model()->find($condition);
     }
-    //display album at home page
+    //display album at home page with view count desc
     public function homeAlbum(){
         $condition= array(
                         'order'=> 'view_count DESC',
@@ -159,6 +159,15 @@ class Album extends CActiveRecord
                         );
         return self::model()->findAll($condition);
     }
+    //display album at home page with comment count desc
+    public function homeHotAlbum(){
+        $condition= array(
+                        'order'=> 'comment_count DESC',
+                        'limit'=>3
+                        );
+        return self::model()->findAll($condition);
+    }
+    
     public function AdminAlbum($user_id){
         $condition= array(
                         'condition'=>'user_id=:user_id',
