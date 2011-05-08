@@ -1,46 +1,36 @@
 <style type="text/css">
-ol li #LoginForm_rememberMe{float:left; margin-top: 6px;}
+.errorMessage{color: red; padding-left:129px;}
 </style>
-<div id="slider">
-    <h2>Login</h2>
-</div>
-
-<div class="body">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	//'id'=>'login-form',
-    'id'=> 'form-demo',
-	'enableAjaxValidation'=>true,
-)); ?>
-    <p>Please fill out the following form with your login credentials:</p>
-	<ol>
-        <li>
-            <?php echo $form->labelEx($model,'username'); ?>
-    		<?php echo $form->textField($model,'username'); ?>
-    		<?php echo $form->error($model,'username'); ?>
-        </li>
-        <li>
-            <?php echo $form->labelEx($model,'password'); ?>
-    		<?php echo $form->passwordField($model,'password'); ?>
-    		<?php echo $form->error($model,'password'); ?>
-            <p class="hint">
+<section id="content">
+<article class="col2 pad_left1">
+    <h2>Sign In</h2>
+    <?php $form=$this->beginWidget('CActiveForm', array(
+    	//'id'=>'login-form',
+        'id'=> 'form-demo',
+    	'enableAjaxValidation'=>true,
+    )); ?>
+    <div>
+        <p>Please fill out the following form with your login credentials:</p>
+        <div class="wrapper">
+            <?php echo $form->textField($model,'username',array('class'=>'input')); ?>
+            <?php echo $form->labelEx($model,'username'); ?>:
+            <?php echo $form->error($model,'username'); ?>
+        </div>
+        <div class="wrapper">
+            <?php echo $form->passwordField($model,'password', array('class'=>'input')); ?>
+            <?php echo $form->labelEx($model,'password'); ?>:
+            <?php echo $form->error($model,'password'); ?>
+        </div>
+        <p class="hint">
                 Hint: You may login with <tt>huynhnv/huynhnv88</tt> or <tt>dunghd/dunghd88</tt>.
-            </p>
-        </li>
-        <li>
+        </p>
+        <div class="wrapper">
             <?php echo $form->checkBox($model,'rememberMe'); ?>
-    		<?php echo $form->label($model,'rememberMe'); ?>
+            <?php echo $form->label($model,'rememberMe'); ?>
     		<?php echo $form->error($model,'rememberMe'); ?>
-        </li>
-        <li class="buttons">
-            <?php echo CHtml::submitButton('Login'); ?>
-        </li>
-    </ol>
-
-
-
-
-<?php $this->endWidget(); ?>
-
-</div>
-<!-- form -->
+        </div>
+        <?php echo CHtml::submitButton('Login', array('class'=>'button')); ?>
+    </div>
+    <?php $this->endWidget(); ?>
+</article>
+</section>

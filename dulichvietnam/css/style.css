@@ -76,6 +76,7 @@ footer a {color:#439deb}
 #ContactForm a {margin-left:10px;float:right;width:86px;text-align:center;padding:0}
 #ContactForm .input {float:right;margin-right:222px;width:335px;height:17px;border:1px solid #dcdcdc;background:#fff;padding:5px;margin-bottom:6px;color:#323232;font:13px Arial, Helvetica, sans-serif}
 #ContactForm textarea {overflow:auto;float:right;width:557px;height:307px;border:1px solid #dcdcdc;background:#fff;padding:5px;margin-bottom:16px;color:#323232;font:13px Arial, Helvetica, sans-serif}
+
 #form_1 {color:#fff;line-height:24px}
 #form_1 .input {float:right;background:#fff;width:133px;padding:1px 8px;font:12px Arial, Helvetica, sans-serif ;color:#7f7f7f;height:16px;margin-top:3px}
 #form_1 a {color:#439deb}
@@ -86,3 +87,9 @@ footer a {color:#439deb}
 #form_1 .input2 {width:62px}
 #form_1 select {width:58px;height:18px;padding:1px;margin-left:5px;margin-top:5px;display:inline-block}
 #form_1 .button {float:right;font-size:12px;color:#fff;width:66px;line-height:26px;text-decoration:none;text-transform:uppercase;text-align:center;background:#3081c8;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;behavior:url(js/PIE.htc);position:relative;padding:0}
+/* forms sign up */
+#form-demo {margin-top:-10px;line-height:29px;font-weight:bold;width:638px}
+#form-demo .file{margin-left: 84px;}
+#form-demo a {margin-left:10px;float:right;width:86px;text-align:center;padding:0}
+#form-demo .input {float:right;margin-right:222px;width:276px;height:17px;border:1px solid #dcdcdc;background:#fff;padding:5px;margin-bottom:6px;color:#323232;font:13px Arial, Helvetica, sans-serif}
+#form-demo textarea {overflow:auto;float:right;width:557px;height:307px;border:1px solid #dcdcdc;background:#fff;padding:5px;margin-bottom:16px;color:#323232;font:13px Arial, Helvetica, sans-serif}

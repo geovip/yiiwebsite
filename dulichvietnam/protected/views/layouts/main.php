@@ -52,7 +52,7 @@
 						<nav>
 							<ul id="top_nav">
                             <?php if(Yii::app()->user->isGuest){?>
-                                <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=user/signup'?>">Register</a></li>
+                                <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=user/signup'?>">Sign Up</a></li>
                                 <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=site/login'?>">Sign In</a></li>
                             <?php } else{?>
                                 <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=site/logout'?>">Sign Out</a></li>
