@@ -68,50 +68,9 @@
 					<li class="end"><a href="Contacts.html" class="nav5">Contacts</a></li>
 				</ul>
 			</nav>
-			<article class="col1">
-				<ul class="tabs">
-					<li><a href="#" class="active">Flight</a></li>
-					<li><a href="#">Hotel</a></li>
-					<li><a href="#">Car</a></li>
-					<li class="end"><a href="#">Cruise</a></li>
-				</ul>
-				<div class="tabs_cont">
-					<form id="form_1" action="" method="post">
-						<div class="bg">
-							<div class="wrapper">
-								<div class="radio">
-									<input type="radio" name="name1" checked>Round trip
-								</div>
-								<div class="radio"><input type="radio" name="name1">One way</div>
-							</div>
-							<a href="#">Multiple destinations</a>
-							<div class="wrapper"><input type="text" class="input">From</div>
-							<div class="wrapper"><input type="text" class="input">To</div>	
-							<div class="wrapper check_box"><input type="checkbox" checked ><a href="#">Search nearby airports</a></div>	
-							<div class="wrapper"><input type="text" class="input input2" value="04/11/2010"  onblur="if(this.value=='') this.value='04/11/2010'" onfocus="if(this.value =='04/11/2010' ) this.value=''">Depart (mm/dd/yy)</div>
-							<div class="wrapper pad_bot1"><input type="text" class="input input2" value="04/11/2010"  onblur="if(this.value=='') this.value='04/11/2010'" onfocus="if(this.value =='04/11/2010' ) this.value=''">Return  (mm/dd/yy)</div>
-							<div class="wrapper">
-								<div class="radio"><input type="radio" name="name2" checked>Economy cabin</div>
-								<div class="radio end"><input type="radio" name="name2">Business</div>
-							</div>
-							<div class="wrapper pad_bot1">
-								<a href="#" class="button" onclick="document.getElementById('form_1').submit()">Search</a>
-								Audlts <select><option>1</option></select>
-							</div>
-						</div>							
-					</form>
-				</div>
-			</article>
-			<article class="col1 pad_left1">
-				<div class="text">
-					<img src="images/text1.jpg" alt="">
-					<h2>The Best Offers</h2>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
-					<a href="#" class="button">Read More</a>
-				</div>
-			</article>
-			<div class="img"><img src="images/img.jpg" alt=""></div>
-		</header><div class="inner_copy">More <a href="http://www.templatemonster.com/">Website Templates</a> at TemplateMonster.com!</div>
+			
+		</header>
+		
 <!-- / header -->
 <!-- content -->
 		<?php echo $content; ?>

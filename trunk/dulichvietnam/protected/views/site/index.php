@@ -111,6 +111,7 @@ function createMarker(point, photo_id, file_id, name) {
     </script>
    </head>
 <body onload="load()" onunload="GUnload()" >
+	<div align="center" id="map" style="width: 100%; height: 400px"><br/></div>
 	<section id="content">
 			<article class="col1">
 				<h3>Hot Travel</h3>
