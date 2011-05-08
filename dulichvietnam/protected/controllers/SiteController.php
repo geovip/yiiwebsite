@@ -50,12 +50,14 @@ class SiteController extends Controller
                 }
             }
         }
-        //list album at home
+        //list album at home with view count
         $albums= Album::model()->homeAlbum();
-        
+        //list album at home with comment count
+        $albums_comments= Album::model()->homeHotAlbum();
 		$this->render('index', array(
                         'photos'=>$str,
-                        'albums'=>$albums
+                        'albums'=>$albums,
+                        'albums_comments'=>$albums_comments
                         ));
 	}
 

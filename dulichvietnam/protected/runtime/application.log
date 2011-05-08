@@ -1234,3 +1234,11 @@ Stack trace:
 #19 D:\xampp1.7.3\xampp\htdocs\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
 #20 D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
 #21 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=user/mypage
+2011/05/08 16:13:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "sigup".' in D:\xampp1.7.3\xampp\htdocs\yii\framework\web\CController.php:444
+Stack trace:
+#0 D:\xampp1.7.3\xampp\htdocs\yii\framework\web\CController.php(262): CController->missingAction('sigup')
+#1 D:\xampp1.7.3\xampp\htdocs\yii\framework\web\CWebApplication.php(328): CController->run('sigup')
+#2 D:\xampp1.7.3\xampp\htdocs\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('user/sigup')
+#3 D:\xampp1.7.3\xampp\htdocs\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/?r=user/sigup

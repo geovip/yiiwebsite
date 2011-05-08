@@ -116,42 +116,62 @@ function createMarker(point, photo_id, file_id, name) {
 			<article class="col1">
 				<h3>Hot Travel</h3>
 				<div class="pad">
-					<div class="wrapper under">
-						<figure class="left marg_right1"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/page1_img1.jpg" alt=""></figure>
-						<p class="pad_bot2"><strong>Italy<br>Holidays</strong></p>
-						<p class="pad_bot2">Lorem ipsum dolor sit amet, consect etuer adipiscing.</p>
-						<a href="#" class="marker_1"></a>
-					</div>
-					<div class="wrapper under">
-						<figure class="left marg_right1"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/page1_img2.jpg" alt=""></figure>
-						<p class="pad_bot2"><strong>Philippines<br>Travel</strong></p>
-						<p class="pad_bot2">Lorem ipsum dolor sit amet, consect etuer adipiscing.</p>
-						<a href="#" class="marker_1"></a>
-					</div>
-					<div class="wrapper">
-						<figure class="left marg_right1"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/page1_img3.jpg" alt=""></figure>
-						<p class="pad_bot2"><strong>Cruise<br>Holidays</strong></p>
-						<p class="pad_bot2">Lorem ipsum dolor sit amet, consect etuer adipiscing.</p>
-						<a href="#" class="marker_1"></a>
-					</div>
+                <?php
+					if(!empty($albums_comments)){
+						$i=0;
+						foreach($albums_comments as $album){
+							$i++;
+							$file_id= Photo::getPhoto($album->id)->file_id;
+							$photo_name= File::getFile($file_id)->name;
+							?>
+                            <?php if($i==1 || $i==2){?>
+								<div class="wrapper under">
+							<?php } else { ?>
+								<div class="wrapper">
+							<?php } ?>
+                                <figure class="left marg_right1">
+                                    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>">
+										<img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="116" height="116" />
+									</a>
+                                </figure>
+        						<p class="pad_bot2"><strong><?php echo $album->title;?></strong></p>
+        						<p class="pad_bot2"><?php echo substr($album->description, 0, 54);?></p>
+        						<a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>" class="marker_1"></a>
+        					</div>
+                            <?php 
+						}
+					}
+				?>
 				</div>
        		</article>
 			<article class="col2 pad_left1">
 				<h2>Popular Places</h2>
-				<div class="wrapper under">
-					<figure class="left marg_right1"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/page1_img4.jpg" alt=""></figure>
-					<p class="pad_bot2"><strong>Hotel du Havre</strong></p>
-					<p class="pad_bot2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-					<p class="pad_bot2"><strong>Nemo enim ipsam voluptatem</strong> quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p>
-					<a href="#" class="marker_2"></a>
-				</div>
-				<div class="wrapper">
-					<figure class="left marg_right1"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/page1_img5.jpg" alt=""></figure>
-					<p class="pad_bot2"><strong>Hotel Vacance</strong></p>
-					<p class="pad_bot2">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.</p>
-					<p class="pad_bot2">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda.</p>
-					<a href="#" class="marker_2"></a>
-				</div>
+				<?php
+					if(!empty($albums)){
+						$i=0;
+						foreach($albums as $album){
+							$i++;
+							$file_id= Photo::getPhoto($album->id)->file_id;
+							$photo_name= File::getFile($file_id)->name;
+							?>
+							<?php if($i==1){?>
+								<div class="wrapper under">
+							<?php } else { ?>
+								<div class="wrapper">
+							<?php } ?>
+								<figure class="left marg_right1">
+									<a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>">
+										<img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="246" height="195" />
+									</a>
+								</figure>
+								<p class="pad_bot2"><strong><?php echo $album->title;?></strong></p>
+								<p class="pad_bot2"><?php echo $album->description;?></p>
+								<a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>" class="marker_2"></a>
+							</div>
+						<?php 
+						}
+					}
+				?>
        		</article>
 	</section>
 
