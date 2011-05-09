@@ -16,6 +16,24 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'desc'); ?>
+		<?php echo $form->textField($model,'desc',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'desc'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'content'); ?>
+		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'content'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'type'); ?>
+		<?php echo $form->textField($model,'type',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->error($model,'type'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'address'); ?>
 		<?php echo $form->textField($model,'address',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'address'); ?>
@@ -25,6 +43,18 @@
 		<?php echo $form->labelEx($model,'img_file'); ?>
 		<?php echo $form->textField($model,'img_file',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'img_file'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'lat'); ?>
+		<?php echo $form->textField($model,'lat'); ?>
+		<?php echo $form->error($model,'lat'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'long'); ?>
+		<?php echo $form->textField($model,'long'); ?>
+		<?php echo $form->error($model,'long'); ?>
 	</div>
 
 	<div class="row">

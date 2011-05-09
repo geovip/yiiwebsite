@@ -28,12 +28,14 @@ class AdsController extends Controller {
             $model->attributes = $_POST['Adsvertisment'];
             $model->creation_date = date("Y-m-d H:i:s");
             $model->modified_date = date("Y-m-d H:i:s");
-            $model->img_file = CUploadedFile::getInstance($model, 'img_file');
+            $file_name = time() . '_' . CUploadedFile::getInstance($model, 'img_file');
+            $file = CUploadedFile::getInstance($model, 'img_file');
+            $model->img_file = $file_name;
 
             if ($model->save()) {
                 if (!is_dir(Yii::app()->basePath . '/uploads/ads'))
                     mkdir(Yii::app()->basePath . '/uploads/ads', 777);
-                $model->img_file->saveAs(Yii::app()->basePath . '/uploads/ads/' . $model->img_file);
+                $file->saveAs(Yii::app()->basePath . '/uploads/ads/' . $file_name);
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
@@ -55,15 +57,18 @@ class AdsController extends Controller {
 // $this->performAjaxValidation($model);
 
         if (isset($_POST['Adsvertisment'])) {
+            $old_image = $model->img_file;
             $model->attributes = $_POST['Adsvertisment'];
             $model->modified_date = date("Y-m-d H:i:s");
 
-            $model->img_file = CUploadedFile::getInstance($model, 'img_file');
+            $file_name = time() . '_' . CUploadedFile::getInstance($model, 'img_file');
+            $file = CUploadedFile::getInstance($model, 'img_file');
+            $model->img_file = $file_name;
 
-            if ($model->save()) {
-                if (!is_dir(Yii::app()->basePath . '/uploads/ads'))
-                    mkdir(Yii::app()->basePath . '/uploads/ads', 777);
-                $model->img_file->saveAs(Yii::app()->basePath . '/uploads/ads/' . $model->img_file);
+            if ($model->save()) {    
+                // remove old file
+                unlink(Yii::app()->basePath . '/uploads/ads/' . $old_image);
+                $file->saveAs(Yii::app()->basePath . '/uploads/ads/' . $file_name);
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
