@@ -10,6 +10,7 @@
         	'attributes'=>array(
         		//'id',
         		'username',
+                        'type',
         		'email',
         		'phone',
         		'displayname',

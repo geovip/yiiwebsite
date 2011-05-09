@@ -37,6 +37,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         'email',
         //'phone',
         'displayname',
+        'type',
         //'photo_id',
         /*
           'password',
@@ -46,14 +47,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
          */
         array(
             'class' => 'CButtonColumn',
-            'buttons' => array
-                (
-                'update' => array
-                    (
-                    //'url'=> Yii::app()->request->baseUrl.'/?r=user/edit&user_id='.$data->id
-                    'url' => 'Yii::app()->createUrl("user/edit", array("user_id"=>$data->id))',
-                )
-            ),
+            
         ),
     ),
 ));

@@ -3,7 +3,11 @@
 class AdsController extends Controller {
 
     public $layout = 'admin';
-
+    public function init()
+    {
+        if(!Yii::app()->session['isAdmin'])
+                $this->redirect(Yii::app()->createUrl('admin'));
+    }
     /**
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed

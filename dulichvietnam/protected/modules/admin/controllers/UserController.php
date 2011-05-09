@@ -4,6 +4,11 @@ class UserController extends Controller {
 
     public $layout = 'admin';
 
+    public function init() {
+        if (!Yii::app()->session['isAdmin'])
+            $this->redirect(Yii::app()->createUrl('admin'));
+    }
+
     public function actionIndex() {
         $this->render('index');
     }
@@ -30,6 +35,8 @@ class UserController extends Controller {
 
         if (isset($_POST['User'])) {
             $model->attributes = $_POST['User'];
+            $model->creation_date = date("Y-m-d H:i:s");
+            $model->modified_date = date("Y-m-d H:i:s");
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
