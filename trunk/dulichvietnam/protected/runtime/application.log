@@ -1354,3 +1354,193 @@ Stack trace:
 #7 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
 #8 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
 #9 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/ads/delete&id=1
+2011/05/09 09:45:37 [error] [exception.CException] exception 'CException' with message 'Property "CRequiredValidator.0" is not defined.' in F:\Working\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\Working\www\yii\framework\validators\CValidator.php(161): CComponent->__set('0', 'length')
+#1 F:\Working\www\yii\framework\base\CModel.php(281): CValidator::createValidator('required', Object(Adsvertisment), 'name', Array)
+#2 F:\Working\www\yii\framework\base\CModel.php(255): CModel->createValidators()
+#3 F:\Working\www\yii\framework\base\CModel.php(546): CModel->getValidators()
+#4 F:\Working\www\yii\framework\base\CModel.php(465): CModel->getSafeAttributeNames()
+#5 F:\Working\www\yii\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 F:\Working\www\yii\framework\db\ar\CActiveRecord.php(126): CComponent->__set('attributes', Array)
+#7 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php(28): CActiveRecord->__set('attributes', Array)
+#8 F:\Working\www\yii\framework\web\actions\CInlineAction.php(57): AdsController->actionAdd()
+#9 F:\Working\www\yii\framework\web\CController.php(300): CInlineAction->run()
+#10 F:\Working\www\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#11 F:\Working\www\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('add')
+#13 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('admin/ads/add')
+#14 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#15 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/ads/add
+2011/05/09 09:51:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "al".' in F:\Working\www\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('al')
+#1 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=al
+2011/05/09 09:51:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admi".' in F:\Working\www\yii\framework\web\CController.php:444
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CController.php(262): CController->missingAction('admi')
+#1 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('admi')
+#2 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('album/admi')
+#3 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=album/admi
+2011/05/09 10:14:04 [error] [php] unlink(F:\Working\www\yiiwebsite\dulichvietnam\protected/uploads/ads/Penguins.jpg) [<a href='function.unlink'>function.unlink</a>]: No such file or directory (F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php:104)
+Stack trace:
+#0 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php(84): Adsvertisment->delete()
+#1 unknown(0): AdsController->actionDelete()
+#2 F:\Working\www\yii\framework\web\actions\CInlineAction.php(54): ReflectionMethod->invokeArgs()
+#3 F:\Working\www\yii\framework\web\CController.php(300): CInlineAction->run()
+#4 F:\Working\www\yii\framework\web\CController.php(278): AdsController->runAction()
+#5 F:\Working\www\yii\framework\web\CController.php(257): AdsController->runActionWithFilters()
+#6 F:\Working\www\yii\framework\web\CWebApplication.php(328): AdsController->run()
+#7 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController()
+#8 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#9 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin%2Fads%2Fdelete&id=4&ajax=adsvertisment-grid
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php (104)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (84)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/09 10:14:16 [error] [php] unlink(F:\Working\www\yiiwebsite\dulichvietnam\protected/uploads/ads/Penguins.jpg) [<a href='function.unlink'>function.unlink</a>]: No such file or directory (F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php:104)
+Stack trace:
+#0 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php(84): Adsvertisment->delete()
+#1 unknown(0): AdsController->actionDelete()
+#2 F:\Working\www\yii\framework\web\actions\CInlineAction.php(54): ReflectionMethod->invokeArgs()
+#3 F:\Working\www\yii\framework\web\CController.php(300): CInlineAction->run()
+#4 F:\Working\www\yii\framework\web\CController.php(278): AdsController->runAction()
+#5 F:\Working\www\yii\framework\web\CController.php(257): AdsController->runActionWithFilters()
+#6 F:\Working\www\yii\framework\web\CWebApplication.php(328): AdsController->run()
+#7 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController()
+#8 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#9 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin%2Fads%2Fdelete&id=4&ajax=adsvertisment-grid
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php (104)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (84)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/09 10:20:22 [error] [php] unlink(F:\Working\www\yiiwebsite\dulichvietnam\protected/uploads/ads/Desert.jpg) [<a href='function.unlink'>function.unlink</a>]: No such file or directory (F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php:104)
+Stack trace:
+#0 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php(84): Adsvertisment->delete()
+#1 unknown(0): AdsController->actionDelete()
+#2 F:\Working\www\yii\framework\web\actions\CInlineAction.php(54): ReflectionMethod->invokeArgs()
+#3 F:\Working\www\yii\framework\web\CController.php(300): CInlineAction->run()
+#4 F:\Working\www\yii\framework\web\CController.php(278): AdsController->runAction()
+#5 F:\Working\www\yii\framework\web\CController.php(257): AdsController->runActionWithFilters()
+#6 F:\Working\www\yii\framework\web\CWebApplication.php(328): AdsController->run()
+#7 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController()
+#8 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#9 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin%2Fads%2Fdelete&id=4&ajax=adsvertisment-grid
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php (104)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (84)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/09 10:20:32 [error] [php] unlink(F:\Working\www\yiiwebsite\dulichvietnam\protected/uploads/ads/Chrysanthemum.jpg) [<a href='function.unlink'>function.unlink</a>]: No such file or directory (F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php:104)
+Stack trace:
+#0 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php(84): Adsvertisment->delete()
+#1 unknown(0): AdsController->actionDelete()
+#2 F:\Working\www\yii\framework\web\actions\CInlineAction.php(54): ReflectionMethod->invokeArgs()
+#3 F:\Working\www\yii\framework\web\CController.php(300): CInlineAction->run()
+#4 F:\Working\www\yii\framework\web\CController.php(278): AdsController->runAction()
+#5 F:\Working\www\yii\framework\web\CController.php(257): AdsController->runActionWithFilters()
+#6 F:\Working\www\yii\framework\web\CWebApplication.php(328): AdsController->run()
+#7 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController()
+#8 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#9 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin%2Fads%2Fdelete&id=5&ajax=adsvertisment-grid
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php (104)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (84)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/09 10:20:50 [error] [php] unlink(F:\Working\www\yiiwebsite\dulichvietnam\protected/uploads/ads/Tulips.jpg) [<a href='function.unlink'>function.unlink</a>]: No such file or directory (F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php:104)
+Stack trace:
+#0 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php(84): Adsvertisment->delete()
+#1 unknown(0): AdsController->actionDelete()
+#2 F:\Working\www\yii\framework\web\actions\CInlineAction.php(54): ReflectionMethod->invokeArgs()
+#3 F:\Working\www\yii\framework\web\CController.php(300): CInlineAction->run()
+#4 F:\Working\www\yii\framework\web\CController.php(278): AdsController->runAction()
+#5 F:\Working\www\yii\framework\web\CController.php(257): AdsController->runActionWithFilters()
+#6 F:\Working\www\yii\framework\web\CWebApplication.php(328): AdsController->run()
+#7 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController()
+#8 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#9 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin%2Fads%2Fdelete&id=4&ajax=adsvertisment-grid
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php (104)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (84)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/09 10:21:11 [error] [php] unlink(F:\Working\www\yiiwebsite\dulichvietnam\protected/uploads/ads/Tulips.jpg) [<a href='function.unlink'>function.unlink</a>]: No such file or directory (F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php:104)
+Stack trace:
+#0 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php(84): Adsvertisment->delete()
+#1 unknown(0): AdsController->actionDelete()
+#2 F:\Working\www\yii\framework\web\actions\CInlineAction.php(54): ReflectionMethod->invokeArgs()
+#3 F:\Working\www\yii\framework\web\CController.php(300): CInlineAction->run()
+#4 F:\Working\www\yii\framework\web\CController.php(278): AdsController->runAction()
+#5 F:\Working\www\yii\framework\web\CController.php(257): AdsController->runActionWithFilters()
+#6 F:\Working\www\yii\framework\web\CWebApplication.php(328): AdsController->run()
+#7 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController()
+#8 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#9 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin%2Fads%2Fdelete&id=4&ajax=adsvertisment-grid
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Adsvertisment.php (104)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (84)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/09 16:43:57 [error] [system.db.CDbCommand] Error in querying SQL: SHOW COLUMNS FROM `place`
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/09 16:49:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "manage".' in F:\Working\www\yii\framework\web\CController.php:444
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CController.php(262): CController->missingAction('manage')
+#1 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('manage')
+#2 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('admin/place/man...')
+#3 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/place/manage
+2011/05/09 16:50:07 [error] [exception.CException] exception 'CException' with message 'PlaceController cannot find the requested view "admin".' in F:\Working\www\yii\framework\web\CController.php:842
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CController.php(746): CController->renderPartial('admin', Array, true)
+#1 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php(107): CController->render('admin', Array)
+#2 F:\Working\www\yii\framework\web\actions\CInlineAction.php(57): PlaceController->actionManage()
+#3 F:\Working\www\yii\framework\web\CController.php(300): CInlineAction->run()
+#4 F:\Working\www\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#5 F:\Working\www\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('manage')
+#7 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('admin/place/man...')
+#8 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#9 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#10 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/place/manage
+2011/05/09 17:11:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "g".' in F:\Working\www\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('g')
+#1 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=g
+2011/05/09 18:14:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "add".' in F:\Working\www\yii\framework\web\CController.php:444
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CController.php(262): CController->missingAction('add')
+#1 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('add')
+#2 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('admin/album/add')
+#3 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/album/add
+2011/05/09 18:18:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in F:\Working\www\yii\framework\web\CController.php:444
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CController.php(262): CController->missingAction('user')
+#1 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('user')
+#2 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('admin/album/use...')
+#3 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/album/user
+2011/05/09 18:18:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "manage".' in F:\Working\www\yii\framework\web\CController.php:444
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CController.php(262): CController->missingAction('manage')
+#1 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('manage')
+#2 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('admin/comment/m...')
+#3 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/comment/manage
+2011/05/09 19:43:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in F:\Working\www\yii\framework\web\CController.php:444
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CController.php(262): CController->missingAction('user')
+#1 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('user')
+#2 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('admin/album/use...')
+#3 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/album/user

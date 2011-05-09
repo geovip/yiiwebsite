@@ -92,25 +92,28 @@ class UserController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
+        if (Yii::app()->request->isPostRequest) {
+            $model = $this->loadModel($id);
 
-        $model = $this->loadModel($id);
-
-        $photo_id = $model->photo_id;
-        try {
-            if (count($photo_id)) {
-                $profile_file_thumb = File::model()->getFile($photo_id);
-                $profile_file_ogr = File::model()->getFileOrginal($photo_id);
-                @unlink(Yii::app()->getBasePath() . '/uploads/' . $profile_file_thumb->name);
-                @unlink(Yii::app()->getBasePath() . '/uploads/' . $profile_file_ogr->name);
-                $profile_file_thumb->delete();
-                $profile_file_ogr->delete();
+            $photo_id = $model->photo_id;
+            try {
+                if (count($photo_id)) {
+                    $profile_file_thumb = File::model()->getFile($photo_id);
+                    $profile_file_ogr = File::model()->getFileOrginal($photo_id);
+                    @unlink(Yii::app()->getBasePath() . '/uploads/' . $profile_file_thumb->name);
+                    @unlink(Yii::app()->getBasePath() . '/uploads/' . $profile_file_ogr->name);
+                    $profile_file_thumb->delete();
+                    $profile_file_ogr->delete();
+                }
+            } catch (Exception $ex) {
+                throw $ex;
             }
-        } catch (Exception $ex) {
-            throw $ex;
-        }
-        $model->delete();
+            $model->delete();
 
-        $this->redirect(array('manage'));
+            $this->redirect(array('manage'));
+        }
+        else
+            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
     }
 
     /**

@@ -38,7 +38,9 @@ class Adsvertisment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, url, img_file', 'length', 'max'=>255),
+			array('name','required'),
+                        array('url','url'),
+                        array('img_file', 'file', 'types'=>'jpg, gif, png'),
 			array('creation_date, modified_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -66,7 +68,7 @@ class Adsvertisment extends CActiveRecord
 			'id' => 'ID',
 			'name' => 'Name',
 			'url' => 'Url',
-			'img_file' => 'Img File',
+			'img_file' => 'Image File',
 			'creation_date' => 'Creation Date',
 			'modified_date' => 'Modified Date',
 		);
@@ -94,4 +96,12 @@ class Adsvertisment extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        // remove upload
+        
+        protected function beforeDelete()
+        {                     
+            unlink(Yii::app()->basePath . '/uploads/ads/' . $this->img_file);
+            return parent::beforeDelete(); 
+        }
 }

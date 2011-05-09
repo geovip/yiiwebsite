@@ -9,11 +9,6 @@
             @import url(<?php echo Yii::app()->request->baseUrl; ?>/css/admin/style.css);
             img {behavior:url('js/iepngfix.htc') !important;}
         </style>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.4.2.js" type="text/javascript"></script> 
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/jquery_ui.js" type="text/javascript"></script> 
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/wysiwyg.js" type="text/javascript"></script> 
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/functions.js" type="text/javascript"></script> 
-        
     </head> 
     <body> 
         <div id="container"> <!-- Container --> 
@@ -45,8 +40,8 @@
                             <div class="navhead"><span><?php echo CHtml::link('Category'); ?></span></div> 
                             <div class="subnav"> 
                                 <ul class="submenu"> 
-                                    <li><?php echo CHtml::link('Add a category', array('album/add')); ?></li> 
-                                    <li><?php echo CHtml::link('Manage category', array('album/manage')); ?></li> 							
+                                    <li><?php echo CHtml::link('Add a category', array('category/add')); ?></li> 
+                                    <li><?php echo CHtml::link('Manage category', array('category/manage')); ?></li> 							
                                 </ul> 
                             </div>
                             <div class="navhead"><span><?php echo CHtml::link('Gold Place'); ?></span></div> 
@@ -66,11 +61,7 @@
                         </div> 
                     </div> <!-- END Navigation --> 
                 </div> 
-                <div class="sidebox"> 
-                    <span class="stitle">Calendar Panel</span> 
-                    <div id="datepicker"></div> 
-
-                </div> 		 
+ 
             </div> <!-- END Sidebar --> 
             <div id="main"> <!-- Main, right side content --> 
                 <div id="content"> <!-- Content begins here --> 
