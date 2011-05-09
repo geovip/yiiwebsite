@@ -9,6 +9,10 @@
     <fieldset>
         <legend>Add A User</legend>
         <div class="input_field">
+            <?php echo $form->labelEx($model, 'type'); ?>
+            <?php echo $form->dropDownList($model, 'type', array('admin' => 'admin','user'=>'user')) ?>
+        </div>
+        <div class="input_field">
             <?php echo $form->labelEx($model, 'username'); ?>
             <?php echo $form->textField($model, 'username', array('id' => 'username', 'size' => 45, 'maxlength' => 45)); ?>
             <?php echo $form->error($model, 'username'); ?>

@@ -1636,3 +1636,66 @@ Stack trace:
 REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/place/update&id=2
 in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (70)
 in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/09 23:22:42 [error] [exception.CException] exception 'CException' with message 'CActiveForm does not have a method named "dropBoxList".' in F:\Working\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 [internal function]: CComponent->__call('dropBoxList', Array)
+#1 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\_form.php(13): CActiveForm->dropBoxList(Object(User), 'type', Array)
+#2 F:\Working\www\yii\framework\web\CBaseController.php(119): require('F:\Working\www\...')
+#3 F:\Working\www\yii\framework\web\CBaseController.php(88): CBaseController->renderInternal('F:\Working\www\...', Array, true)
+#4 F:\Working\www\yii\framework\web\CController.php(833): CBaseController->renderFile('F:\Working\www\...', Array, true)
+#5 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\create.php(2): CController->renderPartial('_form', Array)
+#6 F:\Working\www\yii\framework\web\CBaseController.php(119): require('F:\Working\www\...')
+#7 F:\Working\www\yii\framework\web\CBaseController.php(88): CBaseController->renderInternal('F:\Working\www\...', Array, true)
+#8 F:\Working\www\yii\framework\web\CController.php(833): CBaseController->renderFile('F:\Working\www\...', Array, true)
+#9 F:\Working\www\yii\framework\web\CController.php(746): CController->renderPartial('create', Array, true)
+#10 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php(41): CController->render('create', Array)
+#11 F:\Working\www\yii\framework\web\actions\CInlineAction.php(57): UserController->actionAdd()
+#12 F:\Working\www\yii\framework\web\CController.php(300): CInlineAction->run()
+#13 F:\Working\www\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#14 F:\Working\www\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('add')
+#16 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('admin/user/add')
+#17 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#18 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#19 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/user/add
+2011/05/09 23:33:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "manage".' in F:\Working\www\yii\framework\web\CController.php:444
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CController.php(262): CController->missingAction('manage')
+#1 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('manage')
+#2 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('admin/comment/m...')
+#3 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/comment/manage
+2011/05/09 23:35:21 [warning] [application] Failed to set unsafe attribute "type".
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (32)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/09 23:35:35 [warning] [application] Failed to set unsafe attribute "type".
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (32)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/09 23:39:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "manage".' in F:\Working\www\yii\framework\web\CController.php:444
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CController.php(262): CController->missingAction('manage')
+#1 F:\Working\www\yii\framework\web\CWebApplication.php(328): CController->run('manage')
+#2 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('admin/comment/m...')
+#3 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=admin/comment/manage
+2011/05/09 23:45:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "s".' in F:\Working\www\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('s')
+#1 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=s
+2011/05/09 23:45:33 [error] [exception.CException] exception 'CException' with message 'Alias "Services.models.*" is invalid. Make sure it points to an existing directory or file.' in F:\Working\www\yii\framework\YiiBase.php:335
+Stack trace:
+#0 F:\Working\www\yii\framework\base\CModule.php(209): YiiBase::import('Services.models...')
+#1 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\services\ServicesModule.php(14): CModule->setImport(Array)
+#2 F:\Working\www\yii\framework\base\CModule.php(73): ServicesModule->init()
+#3 F:\Working\www\yii\framework\YiiBase.php(200): CModule->__construct('services', NULL, Array)
+#4 F:\Working\www\yii\framework\base\CModule.php(266): YiiBase::createComponent('services.Servic...', 'services', NULL, Array)
+#5 F:\Working\www\yii\framework\web\CWebApplication.php(383): CModule->getModule('services')
+#6 F:\Working\www\yii\framework\web\CWebApplication.php(322): CWebApplication->createController('services')
+#7 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('services')
+#8 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#9 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#10 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/index.php?r=services

@@ -44,6 +44,8 @@ class User extends CActiveRecord
 		return array(
 			array('photo_id', 'numerical', 'integerOnly'=>true),
 			array('username, email, phone, displayname, password, salt', 'length', 'max'=>45),
+                        array('username,password,email','required'),
+                        array('email','email'),
 			array('creation_date, modified_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

@@ -4,6 +4,11 @@ class PlaceController extends Controller {
 
     public $layout = 'admin';
 
+    public function init() {
+        if (!Yii::app()->session['isAdmin'])
+            $this->redirect(Yii::app()->createUrl('admin'));
+    }
+
     /**
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
@@ -56,7 +61,7 @@ class PlaceController extends Controller {
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Place'])) {           
+        if (isset($_POST['Place'])) {
             $old_image = $model->img_file;
             $model->attributes = $_POST['Place'];
             $model->modified_date = date("Y-m-d H:i:s");
@@ -65,7 +70,7 @@ class PlaceController extends Controller {
             $file = CUploadedFile::getInstance($model, 'img_file');
             $model->img_file = $file_name;
 
-            if ($model->save()) {    
+            if ($model->save()) {
                 // remove old file
                 unlink(Yii::app()->basePath . '/uploads/place/' . $old_image);
                 $file->saveAs(Yii::app()->basePath . '/uploads/place/' . $file_name);
