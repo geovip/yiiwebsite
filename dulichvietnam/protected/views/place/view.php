@@ -20,8 +20,13 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'name',
+		'desc',
+		'content',
+		'type',
 		'address',
 		'img_file',
+		'lat',
+		'long',
 		'creation_date',
 		'modified_date',
 	),

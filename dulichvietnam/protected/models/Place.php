@@ -6,6 +6,9 @@
  * The followings are the available columns in table '{{place}}':
  * @property string $id
  * @property string $name
+ * @property string $desc
+ * @property string $content
+ * @property string $type
  * @property string $address
  * @property string $img_file
  * @property double $lat
@@ -41,13 +44,14 @@ class Place extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('lat, long', 'numerical'),
-			array('name, address, img_file', 'length', 'max'=>255),
-                        array('name, address', 'required'),
+			array('name, desc, address, img_file', 'length', 'max'=>255),
+			array('type', 'length', 'max'=>10),
+                        array('name, address,desc,content', 'required'),
                         array('img_file', 'file', 'types'=>'jpg, gif, png'),
-			array('creation_date, modified_date', 'safe'),
+			array('content, creation_date, modified_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, address, img_file, lat, long, creation_date, modified_date', 'safe', 'on'=>'search'),
+			array('id, name, desc, content, type, address, img_file, lat, long, creation_date, modified_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,6 +74,9 @@ class Place extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
+			'desc' => 'Description',
+			'content' => 'Content',
+			'type' => 'Type',
 			'address' => 'Address',
 			'img_file' => 'Image File',
 			'lat' => 'Lat',
@@ -92,6 +99,9 @@ class Place extends CActiveRecord
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('desc',$this->desc,true);
+		$criteria->compare('content',$this->content,true);
+		$criteria->compare('type',$this->type,true);
 		$criteria->compare('address',$this->address,true);
 		$criteria->compare('img_file',$this->img_file,true);
 		$criteria->compare('lat',$this->lat);

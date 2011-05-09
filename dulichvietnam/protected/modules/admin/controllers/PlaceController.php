@@ -28,12 +28,14 @@ class PlaceController extends Controller {
             $model->attributes = $_POST['Place'];
             $model->creation_date = date("Y-m-d H:i:s");
             $model->modified_date = date("Y-m-d H:i:s");
-            $model->img_file = CUploadedFile::getInstance($model, 'img_file');
+            $file_name = time() . '_' . CUploadedFile::getInstance($model, 'img_file');
+            $file = CUploadedFile::getInstance($model, 'img_file');
+            $model->img_file = $file_name;
 
             if ($model->save()) {
                 if (!is_dir(Yii::app()->basePath . '/uploads/place'))
                     mkdir(Yii::app()->basePath . '/uploads/place', 777);
-                $model->img_file->saveAs(Yii::app()->basePath . '/uploads/place/' . $model->img_file);
+                $file->saveAs(Yii::app()->basePath . '/uploads/place/' . $file_name);
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
@@ -54,16 +56,19 @@ class PlaceController extends Controller {
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Place'])) {
+        if (isset($_POST['Place'])) {           
+            $old_image = $model->img_file;
             $model->attributes = $_POST['Place'];
             $model->modified_date = date("Y-m-d H:i:s");
 
-            $model->img_file = CUploadedFile::getInstance($model, 'img_file');
+            $file_name = time() . '_' . CUploadedFile::getInstance($model, 'img_file');
+            $file = CUploadedFile::getInstance($model, 'img_file');
+            $model->img_file = $file_name;
 
-            if ($model->save()) {
-                if (!is_dir(Yii::app()->basePath . '/uploads/place'))
-                    mkdir(Yii::app()->basePath . '/uploads/place', 777);
-                $model->img_file->saveAs(Yii::app()->basePath . '/uploads/place/' . $model->img_file);
+            if ($model->save()) {    
+                // remove old file
+                unlink(Yii::app()->basePath . '/uploads/place/' . $old_image);
+                $file->saveAs(Yii::app()->basePath . '/uploads/place/' . $file_name);
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
