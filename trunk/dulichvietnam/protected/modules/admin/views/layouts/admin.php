@@ -33,6 +33,7 @@
                                 <ul class="submenu"> 
                                     <li><?php echo CHtml::link('Add a user', array('user/add')); ?></li> 
                                     <li><?php echo CHtml::link('Manage user', array('user/manage')); ?></li> 
+                                    <li><?php echo CHtml::link('Manage Api User', array('api/manage')); ?></li> 
                                     <li><?php echo CHtml::link('Manage comment', array('comment/manage')); ?></li> 
                                     <li><?php echo CHtml::link('Manage album', array('album/user')); ?></li> 
                                 </ul> 

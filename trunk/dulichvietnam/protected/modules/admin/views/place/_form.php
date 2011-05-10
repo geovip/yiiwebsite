@@ -1,9 +1,3 @@
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/wysiwyg.js"></script>
-<script type="text/javascript">
-    $().ready(function(){
-        $('#Place_content').wysiwyg();      
-    });
-</script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
 <script type="text/javascript"> 
   var geocoder;
@@ -39,7 +33,7 @@
         <legend>Add A Place</legend>
         <p class="note">Fields with <span class="required">*</span> are required.</p>
 
-        <?php echo $form->errorSummary($model); ?>
+
         <div class="input_field">
 		<?php echo $form->labelEx($model,'type'); ?>
 		<?php echo $form->dropDownList($model,'type',array('coffee' => 'coffee','shop' => 'shop','company'=>'company','restaurant' => 'restaurant')); ?>
