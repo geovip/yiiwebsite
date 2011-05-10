@@ -118,7 +118,39 @@ class Place extends CActiveRecord
         
         protected function beforeDelete()
         {                     
-            unlink(Yii::app()->basePath . '/uploads/place/' . $this->img_file);
+            @unlink(Yii::app()->basePath . '/uploads/place/' . $this->img_file);
             return parent::beforeDelete(); 
+        }
+       
+        // $radius= 1; //met
+        public function listAllPlace($lat, $lng,$radius = 1,$type = 'all'){
+            
+            if($type == 'all')
+            {
+                $condition= array(
+                                'condition'=>'lat BETWEEN :lat_s AND :lat_e AND long BETWEEN :long_s AND :long_e',
+                                'params'=>array(
+                                    ':lat_s'=>$lat-($radius*1.1515),
+                                    ':lat_e'=>$lat+($radius*1.1515),
+                                    ':long_s'=>$lng-($radius*1.1515),
+                                    ':long_e'=>$lng+($radius*1.1515)
+                                    )
+                );
+            }
+            else
+            {
+                $condition= array(
+                                'condition'=>'type = :type lat BETWEEN :lat_s AND :lat_e AND long BETWEEN :long_s AND :long_e',
+                                'params'=>array(
+                                    ':lat_s'=>$lat-($radius*1.1515),
+                                    ':lat_e'=>$lat+($radius*1.1515),
+                                    ':long_s'=>$lng-($radius*1.1515),
+                                    ':long_e'=>$lng+($radius*1.1515),
+                                    ':type' => $type
+                                    )
+                );
+            }           
+            
+            return self::model()->findAll($condition);
         }
 }

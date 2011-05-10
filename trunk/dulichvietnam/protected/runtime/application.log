@@ -7718,3 +7718,1014 @@ in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
 in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\layouts\admin.php (21)
 in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
 in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.base.CModule] Loading "admin" module
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "db" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (107)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbConnection] Opening DB connection
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (107)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_api`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (107)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_api`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (107)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.ar.CActiveRecord] Api.count()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `tbl_api` `t`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.ar.CActiveRecord] Api.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_api` `t` LIMIT 10
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "assetManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_user`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "format" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.ar.CActiveRecord] lazy loading Api.User
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT `User`.`id` AS `t1_c0`, `User`.`username` AS `t1_c1`, `User`.`email` AS `t1_c2`, `User`.`phone` AS `t1_c3`, `User`.`displayname` AS `t1_c4`, `User`.`photo_id` AS `t1_c5`, `User`.`password` AS `t1_c6`, `User`.`salt` AS `t1_c7`, `User`.`creation_date` AS `t1_c8`, `User`.`modified_date` AS `t1_c9`, `User`.`website` AS `t1_c10`, `User`.`information` AS `t1_c11`, `User`.`type` AS `t1_c12` FROM `tbl_user` `User`  WHERE (`User`.`id`=:ypl0)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.ar.CActiveRecord] lazy loading Api.User
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT `User`.`id` AS `t1_c0`, `User`.`username` AS `t1_c1`, `User`.`email` AS `t1_c2`, `User`.`phone` AS `t1_c3`, `User`.`displayname` AS `t1_c4`, `User`.`photo_id` AS `t1_c5`, `User`.`password` AS `t1_c6`, `User`.`salt` AS `t1_c7`, `User`.`creation_date` AS `t1_c8`, `User`.`modified_date` AS `t1_c9`, `User`.`website` AS `t1_c10`, `User`.`information` AS `t1_c11`, `User`.`type` AS `t1_c12` FROM `tbl_user` `User`  WHERE (`User`.`id`=:ypl0)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.ar.CActiveRecord] lazy loading Api.User
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT `User`.`id` AS `t1_c0`, `User`.`username` AS `t1_c1`, `User`.`email` AS `t1_c2`, `User`.`phone` AS `t1_c3`, `User`.`displayname` AS `t1_c4`, `User`.`photo_id` AS `t1_c5`, `User`.`password` AS `t1_c6`, `User`.`salt` AS `t1_c7`, `User`.`creation_date` AS `t1_c8`, `User`.`modified_date` AS `t1_c9`, `User`.`website` AS `t1_c10`, `User`.`information` AS `t1_c11`, `User`.`type` AS `t1_c12` FROM `tbl_user` `User`  WHERE (`User`.`id`=:ypl0)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.ar.CActiveRecord] lazy loading Api.User
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT `User`.`id` AS `t1_c0`, `User`.`username` AS `t1_c1`, `User`.`email` AS `t1_c2`, `User`.`phone` AS `t1_c3`, `User`.`displayname` AS `t1_c4`, `User`.`photo_id` AS `t1_c5`, `User`.`password` AS `t1_c6`, `User`.`salt` AS `t1_c7`, `User`.`creation_date` AS `t1_c8`, `User`.`modified_date` AS `t1_c9`, `User`.`website` AS `t1_c10`, `User`.`information` AS `t1_c11`, `User`.`type` AS `t1_c12` FROM `tbl_user` `User`  WHERE (`User`.`id`=:ypl0)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\api\admin.php (45)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\layouts\admin.php (21)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 20:56:44 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\layouts\admin.php (21)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\ApiController.php (114)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.web.filters.CFilterChain] Running filter PhotoController.filteraccessControl()
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.CModule] Loading "db" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbConnection] Opening DB connection
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_photo`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_photo`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.ar.CActiveRecord] Photo.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (164)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_photo` `t` WHERE lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (164)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_file`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (32)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_file`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (32)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=71 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=61 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=69 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=77 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.ar.CActiveRecord] Photo.count()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `tbl_photo` `t` WHERE lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:36 [trace] [system.db.ar.CActiveRecord] Photo.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_photo` `t` WHERE lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e ORDER BY view_count DESC LIMIT 12
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:36 [trace] [system.CModule] Loading "assetManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:36 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:36 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=71 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:36 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=69 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:36 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=61 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:36 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=77 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:36 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.web.filters.CFilterChain] Running filter PhotoController.filteraccessControl()
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.CModule] Loading "db" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbConnection] Opening DB connection
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_photo`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_photo`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] Photo.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (164)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_photo` `t` WHERE lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (164)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_file`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (32)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_file`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (32)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=71 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=61 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=69 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=77 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] Photo.count()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `tbl_photo` `t` WHERE lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] Photo.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_photo` `t` WHERE lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e ORDER BY view_count DESC LIMIT 12
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.CModule] Loading "assetManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=71 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=69 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=61 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:38 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=77 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/10 23:32:38 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:05 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:05 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:05 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:05 [trace] [system.base.CModule] Loading "admin" module
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (8)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.CModule] Loading "db" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (86)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.db.CDbConnection] Opening DB connection
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (86)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_user`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (86)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (86)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\admin.php (15)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (93)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\admin.php (53)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (93)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.db.ar.CActiveRecord] User.count()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\admin.php (53)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (93)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `tbl_user` `t`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\admin.php (53)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (93)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\admin.php (53)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (93)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` LIMIT 10
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\admin.php (53)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (93)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.CModule] Loading "assetManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\admin.php (53)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (93)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\admin.php (53)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (93)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.CModule] Loading "format" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\user\admin.php (53)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (93)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:06 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\layouts\admin.php (21)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\UserController.php (93)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:07 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:07 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:07 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:07 [trace] [system.base.CModule] Loading "admin" module
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:07 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AlbumController.php (8)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:07 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\layouts\admin.php (21)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AlbumController.php (18)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:07 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AlbumController.php (18)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.base.CModule] Loading "admin" module
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (12)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "db" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (101)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.db.CDbConnection] Opening DB connection
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (101)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (101)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (101)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\category\admin.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (108)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\category\admin.php (40)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (108)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.db.ar.CActiveRecord] Category.count()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\category\admin.php (40)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (108)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `tbl_category` `t`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\category\admin.php (40)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (108)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\category\admin.php (40)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (108)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` LIMIT 10
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\category\admin.php (40)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (108)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "assetManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\category\admin.php (40)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (108)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\category\admin.php (40)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (108)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "format" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\category\admin.php (40)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (108)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:08 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\layouts\admin.php (21)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\CategoryController.php (108)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.base.CModule] Loading "admin" module
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (8)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "db" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (118)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.db.CDbConnection] Opening DB connection
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (118)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_place`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (118)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_place`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (118)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\place\admin.php (2)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (125)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\place\admin.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (125)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.db.ar.CActiveRecord] Place.count()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\place\admin.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (125)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `tbl_place` `t`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\place\admin.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (125)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.db.ar.CActiveRecord] Place.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\place\admin.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (125)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_place` `t` LIMIT 10
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\place\admin.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (125)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "assetManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\place\admin.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (125)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\place\admin.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (125)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "format" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\place\admin.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (125)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:10 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\layouts\admin.php (21)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\PlaceController.php (125)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.base.CModule] Loading "admin" module
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (8)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "db" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (117)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.db.CDbConnection] Opening DB connection
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (117)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_adsvertisment`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (117)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_adsvertisment`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (117)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\ads\admin.php (2)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (124)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\ads\admin.php (44)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (124)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.db.ar.CActiveRecord] Adsvertisment.count()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\ads\admin.php (44)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (124)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `tbl_adsvertisment` `t`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\ads\admin.php (44)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (124)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.db.ar.CActiveRecord] Adsvertisment.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\ads\admin.php (44)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (124)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_adsvertisment` `t` LIMIT 10
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\ads\admin.php (44)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (124)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "assetManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\ads\admin.php (44)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (124)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\ads\admin.php (44)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (124)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "format" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\ads\admin.php (44)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (124)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:44:12 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\views\layouts\admin.php (21)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\admin\controllers\AdsController.php (124)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "w".' in F:\Working\www\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('w')
+#1 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/?r=w
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "errorHandler" application component
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (1)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "we".' in F:\Working\www\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('we')
+#1 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/?r=we
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "errorHandler" application component
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (1)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:45 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web".' in F:\Working\www\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('web')
+#1 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/?r=web
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "errorHandler" application component
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (1)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "webser".' in F:\Working\www\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('webser')
+#1 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/?r=webser
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "errorHandler" application component
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (1)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:46 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "w".' in F:\Working\www\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('w')
+#1 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/?r=w
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "errorHandler" application component
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (1)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ser".' in F:\Working\www\yii\framework\web\CWebApplication.php:332
+Stack trace:
+#0 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController('ser')
+#1 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/yiiwebsite/dulichvietnam/?r=ser
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "errorHandler" application component
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (1)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\main.php (54)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\layouts\column1.php (7)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:47 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\SiteController.php (74)
+2011/05/10 23:45:48 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:48 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:48 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/10 23:45:48 [trace] [system.base.CModule] Loading "services" module
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.web.filters.CFilterChain] Running filter PhotoController.filteraccessControl()
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.CModule] Loading "user" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.CModule] Loading "session" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.CModule] Loading "db" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbConnection] Opening DB connection
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_photo`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_photo`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (29)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] Photo.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (164)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_photo` `t` WHERE lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\Photo.php (164)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (372)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_file`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (32)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_file`
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (32)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=71 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=61 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=69 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=77 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (379)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.CModule] Loading "widgetFactory" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] Photo.count()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `tbl_photo` `t` WHERE lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] Photo.findAll()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_photo` `t` WHERE lat BETWEEN :lat_s AND :lat_e AND lag BETWEEN :lag_s AND :lag_e ORDER BY view_count DESC LIMIT 12
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.CModule] Loading "assetManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.CModule] Loading "clientScript" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=71 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=69 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=61 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/11 00:02:55 [trace] [system.db.ar.CActiveRecord] File.findByPk()
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/11 00:02:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_file` `t` WHERE `t`.`id`=77 LIMIT 1
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\models\File.php (133)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\_popular.php (3)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+2011/05/11 00:02:55 [trace] [system.CModule] Loading "coreMessages" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\views\photo\popular.php (159)
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\controllers\PhotoController.php (417)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:58 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:58 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:58 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:58 [trace] [system.base.CModule] Loading "services" module
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:58 [error] [php] include(CJSon.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (F:\Working\www\yii\framework\YiiBase.php:395)
+Stack trace:
+#0 F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\services\controllers\GeoController.php(41): spl_autoload_call()
+#1 F:\Working\www\yii\framework\web\actions\CInlineAction.php(57): GeoController->actionIndex()
+#2 F:\Working\www\yii\framework\web\CController.php(300): CInlineAction->run()
+#3 F:\Working\www\yii\framework\web\CController.php(278): GeoController->runAction()
+#4 F:\Working\www\yii\framework\web\CController.php(257): GeoController->runActionWithFilters()
+#5 F:\Working\www\yii\framework\web\CWebApplication.php(328): GeoController->run()
+#6 F:\Working\www\yii\framework\web\CWebApplication.php(121): CWebApplication->runController()
+#7 F:\Working\www\yii\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#8 F:\Working\www\yiiwebsite\dulichvietnam\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiwebsite/dulichvietnam/?r=services/geo
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\services\controllers\GeoController.php (41)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:58 [trace] [system.CModule] Loading "errorHandler" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\protected\modules\services\controllers\GeoController.php (41)
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:58 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:58 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:58 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:02:58 [trace] [system.base.CModule] Loading "services" module
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:03:38 [trace] [system.CModule] Loading "log" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:03:38 [trace] [system.CModule] Loading "request" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:03:38 [trace] [system.CModule] Loading "urlManager" application component
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/11 00:03:38 [trace] [system.base.CModule] Loading "services" module
+in F:\Working\www\yiiwebsite\dulichvietnam\index.php (13)
