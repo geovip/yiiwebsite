@@ -14,7 +14,7 @@ $('.search-form form').submit(function(){
 ?>
 <style type="text/css">
 .grid-view .filters input, .grid-view .filters select {
-width: 85%;
+width: 90%;
 border: 1px solid #CCC;
 }    
 </style>
@@ -25,8 +25,7 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
 
-<!-- search-form -->
-
+<?php echo CHtml::link('Add A Adsvertisment',array('ads/add')); ?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'adsvertisment-grid',
 	'dataProvider'=>$model->search(),

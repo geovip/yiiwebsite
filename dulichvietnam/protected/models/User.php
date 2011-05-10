@@ -61,6 +61,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'api'=>array(self::HAS_ONE, 'Api', 'user_id'),
 		);
 	}
 
