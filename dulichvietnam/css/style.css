@@ -91,5 +91,31 @@ footer a {color:#439deb}
 #form-demo {margin-top:-10px;line-height:29px;font-weight:bold;width:638px}
 #form-demo .file{margin-left: 84px;}
 #form-demo a {margin-left:10px;float:right;width:86px;text-align:center;padding:0}
-#form-demo .input {float:right;margin-right:222px;width:276px;height:17px;border:1px solid #dcdcdc;background:#fff;padding:5px;margin-bottom:6px;color:#323232;font:13px Arial, Helvetica, sans-serif}
-#form-demo textarea {overflow:auto;float:right;width:557px;height:307px;border:1px solid #dcdcdc;background:#fff;padding:5px;margin-bottom:16px;color:#323232;font:13px Arial, Helvetica, sans-serif}
+#form-demo .input, #form-search .input  {float:right;margin-right:222px;width:276px;height:17px;border:1px solid #dcdcdc;background:#fff;padding:5px;margin-bottom:6px;color:#323232;font:13px Arial, Helvetica, sans-serif}
+#form-demo textarea {overflow:auto;float:right;width:498px;height:150px;border:1px solid #dcdcdc;background:#fff;padding:5px;margin-bottom:16px;color:#323232;font:13px Arial, Helvetica, sans-serif}
+.comment {
+   
+    margin:5px 0;
+    padding:10px;
+}
+.photo img {
+    float:left;
+    margin-right:10px;
+}
+.comment .time {
+    color:#888888;
+    font-size:0.8em;
+}
+#comment-form textarea {overflow:auto;float:right;width:557px;height:75px;border:1px solid #dcdcdc;background:#fff;padding:5px;margin-bottom:16px;color:#323232;font:13px Arial, Helvetica, sans-serif}
+.flash_success {
+    background:#E6EFC2 none repeat scroll 0 0;
+    border-color:#C6D880;
+    color:#264409;
+}
+.flash_error {
+    background:#E6EFC2 none repeat scroll 0 0;
+    border-color:#C6D880;
+    color:red;
+}
+#form-demo .editsetting .input{margin-right: 348px;}
+#form-demo .editsetting textarea{margin-right: 125px;}

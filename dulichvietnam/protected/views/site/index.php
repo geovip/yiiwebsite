@@ -130,13 +130,13 @@ function createMarker(point, photo_id, file_id, name) {
 								<div class="wrapper">
 							<?php } ?>
                                 <figure class="left marg_right1">
-                                    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>">
+                                    <a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album->id);?>">
 										<img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="116" height="116" />
 									</a>
                                 </figure>
         						<p class="pad_bot2"><strong><?php echo $album->title;?></strong></p>
         						<p class="pad_bot2"><?php echo substr($album->description, 0, 54);?></p>
-        						<a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>" class="marker_1"></a>
+        						<a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album->id);?>" class="marker_1"></a>
         					</div>
                             <?php 
 						}
@@ -160,13 +160,13 @@ function createMarker(point, photo_id, file_id, name) {
 								<div class="wrapper">
 							<?php } ?>
 								<figure class="left marg_right1">
-									<a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>">
+									<a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album->id); ?>">
 										<img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="246" height="195" />
 									</a>
 								</figure>
 								<p class="pad_bot2"><strong><?php echo $album->title;?></strong></p>
 								<p class="pad_bot2"><?php echo $album->description;?></p>
-								<a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='.$album->id ?>" class="marker_2"></a>
+								<a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album->id);?>" class="marker_2"></a>
 							</div>
 						<?php 
 						}

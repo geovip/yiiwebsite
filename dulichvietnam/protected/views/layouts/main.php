@@ -52,13 +52,13 @@
 						<nav>
 							<ul id="top_nav">
                             <?php if(Yii::app()->user->isGuest){?>
-                                <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=user/signup'?>">Sign Up</a></li>
-                                <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=site/login'?>">Sign In</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl("user/signup");?>">Sign Up</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl("site/login");?>" >Sign In </a></li>
                             <?php } else{?>
-                                <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=site/logout'?>">Sign Out</a></li>
-                                
+                                <li><a href="<?php echo Yii::app()->createUrl("user/mypage");?>">My page</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl("site/logout");?>" >Sign Out </a></li>
                             <?php }?>
-								<li><a href="#">Help</a></li>
+							
 							</ul>
 						</nav>
 					</div>	
@@ -88,8 +88,8 @@
 	<div class="main">
 <!-- footer -->
 		<footer>
-			<a href="http://www.templatemonster.com/" target="_blank">Website template</a> designed by TemplateMonster.com<br>
-			<a href="http://www.templates.com/product/3d-models/" target="_blank">3D Models</a> provided by Templates.com
+			<a href="http://www.tourvn.com/" target="_blank">TourVN</a> designed by JQ<br>
+			
 		</footer>
 <!-- / footer -->
 	</div>

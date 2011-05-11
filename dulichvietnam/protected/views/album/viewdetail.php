@@ -30,31 +30,64 @@ var map;
 }
     </script>
   </head>
-  <style type="text/css">
-  .menu ul{width: 425px;}
-  </style>
- <div id="slider">
-    <h2><?php echo $album->title;?></h2>
- </div>
-  <div class="clr"></div>
-  <div class="body">
-  
-    <div class="body_resize">
-    <?php if($user_id==$album->user_id){ ?>
-    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/edit&album_id='.$album_id ?>"><?php echo "Edit Album"; ?></a>
-    |
-    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/editsetting&album_id='.$album_id ?>"><?php echo "Manage Photos";?></a>
-    <?php } ?>
-    <?php $this->widget('zii.widgets.CListView', array(
-    	'dataProvider'=>$dataProvider,
-    	'itemView'=>'_view',
-        'ajaxUpdate'=> false,
-    	'template'=>"{items}\n{pager}"
-    )); ?>
+<style type="text/css">
+#page1 .text {padding: 7px 0 0 36px; text-align:left;}
+</style>
+    <div class="text">
+		<img src="<?php echo Yii::app()->request->baseUrl ?>/images/text1.jpg" alt="">
+		<h2>The Best Offers</h2>
+		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas.</p>
+		<a href="#" class="button">Read More</a>
+	</div>
+    <div class="img"><img src="<?php echo Yii::app()->request->baseUrl ?>/images/img2.jpg" alt=""></div>
+    <div class="inner_copy">More <a href="http://www.templatemonster.com/">Website Templates</a> at TemplateMonster.com!</div>
+<section id="content">
     
-    <div class="clr"></div>
-    <div class="right">
-    <?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
+    <article class="col1">
+		<h3>Hot Travel</h3>
+		<div class="pad">
+			<?php
+				if(!empty($albums_comments)){
+					$i=0;
+					foreach($albums_comments as $album_comment){
+						$i++;
+						$file_id= Photo::getPhoto($album_comment->id)->file_id;
+						$photo_name= File::getFile($file_id)->name;
+						?>
+                        <?php if($i==1 || $i==2){?>
+							<div class="wrapper under">
+						<?php } else { ?>
+							<div class="wrapper">
+						<?php } ?>
+                            <figure class="left marg_right1">
+                                <a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album_comment->id); ?>">
+									<img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="116" height="116" />
+								</a>
+                            </figure>
+    						<p class="pad_bot2"><strong><?php echo $album_comment->title;?></strong></p>
+    						<p class="pad_bot2"><?php echo substr($album_comment->description, 0, 54);?></p>
+    						<a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album_comment->id); ?>" class="marker_1"></a>
+    					</div>
+                        <?php 
+					}
+				}
+			?>
+		</div>
+	</article>
+    <article class="col2 pad_left1">
+        <h2><?php echo $album->title;?></h2>
+        <?php if($user_id==$album->user_id){ ?>
+        <a href="<?php echo Yii::app()->createUrl("album/edit/album_id/".$album_id); ?>"><?php echo "Edit Album"; ?></a>
+        |
+        <a href="<?php echo Yii::app()->createUrl("album/editsetting/album_id/".$album_id); ?>"><?php echo "Manage Photos";?></a>
+        <?php } ?>
+        <?php $this->widget('zii.widgets.CListView', array(
+        	'dataProvider'=>$dataProvider,
+        	'itemView'=>'_view',
+            'ajaxUpdate'=> false,
+        	'template'=>"{items}\n{pager}"
+        )); ?>
+		<?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
 		<div class="flash_success">
 			<?php echo Yii::app()->user->getFlash('commentSubmitted'); ?>
 		</div>
@@ -78,22 +111,8 @@ var map;
                 'album_id'=>$album_id
     		)); ?>
             <?php }?>
-   </div>     
-   <div class="clr"></div>
-    </div>
-    <div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
-        
-  </div>
   
-  <script type="text/javascript">
-  window.addEvent('domready', function(){
-    
-    var children= jQuery('#yw0 .items').children().size();
-    jQuery('#yw0 .items').children().each(function(index, value) { 
-        if((index+1)%3==0){
-            jQuery(this).addClass('last');
-        } 
-    });
-    
-  });
-  </script>
+		
+    </article>
+</section>
+    <div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
