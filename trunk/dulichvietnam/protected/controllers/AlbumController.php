@@ -321,13 +321,16 @@ class AlbumController extends Controller
 			'criteria'=>$criteria
 		));
         $comment=$this->newComment($album);
+        //list album at home with comment count
+        $albums_comments= Album::model()->homeHotAlbum();
         $this->render('viewdetail', array(
             'dataProvider'=>$dataProvider,
             'photos'=> $photos,
             'album'=> $album,
             'comment'=>$comment,
             'user_id'=>$user_id,
-            'album_id'=> $album_id
+            'album_id'=> $album_id,
+            'albums_comments'=>$albums_comments
             ));
         
     }
@@ -367,7 +370,7 @@ class AlbumController extends Controller
                 $photo->save();
 	           
 		  }
-          $this->redirect(array('viewdetail','album_id'=>$album_id));
+          $this->redirect(Yii::app()->createUrl("album/viewdetail/album_id/".$album_id));
 			
 		}
         
@@ -424,7 +427,7 @@ class AlbumController extends Controller
 			$model->title= $_POST['Album']['title'];
             $model->description= $_POST['Album']['description'];
 			if($model->save())
-				$this->redirect(array('viewdetail','album_id'=>$model->id));
+				$this->redirect(Yii::app()->createUrl("album/viewdetail/album_id/".$model->id));
 		}
         $this->render('edit',array(
 			'model'=>$model,

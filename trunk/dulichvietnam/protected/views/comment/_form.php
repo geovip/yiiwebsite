@@ -11,9 +11,9 @@
 		<?php echo $form->textArea($model,'content',array('rows'=>3, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'content'); ?>
 	</div>
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+	
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'button')); ?>
+	
 
 <?php $this->endWidget(); ?>
 

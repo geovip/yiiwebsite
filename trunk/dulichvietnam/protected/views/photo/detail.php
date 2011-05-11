@@ -1,4 +1,5 @@
 <style type="text/css">
+#comment-form .row textarea{width: 422px;}
 #loading img{background: none; border:none;}
 .rating_star_big_generic {
     background-repeat:no-repeat;
@@ -141,9 +142,7 @@ function createMarker(point, photo_id, file_id, name) {
     </script>
   </head>
 <body onload="load()" onunload="GUnload()" >
-<div id="slider">
-    <h2>Detail Photo</h2>
-  </div>
+
   <div class="clr"></div>
   <div class="body">
     <div class="body_resize">
@@ -166,7 +165,7 @@ function createMarker(point, photo_id, file_id, name) {
         <?php }?>
         <?php 
             if($user_id==$photo->user_id){?>
-                <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/del&photo_id='.$photo->id ?>"><?php echo "Delete";?></a>
+                <a href="<?php echo Yii::app()->createUrl("photo/del/photo_id/".$photo->id); ?>"><?php echo "Delete";?></a>
         <?php }
         ?>
         <?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
@@ -203,9 +202,9 @@ function createMarker(point, photo_id, file_id, name) {
           
           <p>
             <img style="float: left;" src="<?php echo Yii::app()->request->baseUrl.'/images/marker.png'?>" />&nbsp;
-            <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/popular&order=view_count&lat='.$photo->lat.'&lng='.$photo->lag?>"><?php echo $photo->lat. ' and '. $photo->lag;?><br />&nbsp;</a>
+            <a href="<?php echo Yii::app()->createUrl("photo/popular/order/view_count/lat/".$photo->lat."/lng/".$photo->lag);?>"><?php echo $photo->lat. ' and '. $photo->lag;?><br />&nbsp;</a>
              <?php if($user_id==$photo->user_id){?>
-             <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/map&photo_id='.$photo->id.'&file_id='.$photo->file_id?>"><?php echo "Change Position";?></a>
+             <a href="<?php echo Yii::app()->createUrl("photo/map/photo_id/".$photo->id."/file_id/".$photo->file_id);?>"><?php echo "Change Position";?></a>
            <?php }?>
           </p>
            
@@ -312,7 +311,7 @@ function createMarker(point, photo_id, file_id, name) {
     }
     (new Request.JSON({
       'format': 'json',
-      'url' : '<?php echo Yii::app()->request->baseUrl?>/?r=photo/rate',
+      'url' : '<?php echo Yii::app()->createUrl("photo/rate")?>',
       'data' : {
         
         'format' : 'json',

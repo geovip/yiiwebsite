@@ -27,7 +27,7 @@ function saveposition(){
             {
                 
                 if(responseHTML > 0){
-                    window.location.href= "<?php echo Yii::app()->request->baseUrl.'/?r=photo/detail&photo_id='?>"+photo_id+'&file_id='+file_id;
+                    window.location.href= "<?php echo Yii::app()->createUrl('photo/detail/photo_id')?>"+"/"+photo_id+'/file_id/'+file_id;
                 }
             		
             }
@@ -117,10 +117,11 @@ var map;
         
             
                 <div class="clr"></div>
-                <form action="#" onsubmit="showAddress(this.address.value); return false;">
+                <form id="form-search" action="#" onsubmit="showAddress(this.address.value); return false;">
                     <p>        
-                        <input type="text" size="60" name="address" value="3 cit&eacute; Nollez Paris France" />
-                        <input type="submit" value="Search!" />
+                        <input type="text" class="input" size="60" name="address" value="3 cit&eacute; Nollez Paris France" />
+                        
+                        <input type="submit" value="Search" class="button" />
                     </p>
                     
                 </form>
@@ -141,15 +142,12 @@ var map;
                     <div align="center" id="map" style="width: 600px; height: 400px"><br/></div>
                 </p>
               
-                <form method="post" id="form-demo" action="<?php echo Yii::app()->request->baseUrl.'/?r=photo/position' ?>">
-                    <ol>
-                    
-                        <li class="buttons">
-                            <input type="button" onclick="saveposition();" value="Save Position" style="float: right;" />
-                            <input id="photo" type="hidden" value="<?php echo $photo_id ?>" />
-                            <input id="file" type="hidden" value="<?php echo $file_id ?>" />
-                        </li>
-                    </ol>
+                <form method="post" id="form-demo" action="<?php echo Yii::app()->createUrl("photo/position");?>">
+                   
+                    <input class="button" type="button" onclick="saveposition();" value="Save Position" style="margin-top: 23px;" />
+                    <input id="photo" type="hidden" value="<?php echo $photo_id ?>" />
+                    <input id="file" type="hidden" value="<?php echo $file_id ?>" />
+               
                     
                 </form>
             <div class="clr"></div>

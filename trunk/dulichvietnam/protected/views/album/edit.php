@@ -30,39 +30,27 @@ var map;
 }
     </script>
   </head>
- <div id="slider">
+<section id="content">
+<article class="col2 pad_left1">
     <h2><?php echo "Edit Album";?></h2>
-  </div>
-  <div class="clr"></div>
-  <div class="body">
-    <div class="body_resize">
-    <form action="<?php echo Yii::app()->request->baseUrl.'/?r=album/edit&album_id='.$model->id ?>" method="post" enctype="multipart/form-data" id="form-demo">
-    
-    <ol>
-        <li>
-            <label>Title</label>
-            <input id="title" type="text" class="text" name="Album[title]" value="<?php echo $model->title;?>" />
-            <label style="color: red;" id="error_title"></label>
-        </li> 
-        <li>
-        
-        <label> Description</label>
-        <textarea id="description" name="Album[description]" cols="45" rows="6" ><?php echo $model->description;?></textarea>
-        </li>
-        <li class="buttons">
-        <input type="submit" value="Save" />
-        </li>
+    <form action="<?php echo Yii::app()->createUrl("album/edit/album_id/".$model->id); ?>" method="post" enctype="multipart/form-data" id="form-demo">
+        <div>
+            <div class="wrapper">
+                <label>Title</label>
+                <input id="title" type="text" class="input" name="Album[title]" value="<?php echo $model->title;?>" />
+                <label style="color: red;" id="error_title"></label>
                 
-        
-    </ol>
+            </div>
+            <div class="wrapper">
+                <label> Description</label>
+                <textarea id="description" name="Album[description]" cols="1" rows="1" ><?php echo $model->description;?></textarea>
+            </div>
+            <input type="submit" value="Save" class="button" />
+        </div>
     </form>
-    <div class="right">
-    <div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
-        
-   </div>     
-    </div>
-    
-  </div>
+</article>
+</section>
+<div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
 <script type="text/javascript">
  jQuery(document).ready(function () {
     jQuery('#form-demo').validate({
