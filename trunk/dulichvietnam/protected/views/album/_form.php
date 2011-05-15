@@ -96,6 +96,7 @@ a:hover, a.hover {
 	margin-right: 6px;
 }
 #form-demo a{float: none;}
+#form-demo label{float: left;}
 </style>
 
     <form action="<?php echo Yii::app()->createUrl('album/create')?>" method="post" enctype="multipart/form-data" id="form-demo">
