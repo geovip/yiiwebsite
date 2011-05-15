@@ -66,7 +66,7 @@
 			</div>
 			<nav>
 				<ul id="menu">
-					<li><a href="index.html" class="nav1">Home</a></li>
+					<li><a href="<?php echo Yii::app()->createUrl('/');?>" class="nav1">Home</a></li>
 					<li><a href="About.html" class="nav2">About Us </a></li>
 					<li><a href="Tours.html" class="nav3">Our Tours</a></li>
 					<li><a href="Destinations.html" class="nav4">Destinations</a></li>
@@ -119,7 +119,7 @@ function search(address) {
                 });
                 var lat = results[0].geometry.location.lat().toFixed(5);
                 var lng = results[0].geometry.location.lng().toFixed(5);
-                var url= "<?php echo Yii::app()->request->baseUrl.'/?r=photo/popular&order=view_count&lat='?>"+lat+'&lng='+lng;
+                var url= "<?php echo Yii::app()->createUrl('photo/popular/order/view_count/lat')?>"+"/"+lat+'/lng/'+lng;
                 window.location.href= url;
               } else {
                 alert("Geocode was not successful for the following reason: " + status);

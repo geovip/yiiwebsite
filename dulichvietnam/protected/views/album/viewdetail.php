@@ -64,7 +64,7 @@ var map;
 									<img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="116" height="116" />
 								</a>
                             </figure>
-    						<p class="pad_bot2"><strong><?php echo $album_comment->title;?></strong></p>
+    						<p class="pad_bot2"><strong><a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album->id);?>"><?php echo $album_comment->title;?></a></strong></p>
     						<p class="pad_bot2"><?php echo substr($album_comment->description, 0, 54);?></p>
     						<a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album_comment->id); ?>" class="marker_1"></a>
     					</div>
