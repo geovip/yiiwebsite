@@ -95,17 +95,14 @@ a:hover, a.hover {
 	line-height: 18px;
 	margin-right: 6px;
 }
-
+#form-demo a{float: none;}
 </style>
-<div class="form">
-    
 
-    <form action="<?php echo Yii::app()->request->baseUrl; ?>/?r=album/create" method="post" enctype="multipart/form-data" id="form-demo">
-    
-    <ol>
-        <li>
-            <label>Choose Album</label>
+    <form action="<?php echo Yii::app()->createUrl('album/create')?>" method="post" enctype="multipart/form-data" id="form-demo">
+    <div>
             
+		<div class="wrapper">
+            <label>Choose Album:</label>
             <select id="album" name="Album[album_id]">
                 
             <?php if(!empty($this->albums)){
@@ -119,10 +116,12 @@ a:hover, a.hover {
             <?php }
             ?>  
             </select>
+            
             <a class="add_album" href="javascript:void(0);" ><img id="img_add_album" src="<?php echo Yii::app()->request->baseUrl; ?>/images/folder_add.png" /></a>
-        </li>
-        <li>
-            <label>Choose category</label>
+        
+        </div>
+        <div class="wrapper">
+            <label>Choose category:</label>
             <select id="category" name="Album[category_id]">
            
             <?php if(!empty($this->categories)){
@@ -132,67 +131,53 @@ a:hover, a.hover {
             }  
             ?>    
             </select>
-        </li>
-         <div id="create_album" style="display: none;">
-        <li>
-           
             
+        </div> 
+        
+        <div id="create_album" style="display: none;">
+            <div class="wrapper">
                 <label>Title</label>
-                <input id="title" type="text" class="text" name="Album[title]" />
+                <input id="title" type="text" class="input" name="Album[title]" />
                 <label style="color: red;" id="error_title"></label>
+            </div>
+            <div class="wrapper">
                 <label> Description</label>
                 <textarea id="description" name="Album[description]" cols="45" rows="6"></textarea>
-                
-                
-               
-            
-        </li>
-        <li class="buttons">
-        <input type="button" value="Save" onclick="javascript:save_create_album();" />
-        </li>
+            </div>
+            <input type="button" class="button" value="Save" onclick="javascript:save_create_album();" />
         </div>
-        
-    </ol>
-    
-	<fieldset id="demo-fallback">
-		<legend>File Upload</legend>
-		<p>
-			This form is just an example fallback for the unobtrusive behaviour of FancyUpload.
-			If this part is not changed, something must be wrong with your code.
-		</p>
-		<label for="demo-photoupload">
-			Upload a Photo:
-			<input type="file" name="Filedata" />
-		</label>
-	</fieldset>
- 
-	<div id="demo-status" class="hide">
-		<p>
-			<a href="#" id="demo-browse">Browse Files</a> |
-			<a href="#" id="demo-clear">Clear List</a> |
-			<a href="#" id="demo-upload">Start Upload</a>
-		</p>
-		<div>
-			<strong class="overall-title"></strong><br />
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/progress-bar/bar.gif" class="progress overall-progress" />
-		</div>
-		<div>
-			<strong class="current-title"></strong><br />
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/progress-bar/bar.gif" class="progress current-progress" />
-		</div>
-		<div class="current-text"></div>
-	</div>
- 
-	<ul id="demo-list"></ul>
-    <input type="hidden" value="<?php echo $this->user_id ?>" id="user_id" />
-    
-    
-    <input type="hidden" id="form_upload" value="<?php echo Yii::app()->request->baseUrl; ?>/?r=album/files" />
+        	<fieldset id="demo-fallback">
+        		<legend>File Upload</legend>
+        		<p>
+        			This form is just an example fallback for the unobtrusive behaviour of FancyUpload.
+        			If this part is not changed, something must be wrong with your code.
+        		</p>
+        		<label for="demo-photoupload">
+        			Upload a Photo:
+        			<input type="file" name="Filedata" />
+        		</label>
+        	</fieldset>
+            <div id="demo-status" class="hide">
+        		<p>
+        			<a href="#" id="demo-browse">Browse Files</a> |
+        			<a href="#" id="demo-clear">Clear List</a> |
+        			<a href="#" id="demo-upload">Start Upload</a>
+        		</p>
+        		<div>
+        			<strong class="overall-title"></strong><br />
+        			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/progress-bar/bar.gif" class="progress overall-progress" />
+        		</div>
+        		<div>
+        			<strong class="current-title"></strong><br />
+        			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/progress-bar/bar.gif" class="progress current-progress" />
+        		</div>
+        		<div class="current-text"></div>
+        	</div>
+            <ul id="demo-list"></ul>
+            <input type="hidden" value="<?php echo $this->user_id ?>" id="user_id" />
+            <input type="hidden" id="form_upload" value="<?php echo Yii::app()->createUrl('album/files')?>" />
+    </div> 
 </form>
-
-
-
-</div><!-- form -->
 <script type="text/javascript">
 function save_create_album(){
     

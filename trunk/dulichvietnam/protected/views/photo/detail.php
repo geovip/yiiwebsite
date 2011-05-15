@@ -44,7 +44,7 @@ function createMarker(point, photo_id, file_id, name) {
     
     google.maps.event.addListener(marker, "click", function() {
         var imag="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'?>"+name;
-        var url= "<?php echo Yii::app()->request->baseUrl.'/?r=photo/detail&photo_id='?>"+photo_id+'&file_id='+file_id;
+        var url= "<?php echo Yii::app()->createUrl('photo/detail/photo_id')?>"+"/"+photo_id+'/file_id/'+file_id;
        
         var infowindow = new google.maps.InfoWindow(
           { 
@@ -104,7 +104,7 @@ function createMarker(point, photo_id, file_id, name) {
             var center = map.getCenter();
             var lat= center.lat().toFixed(5);
             var lng= center.lng().toFixed(5);
-            var url = "<?php echo Yii::app()->request->baseUrl ?>/?r=photo/listmap";
+            var url = "<?php echo Yii::app()->createUrl('photo/listmap')?>";
             new Request({
                 url: url,
                 method: "post",

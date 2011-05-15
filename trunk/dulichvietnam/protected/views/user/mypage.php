@@ -1,5 +1,24 @@
  <style type="text/css">
- .port {width:167px;}
+ .mypapge_photo {width:160px;float: left; margin: 10px 0; padding: 0 30px 0 0;}
+ img.mypage_view_image {
+    background:transparent none repeat scroll 0 0;
+    border:medium none;
+    float:left;
+    margin-top:1px;
+    margin-right: 3px;
+}
+.myphoto img{float:left; margin-right: 17px;}
+.col2 h4{
+    color:#006549;
+    font-size:130%;
+    margin-bottom:5px;
+    margin-left:10px;
+}
+.pad h4{
+    color:#006549;
+    font-size:130%;
+    margin-bottom:5px;
+}
  .comment .content{height: 67px;}
  #user_page_stats ul {
     clear:both;
@@ -61,14 +80,60 @@ var map;
 }
     </script>
   </head>
- <div id="slider">
-    <h2>My page</h2>
-  </div>
-  <div class="clr"></div>
-  <div class="body">
-    <div class="body_resize">
-    <div class="right">
-    <h1><?php echo "Your photos: "?><a href=""><?php echo "on the map";?></a></h1>
+<section id="content">
+    
+    <article class="col1">
+        <h3>Infomation</h3>
+       	<div class="pad">
+            
+            <div>Hi, <strong><?php echo Comment::model()->getAuthorLink($user->id);?></strong>!, <a href="<?php echo Yii::app()->createUrl('user/edit/user_id/'.$user->id);?>"><?php echo "edit";?></a></div>
+            <?php if($user->type=='admin'){?>
+                
+            <?php }?>
+            <p>
+                <?php 
+                    $user_photo= User::model()->getUser($user->id);
+                    $user_photo_name= $user_photo->name;
+                    if($user_photo_name){?>
+                        <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$user_photo_name;?>" width="96" height="96" />
+                    <?php }
+                    else{?>
+                        <img src="<?php echo Yii::app()->request->baseUrl.'/images/nouser.png';?>" width="96" height="96" />
+                    <?php }
+                    ?>
+                
+            </p>
+            <p><?php echo $user->information;?></p>
+            <?php if(!empty($user->website)){?>
+                <p><img class="mypage_view_image" style="border: none; background: #fff;" src="<?php echo Yii::app()->request->baseUrl.'/images/link.png'?>" /><a href="<?php echo $user->website;?>"><?php echo $user->website;?></a></p>  
+            <?php }?>
+            
+            <p style="font-size: 1.5em;"><a href="<?php echo Yii::app()->createUrl('album/create')?>"><?php echo "Upload your photos »"; ?></a></p>
+            <div class="bg"></div>
+            <br />
+            <div>
+            <h4><?php echo "Your Stats:";?></h4>
+            </div>
+            <div class="user_page_stats">
+                <ul>
+                    <li class="first_stat">
+                        <ul id="counters">
+                            <li class="num"><?php echo $sum_photos?></li>
+                            <li><?php echo photos?></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li class="num"><?php echo $sum_google_maps?></li>
+                            <li><?php echo "on the map" ?></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </article>
+    <article class="col2 pad_left1">
+    <h2><?php echo "Your photos: "?><a href=""><?php echo "on the map";?></a></h2>
     <?php if(!empty($photos)){
         $i=0;
        foreach($photos as $photo){?>
@@ -78,35 +143,22 @@ var map;
             $i+=1;
             $file_id= Photo::getPhotoFile($photo->id)->file_id;
             $photo_name= File::getFile($file_id)->name;
-            if($i==3 || $i==6){
-                $class= "port last";
-            }
-            else{
-                $class= "port";
-            }
+            
             
             ?>
-            <div class="<?php echo $class;?>">
-            <h2><?php echo $photo->title; ?></h2>
-            <a href="<?php echo Yii::app()->request->baseUrl.'/?r=photo/detail&photo_id='.$photo->id.'&file_id='.$file_id ?>"><img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="150" height="148" />
+            <div class="mypapge_photo">
+            <strong ><?php echo $photo->title; ?></strong>
+            <a style="padding-bottom: 5px;" href="<?php echo Yii::app()->createUrl('photo/detail/photo_id/'.$photo->id.'/file_id/'.$file_id)?>"><img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="150" height="148" />
             </a>
-            
-            <div class="clr"></div>
             <img class="mypage_view_image" src="<?php echo Yii::app()->request->baseUrl.'/images/geolocated.gif'?>" /><span><?php echo $photo->view_count. " views"; ?> </span>
             <p><?php echo $photo->description;?></p>
   
             </div>
-            <?php 
-            if($i==3 || $i==6){?>
-                <div class="clr"></div>
-            <?php }
-            
-            ?>
             
     <?php } 
     }?>
-    <div class="clr"></div>
-    <h2><?php echo $user->username."'s "."Conversations";?></h2>
+    
+    <h4><?php echo $user->username."'s "."Conversations";?></h4>
     
     
     <?php 
@@ -142,66 +194,18 @@ var map;
                     </div>
                 <?php } 
                 ?>
-            
-            <div class="clr"></div>
+          
         <?php }
         }
     ?>
+    </article>
+    <div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
+</section>
     
-    </div>
-    <div class="left">
+    
+    
+
+       
         
-        <h2>Information</h2>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/test.gif" alt="picture" width="36" height="28" class="floated" />
-        <div class="clr"></div>
-        <div style="background: #F7F6FB none repeat scroll 0 0;">Hi, <?php echo Comment::model()->getAuthorLink($user->id);?>!, <a href="<?php echo Yii::app()->request->baseUrl.'/?r=user/edit&user_id='.$user->id;?>"><?php echo "edit";?></a></div>
-        <?php if($user->type=='admin'){?>
-            <a href="<?php echo Yii::app()->request->baseUrl.'/?r=user/admin' ?>"><?php echo "admin";?></a>
-        <?php }?>
-        <p>
-            <?php 
-                $user_photo= User::model()->getUser($user->id);
-                $user_photo_name= $user_photo->name;
-                if($user_photo_name){?>
-                    <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$user_photo_name;?>" width="96" height="96" />
-                <?php }
-                else{?>
-                    <img src="<?php echo Yii::app()->request->baseUrl.'/images/nouser.png';?>" width="96" height="96" />
-                <?php }
-                ?>
-            
-        </p>
-        <p><?php echo $user->information;?></p>
-        <?php if(!empty($user->website)){?>
-            <p><img class="mypage_view_image" style="border: none; background: #fff;" src="<?php echo Yii::app()->request->baseUrl.'/images/link.png'?>" /><a href="<?php echo $user->website;?>"><?php echo $user->website;?></a></p>  
-        <?php }?>
         
-        <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/create'?>"><?php echo "Upload your photos"; ?></a>
-        <div class="bg"></div>
-        <br />
-        <div style="background: #F7F6FB none repeat scroll 0 0;">
-        <?php echo "Your Stats:";?>
-        </div>
-        <div class="user_page_stats">
-            <ul>
-                <li class="first_stat">
-                    <ul id="counters">
-                        <li class="num"><?php echo $sum_photos?></li>
-                        <li><?php echo photos?></li>
-                    </ul>
-                </li>
-                <li>
-                    <ul>
-                        <li class="num"><?php echo $sum_google_maps?></li>
-                        <li><?php echo "on the map" ?></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        
-        <div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
-        
-        <div class="clr"></div>
-    </div>
-  </div>
- </div>
+       

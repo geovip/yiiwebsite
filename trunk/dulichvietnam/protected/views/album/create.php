@@ -30,29 +30,26 @@ var map;
 }
     </script>
   </head>
-<div id="slider">
-    <h2>Add Photo</h2>
-  </div>
-  <div class="clr"></div>
-<div class="body">
-    <div class="body_resize">
-      <div class="right">
-      <?php 
-        if(!Yii::app()->user->isGuest){?>
-    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/listalbum'?>"><?php echo "Hot Album";?></a>
-    |
-    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/manage'?>"><?php echo "My Album";?></a>
-    |
-    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/create'?>"><?php echo "Upload";?></a>
-    <?php }?>
-
-      <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
-      </div>
-      <div class="left">
-        <div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
+<section id="content">
+    <article class="col2 pad_left1">
+        <h2>Add Photo</h2>
         
-        </div>
-      <div class="clr"></div>
-    </div>
-  </div>
-  <div class="clr"></div>
+        <?php
+        /* 
+        if(!Yii::app()->user->isGuest){?>
+            <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/listalbum'?>"><?php echo "Hot Album";?></a>
+            |
+            <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/manage'?>"><?php echo "My Album";?></a>
+            |
+            <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/create'?>"><?php echo "Upload";?></a>
+        <?php } */?>
+        <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+    </article>
+    <div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
+</section>
+
+      
+      
+        
+        
+        
