@@ -1088,3 +1088,652 @@ in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
 2011/05/15 17:10:00 [trace] [system.CModule] Loading "clientScript" application component
 in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
 in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:17:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:17:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:17:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:17:50 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:17:50 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:07 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:07 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:19:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:19:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:19:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:19:08 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:08 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:19:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:19:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:19:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:19:55 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:19:55 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:21:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:21:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:21:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:21:45 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:21:45 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:22:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:22:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:22:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:22:14 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:22:14 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:26:24 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:26:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:26:24 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:26:24 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:24 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:26:46 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:26:46 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:26:46 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:26:46 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:26:46 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:27:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:27:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:27:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:27:22 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:27:22 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:28:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:28:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:28:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:28:48 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:48 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:57 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:57 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:57 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:57 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:57 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:57 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:57 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:57 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:58 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:28:58 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:28:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:58 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:28:58 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:28:58 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:28:58 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.CModule] Loading "log" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.CModule] Loading "request" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.CModule] Loading "urlManager" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.web.filters.CFilterChain] Running filter AlbumController.filteraccessControl()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.CModule] Loading "user" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.CModule] Loading "session" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.CModule] Loading "db" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.db.CDbConnection] Opening DB connection
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_category`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (22)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.db.ar.CActiveRecord] Category.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:29:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_category` `t` WHERE type=:type ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (109)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Category.php (99)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (74)
+2011/05/15 17:29:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_album`
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (30)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.db.ar.CActiveRecord] Album.findAll()
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:29:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_album` `t` WHERE user_id=:user_id ORDER BY id
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (135)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\models\Album.php (125)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (75)
+2011/05/15 17:29:02 [trace] [system.CModule] Loading "widgetFactory" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\views\layouts\tour.php (1)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
+2011/05/15 17:29:02 [trace] [system.CModule] Loading "clientScript" application component
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\protected\controllers\AlbumController.php (101)
+in D:\xampp1.7.3\xampp\htdocs\yiiwebsite\dulichvietnam\index.php (13)
