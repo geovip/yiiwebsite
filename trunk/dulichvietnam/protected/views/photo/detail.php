@@ -147,7 +147,7 @@ function createMarker(point, photo_id, file_id, name) {
   <div class="body">
     <div class="body_resize">
       <div class="right">
-        <h2><?php echo $photo->title; ?><span></span></h2>
+          <h2> <a href="<?php echo Yii::app()->createUrl('album/viewdetail/album_id/'.$photo->collection_id) ?>"><?php echo $photo->title; ?></a><span></span></h2>
         
         <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture" width="495" />
         
@@ -207,7 +207,33 @@ function createMarker(point, photo_id, file_id, name) {
              <a href="<?php echo Yii::app()->createUrl("photo/map/photo_id/".$photo->id."/file_id/".$photo->file_id);?>"><?php echo "Change Position";?></a>
            <?php }?>
           </p>
-           
+          <h2>Suggest Travel</h2>
+          <?php
+					if(!empty($albums_comments)){
+						$i=0;
+						foreach($albums_comments as $album){
+							$i++;
+							$file_id= Photo::getPhoto($album->id)->file_id;
+							$photo_name= File::getFile($file_id)->name;
+							?>
+                            <?php if($i==1 || $i==2){?>
+								<div class="wrapper under">
+							<?php } else { ?>
+								<div class="wrapper">
+							<?php } ?>
+                                <figure class="left marg_right1">
+                                    <a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album->id);?>">
+										<img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$photo_name;?>" alt="picture" width="116" height="116" />
+									</a>
+                                </figure>
+        						<p class="pad_bot2"><strong><a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album->id);?>"><?php echo $album->title;?></a></strong></p>
+        						<p class="pad_bot2"><?php echo substr($album->description, 0, 54);?></p>
+        						<a href="<?php echo Yii::app()->createUrl("album/viewdetail/album_id/".$album->id);?>" class="marker_1"></a>
+        					</div>
+                            <?php 
+						}
+					}
+				?>
       </div>
       </div>
       <div class="clr"></div>
