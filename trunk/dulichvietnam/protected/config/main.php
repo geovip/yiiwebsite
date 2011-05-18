@@ -37,6 +37,8 @@ return array(
         
           'urlManager'=>array(
           'urlFormat'=>'path',
+          //'urlSuffix' => '.html',
+          'showScriptName'=>false,
           'rules'=>array(
           '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
           ),

@@ -67,10 +67,10 @@
 			<nav>
 				<ul id="menu">
 					<li><a href="<?php echo Yii::app()->createUrl('/');?>" class="nav1">Home</a></li>
-					<li><a href="About.html" class="nav2">About Us </a></li>
-					<li><a href="Tours.html" class="nav3">Our Tours</a></li>
-					<li><a href="Destinations.html" class="nav4">Destinations</a></li>
-					<li class="end"><a href="Contacts.html" class="nav5">Contacts</a></li>
+					<li><a href="<?php echo Yii::app()->createUrl("site/page/view/about");?>" class="nav2">About Us </a></li>
+					<li><a href="<?php echo Yii::app()->createUrl("album/listalbum");?>" class="nav3">Albums</a></li>
+					<li><a href="<?php echo Yii::app()->createUrl("destination");?>" class="nav4">Destinations</a></li>
+					<li class="end"><a href="<?php echo Yii::app()->createUrl("site/contact");?>" class="nav5">Contacts</a></li>
 				</ul>
 			</nav>
 			
