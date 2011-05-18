@@ -282,7 +282,7 @@ window.addEvent('domready', function() { // wait for the content
 			});
  
 			$('demo-upload').addEvent('click', function() {
-                
+               
 				up.start(); // start upload
                 
 				//return false;
@@ -320,7 +320,7 @@ window.addEvent('domready', function() { // wait for the content
 		onFileSuccess: function(file, response) {
             
 			var json = new Hash(JSON.decode(response, true) || {});
- 
+          
 			if (json.get('status') == '1') {
 				file.element.addClass('file-success');
 				file.info.set('html', '<strong>Image was uploaded:</strong> ' + json.get('width') + ' x ' + json.get('height') + 'px, <em>' + json.get('mime') + '</em>)');

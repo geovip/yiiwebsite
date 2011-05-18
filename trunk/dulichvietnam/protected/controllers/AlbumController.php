@@ -140,7 +140,6 @@ class AlbumController extends Controller
                
         //get file
         $file = CUploadedFile::getInstanceByName("Filedata");
-        //var_dump();exit;
         
         if($file !=""){
             
@@ -266,8 +265,9 @@ class AlbumController extends Controller
             	echo '</response>';
             } else {
             	// header('Content-type: application/json');
-            
+                
             	echo json_encode($return);
+                exit;
             }
             
             //$this->image = $file->getName(Yii::app()->getBasePath().'/uploads/'.$file->getName());
