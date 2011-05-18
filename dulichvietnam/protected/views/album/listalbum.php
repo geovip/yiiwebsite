@@ -1,19 +1,20 @@
   
  <div id="slider">
-    <h2>Albums</h2>
+    <h2>
+    <a href="<?php echo Yii::app()->createUrl('album/listalbum')?>"><?php echo "All Album";?></a>
+    <?php 
+        if(!Yii::app()->user->isGuest){?>           
+    |
+    <a href="<?php echo Yii::app()->createUrl('album/manage')?>"><?php echo "My Album";?></a>
+    |
+    <a href="<?php echo Yii::app()->createUrl('album/create')?>"><?php echo "Upload";?></a>
+    <?php }?> </h2>
   </div>
   <div class="clr"></div>
   <div class="body">
     <div class="body_resize">
     
-    <?php 
-        if(!Yii::app()->user->isGuest){?>
-    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/listalbum'?>"><?php echo "Hot Album";?></a>
-    |
-    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/manage'?>"><?php echo "My Album";?></a>
-    |
-    <a href="<?php echo Yii::app()->request->baseUrl.'/?r=album/create'?>"><?php echo "Upload";?></a>
-    <?php }?>
+    
     <div class="clr"></div>
     <?php if(!empty($albums)){
         $i=0;
