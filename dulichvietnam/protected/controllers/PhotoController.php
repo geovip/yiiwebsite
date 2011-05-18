@@ -216,6 +216,8 @@ class PhotoController extends Controller
                 }
             }
         }
+        //list 2 album randomize 
+        $albums_comments= Album::model()->suggestAlbum();
         $this->render('detail', array(
                                 'file'=> $file, 
                                 'photo_id'=>$photo_id,
@@ -225,7 +227,8 @@ class PhotoController extends Controller
                                 'rated'=> $rated,
                                 'rating_count'=> $rating_count,
                                 'tt_rating'=> $tt,
-                                'photos'=>$str
+                                'photos'=>$str,
+                                'albums_comments'=>$albums_comments
                                 ));
     }
     public function newComment($photo)

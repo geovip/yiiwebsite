@@ -168,6 +168,15 @@ class Album extends CActiveRecord
         return self::model()->findAll($condition);
     }
     
+    //display album at home page with comment count desc
+    public function suggestAlbum(){
+        $condition= array(
+                        'order'=> 'RAND()',
+                        'limit'=>2
+                        );
+        return self::model()->findAll($condition);
+    }
+    
     public function AdminAlbum($user_id){
         $condition= array(
                         'condition'=>'user_id=:user_id',

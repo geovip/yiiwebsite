@@ -277,25 +277,38 @@ class AlbumController extends Controller
         
     }
     public function actionListAlbum(){
-        //list album
-        
-        $albums= Album::model()->listAlbum();   
-        /*
-        //list photo
-        foreach($albums as $album){
-            $photo= Photo::model()->getPhoto($album->id);
-            
-            $files= File::model()->getFile($photo->file_id);
-            $file[$album->id][$photo->id]=$files;
-        }
-        //var_dump(count($file));exit;
-        */
-        //$this->albums= $albums;
-        $this->render('listalbum',
-            array(
-                'albums'=>$albums
-            )
-        );
+//        //list album
+//        
+//        $albums= Album::model()->listAlbum();   
+//        /*
+//        //list photo
+//        foreach($albums as $album){
+//            $photo= Photo::model()->getPhoto($album->id);
+//            
+//            $files= File::model()->getFile($photo->file_id);
+//            $file[$album->id][$photo->id]=$files;
+//        }
+//        //var_dump(count($file));exit;
+//        */
+//        //$this->albums= $albums;
+//        $this->render('listalbum',
+//            array(
+//                'albums'=>$albums
+//            )
+//        );
+          $criteria=new CDbCriteria(array(
+                    'order'=>'view_count DESC'
+            ));
+            $dataProvider=new CActiveDataProvider('Album', array(
+                    'pagination'=>array(
+                            'pageSize'=> 4,
+                    ),
+                    'criteria'=>$criteria,
+            ));
+
+            $this->render('list',array(
+                    'dataProvider'=>$dataProvider,
+            ));
     }
     //view detail album
     public function actionViewDetail($album_id){
