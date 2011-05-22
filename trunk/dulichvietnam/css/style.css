@@ -120,3 +120,40 @@ footer a {color:#439deb}
 #form-demo .editsetting .input{margin-right: 348px;}
 #form-demo .editsetting textarea{margin-right: 125px;}
 #form-demo select{float:right;margin-right:222px;width:287px;border:1px solid #dcdcdc;background:#fff;padding:5px;margin-bottom:6px;color:#323232;font:13px Arial, Helvetica, sans-serif}
+.category {
+    display:inline;
+    float:left;
+    margin:0 0 35px;
+    width: 100%;
+}
+
+.category h4 {
+    
+    font-size:26px;
+    
+    line-height:57px;
+    
+    text-transform:uppercase;
+    font-weight:600;
+}
+.category img {
+    float:left;
+    margin:5px 0 30px;
+    padding-right: 20px;
+}
+.category ul{
+    font-size:90%;
+    line-height:170%;
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    float: left;
+    display: inline;
+    width: 400px;
+}
+.category p {
+    display:inline;
+    float:left;
+    
+    width:460px;
+}

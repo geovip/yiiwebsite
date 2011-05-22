@@ -31,7 +31,8 @@
 <?php endforeach; ?>
 <script type="text/javascript">
 function del(album_id, comment_id){
-    var url= "<?php echo Yii::app()->request->baseUrl.'/?r=album/delcomment&comment_id='?>"+comment_id;
+    var url= "<?php echo Yii::app()->createUrl('album/delcomment/comment_id')?>"+ "/"+comment_id;
+   
     if(!confirm('Are you sure you want to delete this comment?')) return false;
     new Request({
         url: url,
@@ -43,7 +44,7 @@ function del(album_id, comment_id){
         onSuccess : function(responseHTML)
         {
             if(responseHTML > 0){
-                window.location.href="<?php echo Yii::app()->request->baseUrl.'/?r=album/viewdetail&album_id='?>"+album_id;
+                window.location.href="<?php echo Yii::app()->createUrl('album/viewdetail/album_id')?>"+"/"+album_id;
                 jQuery('div.flash_success').html('Comment has been deleted!');
             }
         		

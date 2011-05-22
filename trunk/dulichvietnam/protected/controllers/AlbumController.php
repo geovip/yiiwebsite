@@ -306,7 +306,7 @@ class AlbumController extends Controller
                     'criteria'=>$criteria,
             ));
 
-            $this->render('list',array(
+            $this->render('listalbum',array(
                     'dataProvider'=>$dataProvider,
             ));
     }
@@ -359,7 +359,7 @@ class AlbumController extends Controller
 	            'order'=>'comment_count DESC'
 			),
             'pagination'=>array(
-				'pageSize'=>Yii::app()->params['albumPerPage']
+				'pageSize'=>4
 			)
 		));
 		
@@ -471,51 +471,54 @@ class AlbumController extends Controller
 		));
 	}
     public function actionDel($album_id){
+        if(isset($_POST['ajax'])){
         
-        $album= $this->loadModel($album_id);
-        $photos= Photo::model()->listPhoto($album_id);
-        $user_id= Yii::app()->user->getId();
-        
-        foreach($photos as $photo){
-            try{
-                //delete comments photos
-                $photo_comments= Comment::model()->getListComment($photo->id);
-                if(!empty($photo_comments)){
-                    foreach($photo_comments as $comment){
-                        $comment->delete();
-                    }
-                }
-                //get ratings
-
-                $ratings= Rating::model()->getListRatingPhoto($photo->id);
-                if(count($ratings)){
-                    foreach($ratings as $rating){
-                        $rating->delete();
-                    }
-                }
-                $file_thumb= File::model()->getFile($photo->file_id);
-                $file_ogr= File::model()->getFileOrginal($photo->file_id);
-                @unlink(Yii::app()->getBasePath().'/uploads/'.$file_thumb->name);
-                @unlink(Yii::app()->getBasePath().'/uploads/'.$file_ogr->name);
-                $file_thumb->delete();
-                $file_ogr->delete();
-                $photo->delete();
-            }
-            catch(Exception $e){
-                throw $e;
-            }
+            $album= $this->loadModel($album_id);
+            $photos= Photo::model()->listPhoto($album_id);
+            $user_id= Yii::app()->user->getId();
             
-        }
-        //list comments
-        $comments= Comment::model()->getListCommentAlbum($album_id);
-        //del comments
-        foreach($comments as $comment){
-            $comment->delete();
-        }
-        $album->delete();
-        $this->redirect(array('manage'));
+            foreach($photos as $photo){
+                try{
+                    //delete comments photos
+                    $photo_comments= Comment::model()->getListComment($photo->id);
+                    if(!empty($photo_comments)){
+                        foreach($photo_comments as $comment){
+                            $comment->delete();
+                        }
+                    }
+                    //get ratings
+    
+                    $ratings= Rating::model()->getListRatingPhoto($photo->id);
+                    if(count($ratings)){
+                        foreach($ratings as $rating){
+                            $rating->delete();
+                        }
+                    }
+                    $file_thumb= File::model()->getFile($photo->file_id);
+                    $file_ogr= File::model()->getFileOrginal($photo->file_id);
+                    @unlink(Yii::app()->getBasePath().'/uploads/'.$file_thumb->name);
+                    @unlink(Yii::app()->getBasePath().'/uploads/'.$file_ogr->name);
+                    $file_thumb->delete();
+                    $file_ogr->delete();
+                    $photo->delete();
+                }
+                catch(Exception $e){
+                    throw $e;
+                }
+                
+            }
+            //list comments
+            $comments= Comment::model()->getListCommentAlbum($album_id);
+            //del comments
+            foreach($comments as $comment){
+                $comment->delete();
+            }
+            $album->delete();
+            echo 1;
+            exit;
+            //$this->redirect(array('manage'));
         
-        
+        }
     }
 
 	/**
