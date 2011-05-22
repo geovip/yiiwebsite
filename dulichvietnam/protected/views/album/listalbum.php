@@ -8,7 +8,7 @@
 	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas.</p>
 	<a href="#" class="button">Read More</a>
 </div>
-<div class="img"><img src="<?php echo Yii::app()->request->baseUrl ?>/images/img2.jpg" alt="" /></div>
+
 <div class="inner_copy">More <a href="http://www.templatemonster.com/">Website Templates</a> at TemplateMonster.com!</div>
 <a href="<?php echo Yii::app()->createUrl('album/listalbum')?>"><?php echo "All Album";?></a>
     <?php 
