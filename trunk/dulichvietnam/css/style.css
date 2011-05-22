@@ -8,7 +8,7 @@ mark, rp, rt, ruby, summary, time {display:inline}
 body {background:url(../images/bg.jpg) top center repeat;border:0;font:13px Arial, Helvetica, sans-serif;color:#323232;line-height:17px}
 .inner_copy, .inner_copy a {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
 .css3 {border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;box-shadow:0 0 4px rgba(0, 0, 0, .4);-moz-box-shadow:0 0 4px rgba(0, 0, 0, .4);-webkit-box-shadow:0 0 4px rgba(0, 0, 0, .4);behavior:url(js/PIE.htc);position:relative}
-.body1 {background:url(../images/bg_footer.jpg) top center repeat;height:100px}
+.body1 {background:url(../images/bg_footer.jpg) top center repeat;height:100px; overflow: hidden; clear: both;}
 .main {margin:0 auto;width:960px;position:relative}
 .block {height:100px}
 .extra {min-height:100%;height:auto !important;height:100%;margin:0 auto -100px}
