@@ -86,10 +86,25 @@ class SiteController extends Controller
 			$model->attributes=$_POST['ContactForm'];
 			if($model->validate())
 			{
+			 /*
 				$headers="From: {$model->email}\r\nReply-To: {$model->email}";
 				mail(Yii::app()->params['adminEmail'],$model->subject,$model->body,$headers);
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
 				$this->refresh();
+                */
+                $model= new Contact;
+                $model->name=$_POST['ContactForm']['name'];
+                $model->email= $_POST['ContactForm']['email'];
+                $model->subject= $_POST['ContactForm']['subject'];
+                $model->body= $_POST['ContactForm']['body'];
+                $model->creation_date= date("Y-m-d H:i:s");
+                if($model->save()){
+                    Yii::app()->user->setFlash('contacttSubmitted','Thank you for your contact us.'); 
+    			}
+    			else{
+                    Yii::app()->user->setFlash('contactFail','Information could not save.!'); 
+    			}
+    			$this->refresh();
 			}
 		}
 		$this->render('contact',array('model'=>$model));

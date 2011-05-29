@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Places'=>array('index'),
+	'Contacts'=>array('index'),
 	$model->name,
 );
 

@@ -59,6 +59,13 @@
                                     <li><?php echo CHtml::link('Manage adsvertisment', array('ads/manage')); ?></li> 							
                                 </ul> 
                             </div>
+                            <div class="navhead"><span><?php echo CHtml::link('Contacts'); ?></span></div> 
+                            <div class="subnav"> 
+                                <ul class="submenu"> 
+                                    
+                                    <li><?php echo CHtml::link('Manage contacts', array('contact/manage')); ?></li> 							
+                                </ul> 
+                            </div>
                         </div> 
                     </div> <!-- END Navigation --> 
                 </div> 
