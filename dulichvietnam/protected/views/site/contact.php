@@ -9,10 +9,10 @@ $this->pageTitle = Yii::app()->name . ' - Contact Us';
     <article class="col2 pad_left1">
         <h2>Contact Us</h2>
         <div>
-        <?php if (Yii::app()->user->hasFlash('contact')): ?>
+        <?php if (Yii::app()->user->hasFlash('contacttSubmitted')): ?>
 
             <div class="flash-success">
-                <?php echo Yii::app()->user->getFlash('contact'); ?>
+                <?php echo Yii::app()->user->getFlash('contacttSubmitted'); ?>
             </div>
 
         <?php else: ?>
