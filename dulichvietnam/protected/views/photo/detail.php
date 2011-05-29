@@ -207,7 +207,9 @@ function createMarker(point, photo_id, file_id, name) {
              <a href="<?php echo Yii::app()->createUrl("photo/map/photo_id/".$photo->id."/file_id/".$photo->file_id);?>"><?php echo "Change Position";?></a>
            <?php }?>
           </p>
+          
           <h2>Suggest Travel</h2>
+          <div class="pad">
           <?php
 					if(!empty($albums_comments)){
 						$i=0;
@@ -234,6 +236,8 @@ function createMarker(point, photo_id, file_id, name) {
 						}
 					}
 				?>
+                </div>
+               
       </div>
       </div>
       <div class="clr"></div>
