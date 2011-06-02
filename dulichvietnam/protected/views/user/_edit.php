@@ -20,11 +20,7 @@
     		<?php echo $form->textField($model,'displayname',array('id'=>'displayname', 'class'=>'input')); ?>
     	    <?php echo $form->labelEx($model,'displayname'); ?>
         </div>
-        <div class="wrapper">
-                    <?php echo $form->passwordField($model,'password',array('id'=>'password', 'class'=>'input')); ?>
-                    <?php echo $form->labelEx($model,'password'); ?>:
-                    <div class="error-message" id="password1-err"></div>
-                </div>
+       
          <div class="wrapper">
             
     		<?php echo $form->textField($model,'email',array('id'=>'email', 'class'=>'input', 'disabled'=>'disabled')); ?>
