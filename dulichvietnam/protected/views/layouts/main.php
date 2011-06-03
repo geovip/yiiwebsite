@@ -15,7 +15,7 @@
 <!-- header -->
 		<header>
 			<div class="wrapper">
-				<h1><a href="index.html" id="logo">Around the World</a></h1>
+				<h1><a href="<?php echo Yii::app()->createUrl("site");?>" id="logo">Around the World</a></h1>
 				<div class="right">
 					<div class="wrapper">
 						<form id="search" action="" method="post">
