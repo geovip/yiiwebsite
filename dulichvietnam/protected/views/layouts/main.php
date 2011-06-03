@@ -9,6 +9,7 @@
 <script type="text/javascript">    
   jQuery.noConflict();
 </script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <div class="extra">
 	<div class="main">
 <!-- header -->
@@ -71,7 +72,7 @@
 	</div>
 </div>
 <script type="text/javascript"> Cufon.now(); </script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
 <script type="text/javascript">
 var geocoder= new google.maps.Geocoder();
 function search(address) {
