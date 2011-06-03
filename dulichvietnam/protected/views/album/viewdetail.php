@@ -49,6 +49,15 @@ a:hover, a.hover {
 	</article>
     <article class="col2 pad_left1">
         <h2><?php echo $album->title;?></h2>
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style ">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4de90e105f2966d6"></script>
+        <!-- AddThis Button END -->
         <?php if($user_id==$album->user_id){ ?>
         <a href="<?php echo Yii::app()->createUrl("album/edit/album_id/".$album_id); ?>"><?php echo "Edit Album"; ?></a>
         |
