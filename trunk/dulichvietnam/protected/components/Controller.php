@@ -20,4 +20,22 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+    
+    /**
+	 * Initializes the controller.
+	 * This method is called by the application before the controller starts to execute.
+	 * You may override this method to perform the needed initialization for the controller.
+	 * @since 1.0.1
+	 */
+	public function init()
+	{
+	   Yii::app()->clientScript->registerCSSFile(Yii::app()->request->baseUrl . '/css/reset.css','all');
+       Yii::app()->clientScript->registerCSSFile(Yii::app()->request->baseUrl . '/css/layout.css','all');
+       Yii::app()->clientScript->registerCSSFile(Yii::app()->request->baseUrl . '/css/style.css','all');
+       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/mootools-1.2.2.js');
+       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/jquery-1.4.2.js');
+       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/cufon-yui.js');
+       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/cufon-replace.js');
+       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/Myriad_Pro_600.font.js');
+	}
 }
