@@ -29,6 +29,10 @@ return array(
     //'defaultController'=>'album/listalbum',
     // application components
     'components' => array(
+        'clientScript'=>array(
+            'class'=>'application.extensions.CClientScriptMinify',
+            'minifyController'=>'/minify',
+        ),
         'user' => array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
@@ -36,12 +40,13 @@ return array(
         // uncomment the following to enable URLs in path-format
         
           'urlManager'=>array(
-          'urlFormat'=>'path',
-          //'urlSuffix' => '.html',
-          'showScriptName'=>false,
-          'rules'=>array(
-          '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-          ),
+              'urlFormat'=>'path',
+              //'urlSuffix' => '.html',
+              'showScriptName'=>false,
+              'rules'=>array(
+              '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+              'minify/<group:[^\/]+>'=>'minify/index',
+              ),
           ),
         
         /*

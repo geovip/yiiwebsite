@@ -1,46 +1,19 @@
-<head> 	
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript">
-var map;
- function load() {
-    
-    var marker;
-    
-    var latlng;
-    
-    latlng = new google.maps.LatLng(-34.397, 150.644);
-    
-    var myOptions = {
-      zoom: 8,
-      center: latlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map = new google.maps.Map(document.getElementById("map"), myOptions);
-    //set maker hien tai
-    
-    marker = new google.maps.Marker({
-      map:map,
-      //draggable:true,
-      animation: google.maps.Animation.DROP,
-      position: latlng
-    });
-    
-    
-   
-}
-    </script>
-  </head>
 <style type="text/css">
 #page1 .text {padding: 7px 0 0 36px; text-align:left;}
+a:hover, a.hover {
+    color: red;
+}
 </style>
-    <div class="text">
-		<img src="<?php echo Yii::app()->request->baseUrl ?>/images/text1.jpg" alt="">
-		<h2>The Best Offers</h2>
-		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas.</p>
-		<a href="#" class="button">Read More</a>
-	</div>
-    <div class="img"><img src="<?php echo Yii::app()->request->baseUrl ?>/images/img2.jpg" alt=""></div>
-    <div class="inner_copy">More <a href="http://www.templatemonster.com/">Website Templates</a> at TemplateMonster.com!</div>
+ <h3>
+<a href="<?php echo Yii::app()->createUrl('album/listalbum')?>"><?php echo "All Album";?></a>
+    <?php 
+        if(!Yii::app()->user->isGuest){?>           
+    |
+    <a href="<?php echo Yii::app()->createUrl('album/manage')?>"><?php echo "My Album";?></a>
+    |
+    <a href="<?php echo Yii::app()->createUrl('album/create')?>"><?php echo "Upload";?></a>
+    <?php }?>
+</h3>
 <section id="content">
     
     <article class="col1">

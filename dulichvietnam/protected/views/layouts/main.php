@@ -2,37 +2,13 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
-
-	
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/mootools-1.2.2.js"></script>
-	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset.css" type="text/css" media="all">
-	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/layout.css" type="text/css" media="all">
-	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" type="text/css" media="all">
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.4.2.js" ></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/cufon-yui.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/cufon-replace.js"></script>  
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/Myriad_Pro_600.font.js"></script>
-	<!--[if lt IE 9]>
-		<script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script_other.js"></script>
-		<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/html5.js"></script>
-	<![endif]-->
-    <script type="text/javascript">
-        Cufon.replace('h1')('h2')('h3')('h4')('div.menu li');
-    </script>
-   
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.validate.js"></script>
-
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    
-    <script type="text/javascript">    
-      jQuery.noConflict();
-    </script>
-    
+	<meta name="language" content="en" />	  
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
-
 <body id="page1">
+<script type="text/javascript">    
+  jQuery.noConflict();
+</script>
 <div class="extra">
 	<div class="main">
 <!-- header -->
@@ -66,7 +42,7 @@
 			</div>
 			<nav>
 				<ul id="menu">
-					<li><a href="<?php echo Yii::app()->createUrl('/');?>" class="nav1">Home</a></li>
+					<li><a href="<?php echo Yii::app()->createUrl("site");?>" class="nav1">Home</a></li>
 					<li><a href="<?php echo Yii::app()->createUrl("site/page/view/about");?>" class="nav2">About Us </a></li>
 					<li><a href="<?php echo Yii::app()->createUrl("album/listalbum");?>" class="nav3">Albums</a></li>
 					<li><a href="<?php echo Yii::app()->createUrl("destination");?>" class="nav4">Destinations</a></li>
@@ -95,9 +71,7 @@
 	</div>
 </div>
 <script type="text/javascript"> Cufon.now(); </script>
-</body>
-</html>
-<head>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
 var geocoder= new google.maps.Geocoder();
 function search(address) {
@@ -135,4 +109,13 @@ function search(address) {
    });
 
 </script>
-</head>
+<!--[if lt IE 9]>
+		<script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script_other.js"></script>
+		<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/html5.js"></script>
+<![endif]-->
+    <script type="text/javascript">
+        Cufon.replace('h1')('h2')('h3')('h4')('div.menu li');
+    </script> 
+    
+</body>
+</html>
