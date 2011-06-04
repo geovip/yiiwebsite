@@ -35,7 +35,7 @@
                                     <li><?php echo CHtml::link('Manage user', array('user/manage')); ?></li> 
                                     <li><?php echo CHtml::link('Manage Api User', array('api/manage')); ?></li> 
                                     <li><?php echo CHtml::link('Manage comment', array('comment/manage')); ?></li> 
-                                    <li><?php echo CHtml::link('Manage album', array('album/user')); ?></li> 
+                                    
                                 </ul> 
                             </div> 	
                             <div class="navhead"><span><?php echo CHtml::link('Category'); ?></span></div> 
