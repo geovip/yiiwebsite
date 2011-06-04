@@ -59,10 +59,13 @@ a:hover, a.hover {
         <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4de90e105f2966d6"></script>
         <!-- AddThis Button END -->
         <?php if($user_id==$album->user_id){ ?>
+        <div style="padding-bottom: 5px;">
         <a href="<?php echo Yii::app()->createUrl("album/edit/album_id/".$album_id); ?>"><?php echo "Edit Album"; ?></a>
         |
         <a href="<?php echo Yii::app()->createUrl("album/editsetting/album_id/".$album_id); ?>"><?php echo "Manage Photos";?></a>
+        </div>
         <?php } ?>
+       
         <?php $this->widget('zii.widgets.CListView', array(
         	'dataProvider'=>$dataProvider,
         	'itemView'=>'_view',

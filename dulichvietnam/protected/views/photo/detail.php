@@ -162,10 +162,11 @@ function createMarker(point, photo_id, file_id, name) {
           <span id="rate_5" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(5);"<?php endif; ?> onmouseover="rating_over(5);"></span>
           <span id="rating_text" class="rating_text"><?php echo "click to rate" ;?></span>
         </div>
+        
         <?php }?>
         <?php 
             if($user_id==$photo->user_id){?>
-                <a href="<?php echo Yii::app()->createUrl("photo/del/photo_id/".$photo->id); ?>"><?php echo "Delete";?></a>
+                <a href="javascript:void(0);" onclick="delete_photo('<?php echo $photo->id;?>', '<?php echo $photo->collection_id;?>');"><?php echo "Delete";?></a>
         <?php }
         ?>
         <?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
@@ -384,4 +385,30 @@ function createMarker(point, photo_id, file_id, name) {
  });
   
   
+</script>
+<script type="text/javascript">
+function delete_photo(photo_id, album_id){
+    
+    var url= "<?php echo Yii::app()->createUrl("photo/del/photo_id"); ?>"+ "/"+ photo_id;
+    
+    if(!confirm('Are you sure you want to delete this photo?')) return false;
+    new Request({
+        url: url,
+        method: "post",
+       data:{
+            'ajax': 'ajax'
+            
+        },
+        onSuccess : function(responseHTML)
+        {
+            if(responseHTML > 0){
+                
+                window.location.href="<?php echo Yii::app()->createUrl('album/viewdetail/album_id')?>"+"/"+album_id;
+            }
+        		
+        }
+    }).send();
+    return false;
+    
+}
 </script>
