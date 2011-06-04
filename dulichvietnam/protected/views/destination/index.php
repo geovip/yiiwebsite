@@ -26,7 +26,7 @@
   font-size: 1em;
   width: 100%;
 }
-#side-container li input {background-color: inherit;}
+#side-container li input { padding: 6px 5px; background-color: #fff; border: 1px solid #E5E3DF; margin-bottom: 5px;}
 #side-container input{background-color: #678AC7;}
 </style> 
 <div id="side-container"> 
