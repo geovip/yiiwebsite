@@ -26,6 +26,8 @@
   font-size: 1em;
   width: 100%;
 }
+#side-container li input {background-color: inherit;}
+#side-container input{background-color: #678AC7;}
 </style> 
 <div id="side-container"> 
   <ul> 
@@ -40,7 +42,7 @@
   <div id="dir-container"></div> 
 </div> 
 <div id="map-container"></div> 
-
+<div style="display: none;" align="center" id="map" style="width: 100%; height: 500px"><br/></div>
 
 <script type="text/javascript"> 
 var FindDirection = {
