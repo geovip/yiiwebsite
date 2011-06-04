@@ -32,9 +32,11 @@ class UserController extends Controller {
 
         // Uncomment the following line if AJAX validation is needed
         $this->performAjaxValidation($model);
-
+        
         if (isset($_POST['User'])) {
+            $password= $_POST['User']['password'];
             $model->attributes = $_POST['User'];
+            $model->password= md5($password);
             $model->creation_date = date("Y-m-d H:i:s");
             $model->modified_date = date("Y-m-d H:i:s");
             if ($model->save())
@@ -69,7 +71,9 @@ class UserController extends Controller {
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['User'])) {
+            $password= $_POST['User']['password'];
             $model->attributes = $_POST['User'];
+            $model->password= md5($password);
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
