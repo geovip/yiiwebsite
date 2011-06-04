@@ -147,8 +147,12 @@ function createMarker(point, photo_id, file_id, name) {
   <div class="body">
     <div class="body_resize">
       <div class="right">
+          <?php
+        //get ten album
+        $album= Album::getAlbum($photo->collection_id); 
+        ?>
         
-        <h2> <span><?php echo $photo->title; ?></span></h2>
+        <h2> <a href="<?php echo Yii::app()->createUrl('album/viewdetail/album_id/'.$photo->collection_id) ?>"><?php echo $album->title;?></a> - <span><?php echo $photo->title; ?></span></h2>
         
         <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture" width="495" />
         
@@ -165,11 +169,7 @@ function createMarker(point, photo_id, file_id, name) {
         </div>
         
         <?php //}?>
-        <?php
-        //get ten album
-        $album= Album::getAlbum($photo->collection_id); 
-        ?>
-        <a href="<?php echo Yii::app()->createUrl('album/viewdetail/album_id/'.$photo->collection_id) ?>"><?php echo $album->title;?></a>
+      
         <?php 
             if($user_id==$photo->user_id){?>
                 <a href="javascript:void(0);" onclick="delete_photo('<?php echo $photo->id;?>', '<?php echo $photo->collection_id;?>');"><?php echo "Delete";?></a>
