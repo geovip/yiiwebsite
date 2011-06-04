@@ -4,6 +4,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />	  
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+    <?php
+    Yii::app()->clientScript->registerCSSFile(Yii::app()->request->baseUrl . '/css/reset.css','all');
+       Yii::app()->clientScript->registerCSSFile(Yii::app()->request->baseUrl . '/css/layout.css','all');
+       Yii::app()->clientScript->registerCSSFile(Yii::app()->request->baseUrl . '/css/style.css','all');
+       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/mootools-1.2.2.js');
+       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/jquery-1.4.2.js');
+       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/cufon-yui.js');
+       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/cufon-replace.js');
+       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/Myriad_Pro_600.font.js');
+    ?>
 </head>
 <body id="page1">
 <script type="text/javascript">    
