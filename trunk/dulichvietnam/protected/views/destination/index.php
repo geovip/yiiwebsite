@@ -26,12 +26,13 @@
   font-size: 1em;
   width: 100%;
 }
-#side-container li input { padding: 6px 5px; background-color: #fff; border: 1px solid #E5E3DF; margin-bottom: 5px;}
+#side-container li input { padding:5px; background-color: #fff; border: 1px solid #E5E3DF; margin-bottom: 5px; width: 214px;}
+#side-container li.dir-label{padding-right: 16px;}
 #side-container input{background-color: #678AC7;}
 </style> 
 <div id="side-container"> 
   <ul> 
-    <li class="dir-label">From:</li> 
+    <li class="">From:</li> 
     <li><input id="from-input" type=text value="24 Le Dinh Duong, Da Nang"/></li> 
     <br clear="both"/> 
     <li class="dir-label">To:</li> 

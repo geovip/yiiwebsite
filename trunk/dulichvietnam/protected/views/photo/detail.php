@@ -147,13 +147,14 @@ function createMarker(point, photo_id, file_id, name) {
   <div class="body">
     <div class="body_resize">
       <div class="right">
-          <h2> <a href="<?php echo Yii::app()->createUrl('album/viewdetail/album_id/'.$photo->collection_id) ?>"><?php echo $photo->title; ?></a><span></span></h2>
+        
+        <h2> <span><?php echo $photo->title; ?></span></h2>
         
         <img src="<?php echo Yii::app()->request->baseUrl.'/protected/uploads/'.$file->name ?>" alt="picture" width="495" />
         
         <div class="clr"></div>
         <p><?php echo $photo->description;?></p>
-        <?php if(!Yii::app()->user->isGuest){?>
+        <?php //if(!Yii::app()->user->isGuest){?>
          <div id="photo_rating" class="rating" onmouseout="rating_out();">
           <span id="rate_1" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(1);"<?php endif; ?> onmouseover="rating_over(1);"></span>
           <span id="rate_2" class="rating_star_big_generic" <?php if (!$rated && $user_id):?> onclick="rate(2);"<?php endif; ?> onmouseover="rating_over(2);"></span>
@@ -163,7 +164,12 @@ function createMarker(point, photo_id, file_id, name) {
           <span id="rating_text" class="rating_text"><?php echo "click to rate" ;?></span>
         </div>
         
-        <?php }?>
+        <?php //}?>
+        <?php
+        //get ten album
+        $album= Album::getAlbum($photo->collection_id); 
+        ?>
+        <a href="<?php echo Yii::app()->createUrl('album/viewdetail/album_id/'.$photo->collection_id) ?>"><?php echo $album->title;?></a>
         <?php 
             if($user_id==$photo->user_id){?>
                 <a href="javascript:void(0);" onclick="delete_photo('<?php echo $photo->id;?>', '<?php echo $photo->collection_id;?>');"><?php echo "Delete";?></a>
@@ -261,7 +267,7 @@ function createMarker(point, photo_id, file_id, name) {
   var rated = "<?php echo $rated;?>";
   var photo_id = <?php echo $photo->id;?>;
   var total_votes = <?php echo $rating_count;?>;
-  var viewer = <?php echo $user_id;?>;
+  var viewer = <?php if($user_id){echo $user_id;} else echo 0;?>;
   var tt_rating= <?php echo $tt_rating;?>;
   
   function rating_over(rating) {
