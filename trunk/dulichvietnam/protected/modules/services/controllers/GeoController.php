@@ -2,30 +2,28 @@
 
 class GeoController extends Controller {
 
-    public function actionIndex() {
+    public function actionIndex($key='',$task='location',$lat='',$log='',$type='all') {
         if (Yii::app()->request->isAjaxRequest) {
-             // Check key api
-             $key = $_GET['key'];
-             $model=Api::model()->find('key=:key', array(':$key'=>$key));
-	     if($model===null)
+             // Check key api			
+           $sql = 'select * from tbl_api where tbl_api.key = "' . $key .'"';
+           $connection=Yii::app()->db;
+           $command=$connection->createCommand($sql);
+           $row=$command->queryRow();
+    	    if(!$row)
              {
-                 $error =  array('status' => 'error','message'=>'Access deny.Invalid key.');
+                 $error =  array('message'=>'Access deny.Invalid key.');
                  echo json_encode($error);
              }
              else
              {
-                 // process 
-                 $task = $_GET['task'];            
-                 $result = array();
-                 // Lat,Log for GPS
-                 $lat = $_GET['lat'];
-                 $log = $_GET['log'];                 
+                 // process     
+                 $result = array();             
                  switch ($task){
                         case 'location';
-                            $result = $this->findLocation($lat,$log,$_GET['type']);
+                            $result = $this->findLocation($lat,$log,$type);
                             break;
                         case 'image':
-                            $result = $this->uploadImage($lat,$log,$_GET['hex']);
+                            $result = $this->uploadImage($lat,$log,$type);
                             break;
                         default:
                             $result = array('status' => 'error','message'=>'Invalid task.');  
@@ -37,32 +35,41 @@ class GeoController extends Controller {
         }
         else
         {
-            $error =  array('status' => 'error','message'=>'Request not found.');
-            echo json_encode($error);
+            $error =  array('message'=>'Request not found.');
+           echo json_encode($error);
         }
         Yii::app()->end();
     }
     
     // $type : coffee , shop , restaurant , company
-    protected  function findLocation($lat,$log,$type = 'all')
-    {        
-       $result = Place::model()->listAllPlace($lat,$log,$type);
+    protected  function findLocation($lat,$lng,$type = 'all')
+    {       
+        $sql = 'select name,address from tbl_place p ';       
+        $radius= 0.15; 
+        if($type == 'all')
+        {
+            $sql .= ' where p.lat BETWEEN '. ($lat-($radius*1.1515)) . ' AND '. ($lat+($radius*1.1515)) . ' AND p.long BETWEEN ' . ($lng-($radius*1.1515)) .' AND '. ($lng+($radius*1.1515)) ;
+        }
+        else
+        {
+            $sql .= ' where p.lat BETWEEN '. ($lat-($radius*1.1515)) . ' AND '. ($lat+($radius*1.1515)) . ' AND p.long BETWEEN ' . ($lng-($radius*1.1515)) .' AND '. ($lng+($radius*1.1515))  .' AND p.type = "' . $type .'"' ;            
+        }     
+       $connection=Yii::app()->db;
+       $command=$connection->createCommand($sql);
+       $result=$command->queryAll();     
        $data = array();
-       if($result === null)
+       if(!count($result))
        {
            $data = array(
-               'status' => 'success',
                'message' => 'No result.',
-               'data' => ''
            );
        }
        else
        {
-           $data = array(
-               'status' => 'success',
-               'message' => 'Found result.',
-               'data' => $result
-           );
+           foreach($result as $item)
+           {
+             $data[] = 'Name : ' . $item['name'] . ' - Address : ' . $item['address'];
+           }            
        }
         return $data;
     }
