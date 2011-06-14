@@ -1,0 +1,25 @@
+<html> 
+<head> 
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&amp;key=ABQIAAAAOZJQqoDBwAknMtPNKR-dvRSi2OoyjRwg8X5jAJmNj4togrBv2xSClpdvpd4FJNt4C5i-i6aTtWzs-g"></script> 
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/jquery-ui.min.js"></script> 
+<script type="text/javascript" src="js/direction.js"></script> 
+<link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>  
+<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head> 
+<body>  
+<div id="side-container"> 
+  <div> 
+    <label for="from-input">From</label>
+    <input id="from-input" type=text value="24 Le Dinh Duong, Da Nang"/>
+    <label for="to-input">To:</label>
+    <input id="to-input" type=text value="305 Au Co, Da Nang"/>
+  </div> 
+  <a href="index.html">Home page</a>
+  <input onclick="FindDirection.getDirections();" type=button value="Go!"/> 
+  <div id="dir-container"></div> 
+</div> 
+<div id="map-container"></div> 
+</body> 
+</html> 

@@ -1,0 +1,166 @@
+
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<title>PhoneGap</title> 
+	<script type="text/javascript" charset="utf-8" src="js/phonegap.0.9.4.js"></script>  
+	<link rel="stylesheet" href="css/jquery.mobile-1.0a4.1.css" /> 
+	<script src="js/jquery-1.5.2.min.js"></script> 
+	<script src="js/jquery.mobile-1.0a4.1.js"></script> 
+	
+	<script type="text/javascript"> 
+ 	var lat,lon;
+	
+ 	// Wait for PhoneGap to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+    //
+    function onDeviceReady() {
+        //navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true });
+        
+        $('#searchButton').click(function() {
+			navigator.network.isReachable('phonegap.com', reachableCallback);
+  			var url = 'http://dulichvn.freevnn.com/services/geo/index/task/location/key/'+$('#searchKey').val()+'/lat/' + lat + '/log' + lon + '/type/'+$('#searchBox').val();	  				
+  			alert('GET data via url ' + url);
+  			$.getJSON(url, 
+  			function(data) {  			    
+  			    var items=data.Items;
+  			    var list = $('#list');
+  			    list.html("");
+  				$.each(items, function(key, val) {
+  				    
+    				list.append(
+      				  $(document.createElement('li')).html(val)
+    				);
+  				});
+  				
+  				
+  				list.listview("destroy").listview()
+ 
+			});
+  			
+		});
+        
+    }
+    
+    // check connection
+    
+    function reachableCallback(reachability) {
+  			// There is no consistency on the format of reachability
+  			var networkState = reachability.code || reachability;
+
+  			var states = {};
+  			states[NetworkStatus.NOT_REACHABLE]                      = 'No network connection';
+  			states[NetworkStatus.REACHABLE_VIA_CARRIER_DATA_NETWORK] = 'Carrier data connection';
+  			states[NetworkStatus.REACHABLE_VIA_WIFI_NETWORK]         = 'WiFi connection';
+
+  			alert('Connection type: ' + states[networkState]);
+	}
+	
+	 // get GPS
+    function getLocation() {
+        // Error callback function telling the user that there was a problem retrieving GPS.
+        var fail = function(error){
+             if (navigator.notification.activityStop) navigator.notification.activityStop(); // only call this if the function exists as it is iPhone only.
+             alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n' + 'Failed to get GPS location');
+        };
+        if(navigator.geolocation) {
+             if (navigator.notification.activityStart) navigator.notification.activityStart(); // only call this if the function exists as it is iPhone only.
+             // Success callback function that will grab coordinate information and display it in an alert.
+             var suc = function(p) {
+                   if (navigator.notification.activityStop) navigator.notification.activityStop(); // only call this if the function exists as it is iPhone only.
+                   alert("Latitude:"+p.coords.latitude + " Longitude: " + p.coords.longitude);
+                   //var element = document.getElementById('geolocation');
+	   				lat = p.coords.latitude;
+	   				lon = p.coords.longitude;
+	   				$('#geolocation').html('Latitude: ' + p.coords.latitude
+	   						+ '<br />' + 'Longitude: ' + p.coords.longitude
+	   						+ '<br />' + 'Altitude: ' + p.coords.altitude
+	   						+ '<br />' + 'Accuracy: ' + p.coords.accuracy
+	   						+ '<br />' + 'Altitude Accuracy: '
+	   						+ p.coords.altitudeAccuracy + '<br />'
+	   						+ 'Heading: ' + p.coords.heading + '<br />'
+	   						+ 'Speed: ' + p.coords.speed + '<br />'
+	   						+ 'Timestamp: ' + new Date(p.timestamp)
+	   						+ '<br />');
+             };
+             // Now make the PhoneGap JavaScript API call, passing in success and error callbacks as parameters, respectively.
+             navigator.geolocation.getCurrentPosition(suc,fail,{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+        } else {
+             fail();
+        }
+   }
+ 
+</script>  
+  
+</head> 
+<body onload="onLoad()"> 
+ 
+    <div data-role="page" id="home"> 
+ 
+  <div data-role="header"> 
+    <h1>Tour De VN</h1> 
+  </div> 
+ 
+  <div data-role="content"> 
+    <p>Find Your Place To Travel Or Get Your Location </p> 
+    <p><a href="#search" data-role="button">Search GoldPlace</a></p>    
+    <p><a href="#location" data-role="button">Your Location</a></p> 
+  </div> 
+ 
+</div> 
+ 
+<div data-role="page" id="search"> 
+ 
+  <div data-role="header" data-position="fixed"> 
+    <h1>Search GoldPlace</h1> 
+    <p>Find goldplace near your location</p>
+    <div class="ui-body ui-body-b"> 
+         <label for="searchKey">Your Api Key</label>
+         <br/>
+         <input type="text" name="search" id="searchKey" value="9cac87" data-theme="a" /> 
+         <br/>
+         <label for="searchBox">Keyword </label>
+         <br/>
+         <select name="search" id="searchBox" data-theme="a" style="height: 32px; width: 155px; ">
+         	<option value="all">all</option>
+         	<option value="coffee">coffee</option>
+         	<option value="shop">shop</option>
+         	<option value="restaurant">restaurant</option>
+         	<option value="company">company</option>
+         </select>
+         <button type="submit" data-theme="a" id="searchButton">Search</button>     
+      
+    </div>  
+  </div> 
+ 
+  <div data-role="content"> 
+     
+     <ul data-role="listview" id="list"> 
+      
+    </ul> 
+      
+        
+    
+  </div> 
+ 
+</div> 
+ 
+<div data-role="page" id="location"> 
+ 
+  <div data-role="header"> 
+    <h1> Current location</h1> 
+  </div> 
+ 
+  <div data-role="content"> 
+    <p id="geolocation">Your locaton : <a href="#" onclick="getLocation();">here</a> !</p> 
+     
+  </div> 
+ 
+</div> 
+ 
+</body> 
+</html>
