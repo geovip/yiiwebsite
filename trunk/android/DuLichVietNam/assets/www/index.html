@@ -23,7 +23,7 @@
         
         $('#searchButton').click(function() {
 			navigator.network.isReachable('phonegap.com', reachableCallback);
-  			var url = 'http://dulichvn.freevnn.com/services/geo/index/task/location/key/'+$('#searchKey').val()+'/lat/' + lat + '/log' + lon + '/type/'+$('#searchBox').val();	  				
+  			var url = 'http://dulichvn.freevnn.com/services/geo/index/task/location/key/'+$('#searchKey').val()+'/lat/' + lat + '/log/' + lon + '/type/'+$('#searchBox').val();	  				
   			alert('GET data via url ' + url);
   			$.getJSON(url, 
   			function(data) {  			    
