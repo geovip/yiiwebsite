@@ -36,7 +36,7 @@ class GeoController extends Controller {
         else
         {
             $error =  array('message'=>'Request not found.');
-           echo json_encode($error);
+            echo json_encode($error);
         }
         Yii::app()->end();
     }
@@ -45,33 +45,31 @@ class GeoController extends Controller {
     protected  function findLocation($lat,$lng,$type = 'all')
     {       
         $sql = 'select name,address from tbl_place p ';       
-        $radius= 0.15; 
+        //$radius= 0.15; 
         if($type == 'all')
         {
-            $sql .= ' where p.lat BETWEEN '. ($lat-($radius*1.1515)) . ' AND '. ($lat+($radius*1.1515)) . ' AND p.long BETWEEN ' . ($lng-($radius*1.1515)) .' AND '. ($lng+($radius*1.1515)) ;
+            $sql .= ' where p.lat BETWEEN '. ($lat-0.5) . ' AND '. ($lat+0.5) . ' AND p.long BETWEEN ' . ($lng-0.5) .' AND '. ($lng+0.5) ;
         }
         else
         {
-            $sql .= ' where p.lat BETWEEN '. ($lat-($radius*1.1515)) . ' AND '. ($lat+($radius*1.1515)) . ' AND p.long BETWEEN ' . ($lng-($radius*1.1515)) .' AND '. ($lng+($radius*1.1515))  .' AND p.type = "' . $type .'"' ;            
-        }     
+            $sql .= ' where p.lat BETWEEN '. ($lat-0.5) . ' AND '. ($lat+0.5) . ' AND p.long BETWEEN ' . ($lng-0.5) .' AND '. ($lng+0.5)   .' AND p.type = "' . $type .'"' ;            
+        }          
        $connection=Yii::app()->db;
        $command=$connection->createCommand($sql);
        $result=$command->queryAll();     
        $data = array();
        if(!count($result))
        {
-           $data = array(
-               'message' => 'No result.',
-           );
+           $data[] = 'No result';
        }
        else
        {
-           foreach($result as $item)
+           foreach($result as $key => $item)
            {
-             $data[] = 'Name : ' . $item['name'] . ' - Address : ' . $item['address'];
+             $data[$key] = $item['name'] . ' - Address : ' . $item['address'] ;
            }            
        }
-        return $data;
+        return array('Items' => $data);
     }
     
     // $hex : string - image hex 
